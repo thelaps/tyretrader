@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>TYREMANAGER</title>
+    <link rel="stylesheet" href="themes/wheels/src/stylesheets/base.css">
+    <link rel="stylesheet" href="themes/wheels/src/stylesheets/skeleton.css">
+    <link rel="stylesheet" href="themes/wheels/src/stylesheets/layout.css">
+    <link rel="stylesheet" href="themes/wheels/src/stylesheets/fancybox/jquery.fancybox-1.3.4.css">
+    <link rel="stylesheet" href="themes/wheels/src/stylesheets/form.css">
+    <link rel="stylesheet" href="themes/wheels/src/stylesheets/design.css">
+    <script type="text/javascript" src="themes/wheels/src/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="themes/wheels/src/js/jquery.fancybox-1.3.4.js"></script>
+    <script type="text/javascript" src="themes/wheels/src/js/jcf.js"></script>
+    <script type="text/javascript" src="themes/wheels/src/js/jcf.checkbox.js"></script>
+    <script type="text/javascript" src="themes/wheels/src/js/jcf.radio.js"></script>
+    <script type="text/javascript" src="themes/wheels/src/js/jcf.select.js"></script>
+    <script type="text/javascript" src="themes/wheels/src/js/main.js"></script>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="themes/wheels/src/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <div id="wrapper-inner">
+            <div id="head">
+                <h1 class="logo">TYREMANAGER. Вам с нами по пути!</h1>
+                <div class="head-banner">
+                    <img src="themes/wheels/src/images/banner.jpg" alt="banner">
+                </div>
+            </div>
+            <div class="panel">
+                <form action="#" class="inline-form">
+                    <label for="login-name">Логин:</label>
+                    <input type="text" name="" id="login-name">
+                    <label for="password">Пароль:</label>
+                    <input type="password" name="" id="password">
+                    <input type="submit" value="Вход">
+                    <a href="#" class="registration">Регистрация</a>
+                </form>
+                <ul id="nav" class="link-group align-right">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Покупка</a></li>
+                    <li><a href="#">Продажа</a></li>
+                </ul>
+            </div>
+            <div id="main" data-role="main">
+                <div class="tab-widget" data-role="tabs">
+                    <ul>
+                        <li class="active">
+                            <span class="ico ico-buy"></span>
+                            Купить
+                        </li>
+                        <li>
+                            <span class="ico ico-sell"></span>
+                            Продать
+                        </li>
+                        <li class="search-tab">
+                            <span class="ico ico-search"></span>
+                            Подобрать
+                        </li>
+                    </ul>
+                    <div class="tabs-holder">
+                        <!-- First tab: buy -->
+                        <div class="tab active" data-role="tab">
+                            <form action="#" class="form form-order">
+                                <div class="order-options">
+                                    <!-- Select disc or tyre -->
+                                    <div class="row product-type">
+                                        <ul class="opt-group" data-role="switcher" data-name="product-type">
+                                            <li>
+                                                <input id="b_tyre" data-target=".tyre-options" type="radio" name="product-type" checked>
+                                                <label for="b_tyre">Шины</label>
+                                            </li>
+                                            <li>
+                                                <input id="b_disc" data-target=".disc-options" type="radio" name="product-type">
+                                                <label for="b_disc">Диски</label>
+                                            </li>
+                                        </ul>
+                                        <ul class="opt-group">
+                                            <li>
+                                                <input id="b_new" type="radio" name="originality" checked >
+                                                <label for="b_new">Новые</label>
+                                            </li>
+                                            <li>
+                                                <input id="b_used" type="radio" name="originality">
+                                                <label for="b_used">Б/У</label>
+                                            </li>
+                                        </ul>
+                                        <div class="quantity">
+                                            <label for="b_qty">Количество</label>
+                                            <input id="b_qty" class="size-s" type="text" name="quantity">
+                                        </div>
+                                    </div>
+                                    <div class="h-separator"></div>
+                                    <div class="row">
+                                        <!-- Select brand -->
+                                        <div class="area-brand">
+                                            <div class="row tyre-options" data-name="product-type">
+                                                <div class="field align-left">
+                                                    <label>Бренд</label>
+                                                    <select>
+                                                        <option value="">Все</option>
+                                                        <option value="">America</option>
+                                                        <option value="">Amtel</option>
+                                                        <option value="">Arctic Claw</option>
+                                                        <option value="">Autoguard</option>
+                                                        <option value="">BCT</option>
+                                                        <option value="">BFGoodrich</option>
+                                                        <option value="">Blackstone</option>
+                                                    </select>
+                                                </div>
+                                                <div class="field align-right">
+                                                    <label>Модель</label>
+                                                    <select>
+                                                        <option>Все</option>
+                                                        <option>model 1</option>
+                                                        <option>model 2</option>
+                                                        <option>model 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row disc-options" data-name="product-type">
+                                                <div class="field align-left">
+                                                    <label>Бренд</label>
+                                                    <select>
+                                                        <option value="">Все</option>
+                                                        <option value="">K&amp;K</option>
+                                                        <option value="">Kosei</option>
+                                                        <option value="">Lenso</option>
+                                                        <option value="">MOMO</option>
+                                                        <option value="">Racing Wheels</option>
+                                                    </select>
+                                                </div>
+                                                <div class="field align-right">
+                                                    <label>Модель</label>
+                                                    <select>
+                                                        <option>Все</option>
+                                                        <option>model 1</option>
+                                                        <option>model 2</option>
+                                                        <option>model 3</option>
+                                                        <option>model 4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="date-period justify">
+                                                <label>Период актуальности</label>
+                                                <input type="text" value="11.08.2013">
+                                                <span>-</span>
+                                                <input type="text" value="11.08.2013">
+                                            </div>
+                                        </div>
+                                        <!-- Select type and size -->
+                                        <div class="area-type">
+                                            <!-- Disc options -->
+                                            <div class="disc-options" data-name="product-type">
+                                                <div class="field">
+                                                    <label>Тип диска</label>
+                                                    <ul class="opt-group justify">
+                                                        <li>
+                                                            <input type="checkbox" name="disc-type" id="b_type-1">
+                                                            <label for="b_type-1">Стальной</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="disc-type" id="b_type-2">
+                                                            <label for="b_type-2">Литой</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="disc-type" id="b_type-3">
+                                                            <label for="b_type-3">Кованный</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="size-field">
+                                                    <div>
+                                                        <label for="b_width">Ширина диска</label>
+                                                        <input id="b_width" class="size-s" type="text">
+                                                    </div>
+                                                    <span>/</span>
+                                                    <div>
+                                                        <label for="b_fixture">Крепеж диска</label>
+                                                        <input id="b_fixture" class="size-s" type="text">
+                                                    </div>
+                                                    <span>x</span>
+                                                    <div>
+                                                        <label for="b_pcd">PCD</label>
+                                                        <input id="b_pcd" class="size-s" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Tyre options -->
+                                            <div class="tyre-options" data-name="product-type">
+                                                <div class="field">
+                                                    <label>Сезон</label>
+                                                    <ul class="opt-group justify">
+                                                        <li>
+                                                            <input type="checkbox" name="disc-type" id="b_season-1">
+                                                            <label for="b_season-1">Летняя</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="disc-type" id="b_season-2">
+                                                            <label for="b_season-2">Зимняя</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="disc-type" id="b_season-3">
+                                                            <label for="b_season-3">Всесезонная</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="size-field">
+                                                    <div>
+                                                        <label for="b_t-width">Ширина шины</label>
+                                                        <input id="b_t-width" class="size-s" type="text">
+                                                    </div>
+                                                    <span>/</span>
+                                                    <div>
+                                                        <label for="b_t-height">Высота шины</label>
+                                                        <input id="b_t-height" class="size-s" type="text">
+                                                    </div>
+                                                    <span>R</span>
+                                                    <div>
+                                                        <label for="b_radial">Диаметр</label>
+                                                        <input id="b_radial" class="size-s" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="h-separator"></div>
+                                    <!-- User contact info -->
+                                    <div class="address-fields">
+                                        <div class="row justify">
+                                            <div class="field">
+                                                <label for="b_city">Город</label>
+                                                <select id="b_city">
+                                                    <option>Киев</option>
+                                                    <option>Харьков</option>
+                                                </select>
+                                            </div>
+                                            <div class="field">
+                                                <label for="b_name">Ф.И.О.</label>
+                                                <input id="b_name" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label for="b_phone">Телефон</label>
+                                                <input id="b_phone" class="phone" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label for="b_email">Email</label>
+                                                <input id="b_email" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="b_add-info">Дополнительная информация</label>
+                                            <input id="b_add-info" class="size-fw" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-submit">
+                                    <button type="submit">ДОБАВИТЬ ЗАЯВКУ</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Second tab: sell -->
+                        <div class="tab" data-role="tab">
+                        </div>
+                        <!-- Third tab: search -->
+                        <div class="tab" data-role="tab">
+                            <form action="#" class="form form-order">
+                                <div class="order-options">
+                                    <!-- Select disc or tyre -->
+                                    <div class="row product-type">
+                                        <ul class="opt-group" data-role="switcher" data-name="product-type">
+                                            <li>
+                                                <input id="s_tyre" data-target=".tyre-options" type="radio" name="product-type">
+                                                <label for="s_tyre">Шины</label>
+                                            </li>
+                                            <li>
+                                                <input id="s_disc" data-target=".disc-options" type="radio" name="product-type" checked>
+                                                <label for="s_disc">Диски</label>
+                                            </li>
+                                            <li>
+                                                <input id="s_car" data-target=".car-options" type="radio" name="product-type">
+                                                <label for="s_car">Машина</label>
+                                            </li>
+                                        </ul>
+                                        <ul class="opt-group">
+                                            <li>
+                                                <input type="radio" name="originality" id="s_new" checked >
+                                                <label for="s_new">Новые</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="originality" id="s_used">
+                                                <label for="s_used">Б/У</label>
+                                            </li>
+                                        </ul>
+                                        <div class="quantity">
+                                            <label for="s_qty">Количество</label>
+                                            <input id="s_qty" class="size-s" type="text" name="quantity">
+                                        </div>
+                                    </div>
+                                    <div class="h-separator"></div>
+                                    <!-- Tyres Options -->
+                                    <div class="row tyre-options" data-name="product-type">
+                                        <!-- Select brand -->
+                                        <div class="area-brand">
+                                            <div class="row">
+                                                <div class="field align-left">
+                                                    <label>Бренд</label>
+                                                    <select>
+                                                        <option value="">Все</option>
+                                                        <option value="">America</option>
+                                                        <option value="">Amtel</option>
+                                                        <option value="">Arctic Claw</option>
+                                                        <option value="">Autoguard</option>
+                                                        <option value="">BCT</option>
+                                                        <option value="">BFGoodrich</option>
+                                                        <option value="">Blackstone</option>
+                                                    </select>
+                                                </div>
+                                                <div class="field align-right">
+                                                    <label>Модель</label>
+                                                    <select>
+                                                        <option>Все</option>
+                                                        <option>model 1</option>
+                                                        <option>model 2</option>
+                                                        <option>model 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Select type and size -->
+                                        <div class="area-type">
+                                            <!-- Tyre options -->
+                                            <div class="field">
+                                                <label>Сезон</label>
+                                                <ul class="opt-group justify">
+                                                    <li>
+                                                        <input type="checkbox" name="disc-type" id="s_season-1">
+                                                        <label for="s_season-1">Летняя</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="disc-type" id="s_season-2">
+                                                        <label for="s_season-2">Зимняя</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="disc-type" id="s_season-3">
+                                                        <label for="s_season-3">Всесезонная</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="size-field">
+                                                <div>
+                                                    <label for="s_t-width">Ширина шины</label>
+                                                    <input id="s_t-width" class="size-s" type="text">
+                                                </div>
+                                                <span>/</span>
+                                                <div>
+                                                    <label for="s_t-height">Высота шины</label>
+                                                    <input id="s_t-height" class="size-s" type="text">
+                                                </div>
+                                                <span>R</span>
+                                                <div>
+                                                    <label for="s_radial">Диаметр</label>
+                                                    <input id="s_radial" class="size-s" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Disc Options -->
+                                    <div class="row disc-options" data-name="product-type">
+                                        <!-- Select brand -->
+                                        <div class="area-brand">
+                                            <div class="row">
+                                                <div class="field align-left">
+                                                    <label>Бренд</label>
+                                                    <select>
+                                                        <option value="">Все</option>
+                                                        <option value="">K&amp;K</option>
+                                                        <option value="">Kosei</option>
+                                                        <option value="">Lenso</option>
+                                                        <option value="">MOMO</option>
+                                                        <option value="">Racing Wheels</option>
+                                                    </select>
+                                                </div>
+                                                <div class="field align-right">
+                                                    <label>Модель</label>
+                                                    <select>
+                                                        <option>Все</option>
+                                                        <option>model 1</option>
+                                                        <option>model 2</option>
+                                                        <option>model 3</option>
+                                                        <option>model 4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Select type and size -->
+                                        <div class="area-type">
+                                            <!-- Disc options -->
+                                            <div class="field">
+                                                <label>Тип диска</label>
+                                                <ul class="opt-group justify">
+                                                    <li>
+                                                        <input type="checkbox" name="disc-type" id="s_type-1">
+                                                        <label for="s_type-1">Стальной</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="disc-type" id="s_type-2">
+                                                        <label for="s_type-2">Литой</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="checkbox" name="disc-type" id="s_type-3">
+                                                        <label for="s_type-3">Кованный</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="size-field">
+                                                <div>
+                                                    <label for="s_width">Ширина диска</label>
+                                                    <input id="s_width" class="size-s" type="text">
+                                                </div>
+                                                <span>/</span>
+                                                <div>
+                                                    <label for="s_fixture">Крепеж диска</label>
+                                                    <input id="s_fixture" class="size-s" type="text">
+                                                </div>
+                                                <span>x</span>
+                                                <div>
+                                                    <label for="s_pcd">PCD</label>
+                                                    <input id="s_pcd" class="size-s" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row car-options" data-name="product-type">
+                                        <div class="area-brand" style="border:0;">
+                                            <div class="row">
+                                                <div class="field align-left">
+                                                    <label>Производитель</label>
+                                                    <select>
+                                                        <option value="">Все</option>
+                                                        <option value="">Alfa Romeo</option>
+                                                        <option value="">BMW</option>
+                                                        <option value="">Ford</option>
+                                                        <option value="">Mercedes</option>
+                                                    </select>
+                                                </div>
+                                                <div class="field align-right">
+                                                    <label>Модель</label>
+                                                    <select>
+                                                        <option>Все</option>
+                                                        <option>model 1</option>
+                                                        <option>model 2</option>
+                                                        <option>model 3</option>
+                                                        <option>model 4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-submit">
+                                    <button type="submit">Подобрать</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel filter">
+                    <form class="filter-fields" action="#">
+                        <select class="alt" style="width:140px;">
+                            <option>Новое</option>
+                            <option>Option 1</option>
+                            <option>Big Option 2</option>
+                        </select>
+                        <select class="alt" style="width:140px;">
+                            <option>Шины</option>
+                            <option>Option 1</option>
+                            <option>Big Option 2</option>
+                            <option>Big Option 3</option>
+                            <option>Big Option 4</option>
+                        </select>
+                        <select class="alt">
+                            <option>ГРН</option>
+                            <option>USD</option>
+                        </select>
+                    </form>
+                    <h2>Предложения продажи</h2>
+                </div>
+                <div class="product-list">
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/tyre.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/disc.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">1548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/tyre.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/disc.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">1548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/tyre.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/disc.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">1548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/tyre.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <h3><a href="#">155/70R13 75T Tracmax Radial 102</a></h3>
+                        <div class="img">
+                            <img src="themes/wheels/src/images/disc.png" alt="Tracmax Radial">
+                        </div>
+                        <div class="short-info">
+                            <table>
+                                <tr>
+                                    <td>Ширина профиля, мм:</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>Высота профиля, %:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Диаметр диска, дюймы: </td>
+                                    <td>13</td>
+                                </tr>
+                            </table>
+                            <div class="price">
+                                <div class="qty">Ко-во: <b>4шт</b>.</div>
+                                <div class="price-value">1548,56 грн</div>
+                            </div>
+                            <div class="season">
+                                <img src="themes/wheels/src/images/pic-summer.png" alt="summer"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer">
+                <a id="to-top" class="link-to-top" href="#head">ВВЕРХ</a>
+                <ul class="link-group">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Опт</a></li>
+                    <li><a href="#">Покупка</a></li>
+                    <li><a href="#">Продажа</a></li>
+                    <li><a href="#">Реклама</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+                <ul class="social">
+                    <li><a class="ico ico-facebook" href="#">facebook</a></li>
+                    <li><a class="ico ico-twitter" href="#">twitter</a></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+input[type=checkbox].css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height:1px;
+    width:1px;
+    margin:-1px;
+    padding:0;
+    border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left:26px !important;
+    height:20px;
+    display:inline-block;
+    line-height:20px;
+    background-repeat:no-repeat;
+    background-position: 0 -20px;
+    font-size:14px;
+    vertical-align:middle;
+    cursor:pointer;
+    padding-bottom: 0 !important;
+    font-family: "Open Sans";
+    font-weight: bold !important;
+    color: #3c4657;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 0;
+    color: #717b8c;
+}
+
+.css-label{
+    background-image:url(../images/checkbox-icons.png);
+}

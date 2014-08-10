@@ -1,0 +1,3223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:o="urn:schemas-microsoft-com:office:office"
+            xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+            xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml"
+            xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+            xmlns:w10="urn:schemas-microsoft-com:office:word"
+            xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+            xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml">
+    <w:body>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="5000" w:type="pct"/>
+                <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="0000"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="7016"/>
+                <w:gridCol w:w="2339"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:gridSpan w:val="2"/>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:pStyle w:val="Heading1"/>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:t>>
+                                <
+                                <5@G5A:>5 ?@54;>65=85
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:pStyle w:val="Heading2"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:t>@>4025F: Newtires</w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:spacing w:after="240"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:b/>
+                                <w:bCs/>
+                            </w:rPr>
+                            <w:t xml:space="preserve">=D>@<0F8O > ?@>402F5: </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t>0720=85 D878G5A:>5 (=0720=85<03078=0):
+                            </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t xml:space="preserve">URL (A09B0): </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t xml:space="preserve">E-mail: </w:t>
+                        </w:r>
+                        <w:smartTag w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="PersonName">
+                            <w:r>
+                                <w:rPr>
+                                    <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                </w:rPr>
+                                <w:t></w:t>
+                            </w:r>
+                        </w:smartTag>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t>>=B0:B=K9 B5;5D>=: , ,</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="1250" w:type="pct"/>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+            <w:pPr>
+                <w:divId w:val="68965344"/>
+                <w:rPr>
+                    <w:vanish/>
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="5000" w:type="pct"/>
+                <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                <w:tblBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                </w:tblBorders>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="0000"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="2849"/>
+                <w:gridCol w:w="1413"/>
+                <w:gridCol w:w="1278"/>
+                <w:gridCol w:w="822"/>
+                <w:gridCol w:w="3051"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>08<5=>20=85
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>&5=0 70 54. B>2., 3@=.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>>;8G5AB2>, HB.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>&5=0, 3@=.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>7>1@065=85</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>BF Goodrich G-Force Stud 205/55 R16 94Q XL H8? B</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>950.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>9,500.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Cept W605 205/55 R16 91Q</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>875.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>8,750.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Yokohama Ice Guard IG35 205/55 R16 94T XL H8?</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>1,000.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10,000.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:pict>
+                                <v:shape id="_x0000_i1026" type="#_x0000_t75" style="width:3in;height:3in">
+                                    <v:imagedata r:id="rIdItem369"/>
+                                </v:shape>
+                            </w:pict>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="5000" w:type="pct"/>
+                <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="0000"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="7016"/>
+                <w:gridCol w:w="2339"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:gridSpan w:val="2"/>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:pStyle w:val="Heading1"/>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:t>>
+                                <
+                                <5@G5A:>5 ?@54;>65=85
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:pStyle w:val="Heading2"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:t>@>4025F: <530-2B>?>AB02:0
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:spacing w:after="240"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:b/>
+                                <w:bCs/>
+                            </w:rPr>
+                            <w:t xml:space="preserve">=D>@<0F8O > ?@>402F5: </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t>0720=85 D878G5A:>5 (=0720=85<03078=0):
+                            </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t xml:space="preserve">URL (A09B0): </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t xml:space="preserve">E-mail: </w:t>
+                        </w:r>
+                        <w:smartTag w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="PersonName">
+                            <w:r>
+                                <w:rPr>
+                                    <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                </w:rPr>
+                                <w:t></w:t>
+                            </w:r>
+                        </w:smartTag>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t>>=B0:B=K9 B5;5D>=: , ,</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="1250" w:type="pct"/>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+            <w:pPr>
+                <w:divId w:val="68965344"/>
+                <w:rPr>
+                    <w:vanish/>
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="5000" w:type="pct"/>
+                <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                <w:tblBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                </w:tblBorders>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="0000"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="2849"/>
+                <w:gridCol w:w="1413"/>
+                <w:gridCol w:w="1278"/>
+                <w:gridCol w:w="822"/>
+                <w:gridCol w:w="3051"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>08<5=>20=85
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>&5=0 70 54. B>2., 3@=.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>>;8G5AB2>, HB.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>&5=0, 3@=.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>7>1@065=85</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Optimo K425 Kinergy eco 205/55 R16 91H</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>915.04</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>9,150.44</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:pict>
+                                <v:shape id="_x0000_i1026" type="#_x0000_t75" style="width:3in;height:3in">
+                                    <v:imagedata r:id="rIdItem39"/>
+                                </v:shape>
+                            </w:pict>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Ventus ME01 K114 205/55 R16 91V K1</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>824.40</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>8,244.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Ventus V12 Evo K110 205/55 R16 94W XL K1</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>850.08</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>8,500.80</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Cept RS W442 205/55 R16 91H</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>801.72</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>8,017.20</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="5000" w:type="pct"/>
+                <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="0000"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="7016"/>
+                <w:gridCol w:w="2339"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:gridSpan w:val="2"/>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:pStyle w:val="Heading1"/>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:t>>
+                                <
+                                <5@G5A:>5 ?@54;>65=85
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="0" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:pStyle w:val="Heading2"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:t>@>4025F: =B5@H8=0</w:t>
+                        </w:r>
+                    </w:p>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:spacing w:after="240"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:b/>
+                                <w:bCs/>
+                            </w:rPr>
+                            <w:t xml:space="preserve">=D>@<0F8O > ?@>402F5: </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t>0720=85 D878G5A:>5 (=0720=85<03078=0):
+                            </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t xml:space="preserve">URL (A09B0): </w:t>
+                        </w:r>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t xml:space="preserve">E-mail: </w:t>
+                        </w:r>
+                        <w:smartTag w:uri="urn:schemas-microsoft-com:office:smarttags" w:element="PersonName">
+                            <w:r>
+                                <w:rPr>
+                                    <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                </w:rPr>
+                                <w:t></w:t>
+                            </w:r>
+                        </w:smartTag>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                            <w:br/>
+                            <w:t>>=B0:B=K9 B5;5D>=: , ,</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="1250" w:type="pct"/>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                            </w:rPr>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+            <w:pPr>
+                <w:divId w:val="68965344"/>
+                <w:rPr>
+                    <w:vanish/>
+                </w:rPr>
+            </w:pPr>
+        </w:p>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="5000" w:type="pct"/>
+                <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                <w:tblBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                </w:tblBorders>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="0000"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="2849"/>
+                <w:gridCol w:w="1413"/>
+                <w:gridCol w:w="1278"/>
+                <w:gridCol w:w="822"/>
+                <w:gridCol w:w="3051"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>08<5=>20=85
+                            </w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>&5=0 70 54. B>2., 3@=.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>>;8G5AB2>, HB.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>&5=0, 3@=.</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>7>1@065=85</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Cept Evo W310 205/55 R16 91H</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>973.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>9,730.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Cept IZ W606 205/55 R16 91T</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>888.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>8,880.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Cept RS W442 205/55 R16 91H</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>696.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>6,960.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Cept W605 205/55 R16 91Q</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>888.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>8,880.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Pike RS W419 205/55 R16 91T</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>938.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>9,380.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Pike RS W419 205/55 R16 91T</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>1,079.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10,790.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+            <w:tr w:rsidR="004F4963">
+                <w:trPr>
+                    <w:divId w:val="68965344"/>
+                    <w:tblCellSpacing w:w="7" w:type="dxa"/>
+                </w:trPr>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRPr="009A6935" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r w:rsidRPr="009A6935">
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                                <w:lang w:val="en-US"/>
+                            </w:rPr>
+                            <w:t>Hankook Winter I*Pike W409 205/55 R16 91T</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>1,053.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:right w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            <w:t>10,530.00</w:t>
+                        </w:r>
+                    </w:p>
+                </w:tc>
+                <w:tc>
+                    <w:tcPr>
+                        <w:tcW w:w="0" w:type="auto"/>
+                        <w:tcBorders>
+                            <w:top w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:left w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="auto"/>
+                        </w:tcBorders>
+                        <w:vAlign w:val="center"/>
+                    </w:tcPr>
+                    <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+                        <w:pPr>
+                            <w:jc w:val="center"/>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                        </w:pPr>
+                        <w:r>
+                            <w:rPr>
+                                <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>
+                                <w:sz w:val="18"/>
+                                <w:szCs w:val="18"/>
+                            </w:rPr>
+                            {imgXml}
+                        </w:r>
+                    </w:p>
+                </w:tc>
+            </w:tr>
+        </w:tbl>
+        <w:p w:rsidR="004F4963" w:rsidRDefault="004F4963">
+            <w:pPr>
+                <w:divId w:val="68965344"/>
+            </w:pPr>
+            <w:r>
+                <w:br/>
+            </w:r>
+            <w:r>
+                <w:rPr>
+                    <w:i/>
+                    <w:iCs/>
+                </w:rPr>
+                <w:t xml:space="preserve">-;5:B@>==0O 18@60 H8= 8 48A:>2 </w:t>
+            </w:r>
+            <w:hyperlink r:id="rId7" w:history="1">
+                <w:r>
+                    <w:rPr>
+                        <w:rStyle w:val="Hyperlink"/>
+                        <w:i/>
+                        <w:iCs/>
+                    </w:rPr>
+                    <w:t>tyretrader.com.ua</w:t>
+                </w:r>
+            </w:hyperlink>
+        </w:p>
+        <w:sectPr w:rsidR="004F4963" w:rsidSect="004F4963">
+            <w:pgSz w:w="11906" w:h="16838"/>
+            <w:pgMar w:top="1134" w:right="850" w:bottom="1134" w:left="1701" w:header="708" w:footer="708"
+                     w:gutter="0"/>
+            <w:cols w:space="708"/>
+            <w:docGrid w:linePitch="360"/>
+        </w:sectPr>
+    </w:body>
+</w:document>

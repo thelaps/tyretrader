@@ -1,0 +1,20 @@
+/*******JUMPER TASKS********/
+
+1 CORE {
+  + 1.1 GET request preprocessor & validator
+  + 1.2 GET request processor{
+            vars:   v - view name
+                    id - id for view
+        1.2.1 Call handler
+        1.2.2 connector with models
+    }
+    1.3 Models manager
+    1.4 Controller manager
+    1.5 Views manager
+    1.6 Multi-Database manager{
+	1.6.1 Basic database controller
+	1.6.2 Module for connecting a lot of types DB
+	1.6.3 Query manager for a one type of syntax and getting results
+	1.6.4 Multi Database manager and processor
+    }
+}
