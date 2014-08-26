@@ -100,6 +100,10 @@ class App{
     public static function getField($from, $needle){
         return (isset($from[$needle])) ? $from[$needle] : null;
     }
+
+    public static function helper(){
+        return self::newJump('helper', 'modules');
+    }
 }
 /*define('CORE_DIR',dirname(__FILE__).DIRECTORY_SEPARATOR);
 require CORE_DIR.'config.php';
