@@ -87,38 +87,3 @@
         </div>
     </form>
 </div>
-
-
-
-<div class="row">
-    <div class="field align-right two-cell">
-        <div class="cell">
-            <label>Область</label>
-        </div>
-        <div class="cell">
-            <select name="user[regionId]" class="cityFilter" data-filter="#homeCity">
-                <option value="">Все</option>
-                {foreach from=$viewData->container.city item=region}
-                    <option value="{$region.region->id}">{$region.region->name}</option>
-                {/foreach}
-            </select>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="field align-right two-cell">
-        <div class="cell">
-            <label>Город</label>
-        </div>
-        <div class="cell">
-            <select name="user[cityId]" class="cityFilter" id="homeCity">
-                <option value="">Все</option>
-                {foreach from=$viewData->container.city item=region}
-                    {foreach from=$region.cities item=cityofregion}
-                        <option{if $viewData->profile->user->cityid == $cityofregion->id} selected{/if} value="{$cityofregion->id}" data-city="{$cityofregion->region_id}">{$cityofregion->name}</option>
-                    {/foreach}
-                {/foreach}
-            </select>
-        </div>
-    </div>
-</div>

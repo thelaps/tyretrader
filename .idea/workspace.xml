@@ -2,50 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="110d17a7-7ec2-4133-be3c-fe98745a8415" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%06^066^066AEBEA%%calcContainerFormTab1.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%12^128^128658B4%%optContainerForm.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%16^160^160A0D65%%homeContainerForm.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%18^183^1830AB54%%viewsettings.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%1C^1CE^1CE82159%%optContainerFormTab8.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%22^22F^22F3699E%%product.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%27^275^275E9E44%%tyreRadius.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%30^308^3080F169%%homeContainerFormTab1.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%41^41C^41CA913A%%calcContainerFormTab2.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%45^45B^45B2D082%%profileBox.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%45^45E^45E480CD%%index.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%47^478^4781CA47%%wheelWidth.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%4D^4DB^4DB4D6D4%%api.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%59^591^591E9BCF%%viewSettingsContainerForm.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%61^611^611F5794%%optContainerCatalog.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%62^627^62700932%%menu.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%67^67E^67E1C58E%%error.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%6A^6A6^6A6537CA%%footer.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%7E^7E1^7E1476AA%%home.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%81^812^812245C4%%wheelPcd.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%88^885^885F8E49%%calculator.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%8A^8A8^8A8A7094%%main.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%8C^8C6^8C6C7DB0%%tyreHeight.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%8F^8FB^8FB95712%%registrationContainerForm.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%93^93D^93D6031B%%header.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%94^940^940E3616%%posts.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%96^966^966EBFAB%%mainContainerForm.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%96^96B^96B44AC8%%optContainerFormTab1Merged.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%9E^9EB^9EB8B688%%optContainerFormTab7.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%A9^A9F^A9F9A1C2%%sold.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%AD^ADE^ADE4F165%%opt.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%B3^B31^B31C6378%%soldContainerCatalog.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%C5^C5D^C5DE67E5%%tyreWidth.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%C9^C98^C98BBC3C%%mainContainerCatalog.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%CE^CED^CED8F309%%optContainerFormTab3Merged.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%D9^D91^D918CC58%%optContainerFormTab4.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%DA^DA7^DA746005%%analitycsContainerForm.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%E1^E1A^E1AFECB0%%analitycsContainerCatalog.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%EA^EA2^EA2C60E7%%analitycs.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%F4^F47^F47087A8%%registration.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%F7^F70^F70D2B50%%wheelEt.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%FB^FB5^FB56256D%%export.tpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/themes/wheels/cache/%%FF^FF1^FF17EB69%%user.tpl.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/wheels/container/forms/registrationContainerForm.tpl" afterPath="$PROJECT_DIR$/themes/wheels/container/forms/registrationContainerForm.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -96,7 +52,7 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/datamodels/activerecord/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="14" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="2235">
+            <state line="55" column="14" selection-start="1775" selection-end="1775" vertical-scroll-proportion="-19.541666" vertical-offset="356" max-vertical-offset="2235">
               <folding />
             </state>
           </provider>
@@ -105,7 +61,7 @@
       <file leaf-file-name="registersuccess.tpl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/notifications/registersuccess.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="37" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="210">
+            <state line="2" column="37" selection-start="101" selection-end="101" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="210">
               <folding />
             </state>
           </provider>
@@ -150,7 +106,7 @@
       <file leaf-file-name="registrationContainerForm.tpl" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/wheels/container/forms/registrationContainerForm.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="28" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.19101124" vertical-offset="385" max-vertical-offset="1935">
+            <state line="88" column="6" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.8988764" vertical-offset="520" max-vertical-offset="1410">
               <folding />
             </state>
           </provider>
@@ -654,14 +610,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="24" width="1920" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14483494" sideWeight="0.67180616" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14483494" sideWeight="0.67180616" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -889,20 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/notifications/registersuccess.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="37" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/datamodels/activerecord/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="14" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="2235">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="97" column="5" selection-start="3198" selection-end="3198" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1860">
@@ -938,6 +880,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/datamodels/activerecord/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="14" selection-start="1775" selection-end="1775" vertical-scroll-proportion="-19.541666" vertical-offset="356" max-vertical-offset="2235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/notifications/registersuccess.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="37" selection-start="101" selection-end="101" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/themes/wheels/container/forms/homeTabs/homeContainerFormTab1.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="22" selection-start="2134" selection-end="3890" vertical-scroll-proportion="-9.375" vertical-offset="450" max-vertical-offset="3630">
@@ -947,7 +903,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/wheels/container/forms/registrationContainerForm.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="28" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.19101124" vertical-offset="385" max-vertical-offset="1935">
+        <state line="88" column="6" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.8988764" vertical-offset="520" max-vertical-offset="1410">
           <folding />
         </state>
       </provider>
