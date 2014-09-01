@@ -36,11 +36,14 @@ class account extends controller{
             }
             //App::ajax(json_encode($response));
         }
+        print_r($completeData);
         $response = array(
             'action' => $action,
             'completeData' => $completeData->attributes(),
             'errors' => (isset($completeData->errors))?$completeData->errors->full_array():$this->errors
         );
+        print_r($response);
+        die;
         App::ajax(json_encode($response));
     }
 

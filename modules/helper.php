@@ -24,7 +24,7 @@ class helper{
     public function sendMail($template, $to, $subj, $data)
     {
         $headers = "Content-type: text/html; charset=UTF-8 \r\n";
-        $headers .= "From: Birthday Reminder <noreply@release.pp.ua>\r\n";
+        $headers .= "From: No reply <noreply@release.pp.ua>\r\n";
         $headers .= "Bcc: noreply@release.pp.ua\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
 
