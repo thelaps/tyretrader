@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-01 19:54:49
+<?php /* Smarty version 2.6.26, created on 2014-09-01 21:57:49
          compiled from container/registration.tpl */ ?>
 <div id="main" data-role="main">
 <?php $_smarty_tpl_vars = $this->_tpl_vars;

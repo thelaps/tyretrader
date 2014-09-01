@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-01 19:54:49
+<?php /* Smarty version 2.6.26, created on 2014-09-01 21:57:49
          compiled from container/forms/registrationContainerForm.tpl */ ?>
 <h2>Регистрация</h2>
 <div class="widget registration">
@@ -100,50 +100,4 @@
             <button type="submit">ЗАРЕГИСТРИРОВАТЬСЯ</button>
         </div>
     </form>
-</div>
-
-
-
-<div class="row">
-    <div class="field align-right two-cell">
-        <div class="cell">
-            <label>Область</label>
-        </div>
-        <div class="cell">
-            <select name="user[regionId]" class="cityFilter" data-filter="#homeCity">
-                <option value="">Все</option>
-                <?php $_from = $this->_tpl_vars['viewData']->container['city']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['region']):
-?>
-                    <option value="<?php echo $this->_tpl_vars['region']['region']->id; ?>
-"><?php echo $this->_tpl_vars['region']['region']->name; ?>
-</option>
-                <?php endforeach; endif; unset($_from); ?>
-            </select>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="field align-right two-cell">
-        <div class="cell">
-            <label>Город</label>
-        </div>
-        <div class="cell">
-            <select name="user[cityId]" class="cityFilter" id="homeCity">
-                <option value="">Все</option>
-                <?php $_from = $this->_tpl_vars['viewData']->container['city']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['region']):
-?>
-                    <?php $_from = $this->_tpl_vars['region']['cities']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['cityofregion']):
-?>
-                        <option<?php if ($this->_tpl_vars['viewData']->profile->user->cityid == $this->_tpl_vars['cityofregion']->id): ?> selected<?php endif; ?> value="<?php echo $this->_tpl_vars['cityofregion']->id; ?>
-" data-city="<?php echo $this->_tpl_vars['cityofregion']->region_id; ?>
-"><?php echo $this->_tpl_vars['cityofregion']->name; ?>
-</option>
-                    <?php endforeach; endif; unset($_from); ?>
-                <?php endforeach; endif; unset($_from); ?>
-            </select>
-        </div>
-    </div>
 </div>

@@ -48,7 +48,6 @@ class account extends controller{
         $post = $this->getRequest('post');
         $user = new User();
         $user = $user->register($post);
-
         return $user;
     }
 
