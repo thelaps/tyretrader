@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-04-27 00:47:04
+<?php /* Smarty version 2.6.26, created on 2014-09-01 19:54:49
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->

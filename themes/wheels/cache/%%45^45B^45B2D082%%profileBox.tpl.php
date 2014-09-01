@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-08-03 22:05:16
+<?php /* Smarty version 2.6.26, created on 2014-09-01 19:54:49
          compiled from widget/profileBox.tpl */ ?>
 <?php if ($this->_tpl_vars['viewData']->profile->isLoggedin()): ?>
 <div class="panel profile-panel">
