@@ -23,9 +23,15 @@ class helper{
 
     public function sendMail($template, $to, $subj, $data)
     {
+
+        $headers = "Content-type: text/html; charset=windows-1251 \r\n";
+        $headers .= "From: Birthday Reminder <noreply@release.pp.ua>\r\n";
+        $headers .= "Bcc: noreply@release.pp.ua\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
         $this->template->assign('data', $data);
         $view = $this->template->fetch(strtolower($template).'.tpl');
-        mail($to, $subj, $view);
+        mail($to, $subj, $view, $headers);
     }
 
     public function getTemplatePath($template)

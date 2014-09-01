@@ -53,7 +53,7 @@ class User extends ActiveRecord\Model
         $this->login = $attributes['login'];
         if($this->is_valid()){
             $this->pass = md5($attributes['pass']);
-            //$this->save();
+            $this->save();
             $this->pass = $attributes['pass'];
             App::helper()->sendMail('registerSuccess', $attributes['email'], 'Регистрация на портале', $this);die;
         }
