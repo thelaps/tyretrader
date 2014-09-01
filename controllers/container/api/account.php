@@ -47,7 +47,7 @@ class account extends controller{
     private function apiRegister(){
         $post = $this->getRequest('post');
         $user = new User();
-        $user->register($post);
+        $user = $user->register($post);
 
         return $user;
     }
