@@ -39,7 +39,7 @@ class account extends controller{
         $response = array(
             'action' => $action,
             'completeData' => $completeData->attributes(),
-            'errors' => (isset($completeData->errors))?$completeData->errors->full_array():$this->errors
+            'errors' => (isset($completeData->errors))?((is_array($completeData->errors)) ? $completeData->errors : $completeData->errors->full_array()):$this->errors
         );
         App::ajax(json_encode($response));
     }

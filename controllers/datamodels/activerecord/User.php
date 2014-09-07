@@ -43,21 +43,29 @@ class User extends ActiveRecord\Model
     }
 
     public function register($attributes){
-        $this->email = $attributes['email'];
-        $this->pass = $attributes['pass'];
-        $this->cityid = $attributes['cityId'];
-        $this->usertype = $attributes['userType'];
-        $this->firstname = $attributes['firstName'];
-        $this->lastname = $attributes['lastName'];
-        $this->phone = $attributes['phone'];
-        $this->login = $attributes['login'];
-        if($this->is_valid()){
-            $this->pass = md5($attributes['pass']);
-            $this->save();
-            $this->pass = $attributes['pass'];
-            App::helper()->sendMail('registerSuccess', $attributes['email'], 'Регистрация на портале', $this);
+        $model = new User();
+        $model->email = $attributes['email'];
+        $model->pass = $attributes['pass'];
+        $model->cityid = $attributes['cityId'];
+        $model->usertype = $attributes['userType'];
+        $model->firstname = $attributes['firstName'];
+        $model->lastname = $attributes['lastName'];
+        $model->phone = $attributes['phone'];
+        $model->login = $attributes['login'];
+        if ( !$model->isExist($model->login, $model->email) ) {
+            if($model->is_valid()){
+                $model->pass = md5($attributes['pass']);
+                $model->save();
+                $model->pass = $attributes['pass'];
+                App::helper()->sendMail('registerSuccess', $attributes['email'], 'Регистрация на портале', $model);
+            }
+        } else {
+            $model->errors = array(
+                array('message' => 'не существующий логин'),
+                array('message' => 'не существующий email')
+            );
         }
-        return $this;
+        return $model;
     }
 
     public function getCompany()
@@ -112,6 +120,11 @@ class User extends ActiveRecord\Model
     public function auth($login, $pass){
         $user = User::find(array('conditions' => array('login = ? and pass = ?', $login, md5($pass))));
         return $user;
+    }
+
+    public function isExist($login, $email){
+        $user = User::find(array('conditions' => array('login = ? OR email = ?', $login, $email)));
+        return ($user);
     }
     /*// order can have many payments by many people
     // the conditions is just there as an example as it makes no logical sense
