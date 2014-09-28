@@ -10,7 +10,7 @@ class registration extends controller{
 
     public function render(){
 
-        $this->viewData['city'] = City::getWithRegions();
+        $this->viewData['city'] = City::getWithRegionsSorted();
         return 'container/registration.tpl';
     }
 }

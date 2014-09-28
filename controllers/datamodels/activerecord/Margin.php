@@ -78,6 +78,12 @@ class Margin extends ActiveRecord\Model
         return $marginItemsObj;
     }
 
+    public static function deleteMarginItems($id)
+    {
+        $model = Margin::find($id);
+        return $model->delete();
+    }
+
     public static function useMargin($item, &$total)
     {
         $company_id = $item->company_id;

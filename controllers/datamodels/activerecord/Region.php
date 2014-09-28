@@ -10,6 +10,9 @@ class Region extends ActiveRecord\Model
 {
     public static $table_name = 'wheel_region';
 
+    static $has_many = array(
+        array('city', 'readonly' => true, 'order' => 'name asc',)
+    );
 
     /*// order can have many payments by many people
     // the conditions is just there as an example as it makes no logical sense

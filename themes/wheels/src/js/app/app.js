@@ -14,7 +14,6 @@ $(document).ready(function(){
                 var action = App.options.base + '?view=api&load=calculator';
                 $.post(action, {fnc:'get', calculator:{id:id}}, function(data, status){
                     var json = AFW.ajax(data);
-                    console.log(json, data);
                     if(status=='success'){
                         var form = $('.tabs-holder .tab.active form');
                         form.find('input[name="calculator[id]"]').val(id);
@@ -36,6 +35,20 @@ $(document).ready(function(){
                         form.find('input[name="calculator[shipping]"]').val(json.completeData.items[0].shipping);
                         form.find('input[name="calculator[transfer]"]').val(json.completeData.items[0].transfer);
                         form.find('input[name="calculator[bank]"]').val(json.completeData.items[0].bank);
+                    }else{
+                        alert('Серверная ошибка!');
+                    }
+                });
+            }
+        });
+        $('.margin-delete').unbind().bind({
+            click: function() {
+                var id=$(this).attr('data-id');
+                var action = App.options.base + '?view=api&load=calculator';
+                $.post(action, {fnc:'deleteMargin', calculator:{id:id}}, function(data, status){
+                    if(status=='success'){
+                        var json = AFW.ajax(data);
+                        Action.process('deleteMargin', json.completeData);
                     }else{
                         alert('Серверная ошибка!');
                     }
@@ -208,6 +221,57 @@ $(document).ready(function(){
                 });
             },
             addMargin : function(e) {
+                CB.table(e.items,{
+                    replace:true,
+                    class:'table price-grid',
+                    cells:[
+                        'id',
+                        function(row) {
+                            return (row.company!=null) ? '<a href="#">'+row.company+'</a>' : ''
+                        },
+                        function(row){
+                            return (row.manufacturer!=null) ? row.manufacturer : '';
+                        },
+                        function(row){
+                            return row.min_cost+'-'+row.max_cost;
+                        },
+                        function(row){
+                            return row.percentage+'%';
+                        },
+                        'fixed_cost',
+                        'not_less',
+                        'not_more',
+                        'shipping',
+                        'transfer',
+                        'bank',
+                        function(row){
+                            return '<button class="edit margin-edit" data-id="'+row.id+'" type="button">edit</button>';
+                        },
+                        function(row){
+                            return '<button class="delete margin-delete" data-id="'+row.id+'" type="button">delete</button>';
+                        }
+                    ],
+                    beforeRows:function(){
+                        return '<tr>' +
+                            '<th class="col-id">ID</th>' +
+                            '<th class="col-provider"><!--<div class="sortable desc">-->ПОСТАВЩИК<!--</div>--></th>' +
+                            '<th class="col-brand"><!--<div class="sortable asc">-->БРЕНД<!--</div>--></th>' +
+                            '<th>РАЗБРОС ЦЕН</th>' +
+                            '<th>ПРОЦЕНТ</th>' +
+                            '<th>Ф. ЗНАЧ.</th>' +
+                            '<th>НЕ МЕНЕЕ</th>' +
+                            '<th>НЕ БОЛЕЕ</th>' +
+                            '<th>ДОСТАВКА</th>' +
+                            '<th>ПЕРЕВОД</th>' +
+                            '<th>БАНК</th>' +
+                            '<th>ИЗМЕНИТЬ</th>' +
+                            '<th>УДАЛИТЬ</th>' +
+                            '</tr>';
+                    }
+                });
+                bindMarginButtons();
+            },
+            deleteMargin : function(e) {
                 CB.table(e.items,{
                     replace:true,
                     class:'table price-grid',

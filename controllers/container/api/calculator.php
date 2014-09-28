@@ -27,8 +27,8 @@ class calculator extends controller{
                 case 'edit':
                     //$completeData = $this->getCompanies();
                     break;
-                case 'delete':
-                    //$completeData = $this->getCompanies();
+                case 'deleteMargin':
+                    $completeData = $this->deleteMarginItems($post['calculator']['id']);
                     break;
                 case 'get':
                     $completeData = $this->getMarginItemById($post['calculator']['id']);
@@ -56,6 +56,10 @@ class calculator extends controller{
 
     public function getMarginItemById($id) {
         return Margin::getMarginItemById($id);
+    }
+
+    public function deleteMarginItems($id) {
+        return Margin::deleteMarginItems($id);
     }
 
     private function arrayAttributes($items, $action)

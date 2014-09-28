@@ -11,7 +11,7 @@ class City extends ActiveRecord\Model
     public static $table_name = 'wheel_city';
 
     static $belongs_to = array(
-        array('region', 'readonly' => true)
+        array('region', 'readonly' => true, 'order' => 'name asc',)
     );
 
     public static function getWithRegions()
@@ -23,6 +23,23 @@ class City extends ActiveRecord\Model
             $withRegions[$city->region->id]['cities'][] = $city;
             $withRegions[$city->region->id]['region'] = $city->region;
         }
+        return $withRegions;
+    }
+
+    public static function getWithRegionsSorted()
+    {
+        $withRegions = array();
+
+        $regionModel = new Region;
+        $regions = $regionModel->find_by_sql('SELECT * FROM `wheel_region` ORDER BY `name` ASC');
+
+        foreach ( $regions as $region ) {
+            $withRegions[$region->id]['cities'] = $region->city;
+            $withRegions[$region->id]['region'] = $region;
+        }
+
+
+
         return $withRegions;
     }
 
@@ -72,4 +89,9 @@ class City extends ActiveRecord\Model
 
         $this->tax = $this->price * $tax;
     }*/
+
+    private function sortBy()
+    {
+
+    }
 }
