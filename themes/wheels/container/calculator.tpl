@@ -2,10 +2,10 @@
 <h2>Калькулятор цен</h2>
 <div class="tab-widget" data-role="tabs">
 <ul>
-    <li class="active">
+    <li class="active" data-action="post" data-target=".price-grid">
         Оптовые цены
     </li>
-    <li>
+    <li data-action="post" data-target=".price-grid">
         Розничные цены
     </li>
 </ul>

@@ -1,13 +1,13 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-28 22:50:18
+<?php /* Smarty version 2.6.26, created on 2014-09-30 01:07:01
          compiled from container/calculator.tpl */ ?>
 <div id="main" data-role="main">
 <h2>Калькулятор цен</h2>
 <div class="tab-widget" data-role="tabs">
 <ul>
-    <li class="active">
+    <li class="active" data-action="post" data-target=".price-grid">
         Оптовые цены
     </li>
-    <li>
+    <li data-action="post" data-target=".price-grid">
         Розничные цены
     </li>
 </ul>

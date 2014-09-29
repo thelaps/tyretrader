@@ -32,12 +32,16 @@ class calculator extends controller{
                     break;
                 case 'get':
                     $completeData = $this->getMarginItemById($post['calculator']['id']);
+                    break;
+                case 'getByType':
+                    $completeData = $this->getMarginItemByType($post['calculator']['type']);
+                    break;
             }
             //App::ajax(json_encode($response));
         }
         $response = array(
             'action' => $action,
-            'completeData' => ($action != 'get') ? $this->arrayAttributes($this->getMarginItems(),$action) : $this->arrayAttributes($completeData, $action),
+            'completeData' => ($action != 'get' && $action != 'getByType') ? $this->arrayAttributes($this->getMarginItems(),$action) : $this->arrayAttributes($completeData, $action),
             'errors' => (isset($completeData->errors))?$completeData->errors->full_array():$this->errors
         );
         App::ajax(json_encode($response));
@@ -56,6 +60,10 @@ class calculator extends controller{
 
     public function getMarginItemById($id) {
         return Margin::getMarginItemById($id);
+    }
+
+    public function getMarginItemByType($type) {
+        return Margin::getMarginItemByType($type);
     }
 
     public function deleteMarginItems($id) {

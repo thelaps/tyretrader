@@ -78,6 +78,26 @@ class Margin extends ActiveRecord\Model
         return $marginItemsObj;
     }
 
+    public static function getMarginItemByType($type)
+    {
+        $marginItemsObj = new  stdClass();
+        $model = new Margin();
+        $marginItemsObj->items = array();
+        $marginItems = $model->find_by_sql('
+            SELECT `wheel_margins`.*, `wheel_companies`.name as company, `wheel_models`.name as model, `wheel_manufacturers`.name as manufacturer
+            FROM `wheel_margins` LEFT JOIN `wheel_companies` ON `wheel_companies`.`id` = `wheel_margins`.`company_id`
+            LEFT JOIN `wheel_models` ON `wheel_models`.`id` = `wheel_margins`.`model_id`
+            LEFT JOIN `wheel_manufacturers` ON `wheel_manufacturers`.`id` = `wheel_margins`.`manufacturer_id`
+            WHERE `wheel_margins`.`type`=\''.$type.'\'
+        ');
+        foreach ( $marginItems as $item ) {
+            $marginItemsObj->items[] = $item;
+        }
+        $marginItemsObj->total = sizeof($marginItemsObj->items);
+
+        return $marginItemsObj;
+    }
+
     public static function deleteMarginItems($id)
     {
         $model = Margin::find($id);

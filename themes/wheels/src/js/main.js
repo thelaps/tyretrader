@@ -215,6 +215,37 @@ $(function() {
 
                 $this.addClass('active').siblings().removeClass('active');
                 setActiveTab(tabs, index);
+                if ( $this.attr('data-action') != undefined ) {
+                    var action = $this.attr('data-action');
+                    switch(action){
+                        case 'submit':
+                            tabs.eq(index).find('button[type="submit"]').click();
+                            break;
+                        case 'get':
+                            var form = tabs.eq(index).find('form');
+                            var url = form.attr('action');
+                            var target = $($this.attr('data-target'));
+                            $.get(url, function(data){
+                                console.log(data);
+                            });
+                            break;
+                        case 'post':
+                            var form = tabs.eq(index).find('form');
+                            var url = form.attr('action');
+                            var target = $($this.attr('data-target'));
+                            var formData = {
+                                'fnc':'getByType',
+                                'calculator':{
+                                    'type':(index == 0) ? 'wholesale' : 'retail'
+                                }
+                            };
+                            $.post(url, formData, function(data){
+                                var json = AFW.ajax(data);
+                                Action.process('getMargin', json.completeData);
+                            });
+                            break;
+                    }
+                }
             });
         });
     };
