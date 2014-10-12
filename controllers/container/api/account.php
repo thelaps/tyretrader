@@ -30,6 +30,9 @@ class account extends controller{
                 case 'auth':
                     $completeData = $this->apiAuth();
                     break;
+                case 'forgot':
+                    $completeData = $this->apiForgot();
+                    break;
                 case 'logout':
                     $completeData = $this->apiLogout();
                     break;
@@ -38,7 +41,7 @@ class account extends controller{
         }
         $response = array(
             'action' => $action,
-            'completeData' => $completeData->attributes(),
+            'completeData' => (!empty($completeData)) ? $completeData->attributes() : null,
             'errors' => (isset($completeData->errors))?((is_array($completeData->errors)) ? $completeData->errors : $completeData->errors->full_array()):$this->errors
         );
         App::ajax(json_encode($response));
@@ -177,6 +180,24 @@ class account extends controller{
             $scope->attribute = 'login';
             $scope->message = 'Введенные вами данные не верны!';
             array_push($this->errors, $scope);
+            return $model;
+        }
+        return $user;
+    }
+
+    private function apiForgot(){
+        $profiler = $this->getModel('profilerModel');
+        $post = $this->getRequest('post');
+        $model = new User();
+        $user = $model->findForgotten($post['email'], $post['login']);
+        if(!empty($user) && empty($user->errors)){
+            ///
+        }else{
+            $scope = new \stdClass();
+            $scope->attribute = 'email';
+            $scope->message = 'Введенные вами данные не верны!';
+            array_push($this->errors, $scope);
+            $this->errors = array_merge($this->errors, $user->errors);
             return $model;
         }
         return $user;

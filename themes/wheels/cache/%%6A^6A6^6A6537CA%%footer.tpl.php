@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-01 21:57:50
+<?php /* Smarty version 2.6.26, created on 2014-10-12 21:19:12
          compiled from layout/footer.tpl */ ?>
 
                 <footer id="footer">
@@ -33,5 +33,8 @@
             <div class="ajaxContent"></div>
             <div id="progressbar"></div>
         </div>
+        <?php if ($this->_tpl_vars['viewData']->resetHandler != 0): ?>
+        <div id="dialog-auto"><?php if ($this->_tpl_vars['viewData']->resetHandler == 1): ?>Сброс пароля успешно завершен. Проверьте почту.<?php else: ?>Сброс пароля прерван.<?php endif; ?></div>
+        <?php endif; ?>
     </body>
 </html>

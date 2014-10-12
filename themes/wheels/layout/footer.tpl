@@ -25,5 +25,8 @@
             <div class="ajaxContent"></div>
             <div id="progressbar"></div>
         </div>
+        {if $viewData->resetHandler != 0}
+        <div id="dialog-auto">{if $viewData->resetHandler == 1}Сброс пароля успешно завершен. Проверьте почту.{else}Сброс пароля прерван.{/if}</div>
+        {/if}
     </body>
 </html>

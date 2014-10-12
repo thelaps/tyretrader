@@ -64,6 +64,15 @@ class index extends controller{
             $render=$oPanel->render();
             $this->viewData->pageContainer = $render;
             $this->viewData->container = $oPanel->viewData;
+            $this->viewData->resetHandler = User::NORESET;
+
+            if ( isset($get['reset']) ) {
+                if ( User::resetPassByKey($get['reset']) ) {
+                    $this->viewData->resetHandler = User::RESETTED;
+                } else {
+                    $this->viewData->resetHandler = User::RESETFAIL;
+                }
+            }
 
             return 'index.tpl';
         } else {

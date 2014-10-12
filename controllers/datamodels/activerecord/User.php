@@ -8,17 +8,21 @@
  */
 class User extends ActiveRecord\Model
 {
+    const NORESET = 0;
+    const RESETTED = 1;
+    const RESETFAIL = 2;
+
     public static $table_name = 'wheel_user';
 
     public $confirm;
 
     static $validates_presence_of = array(
-        array('login', 'message' => 'логин'),
-        array('phone', 'message' => 'телефон'),
-        array('lastname', 'message' => 'фамилию'),
-        array('firstname', 'message' => 'имя'),
-        array('email', 'message' => 'email'),
-        array('pass', 'message' => 'пароль'),
+        array('login', 'message' => 'Введите другой логин'),
+        array('phone', 'message' => 'Введите правильно № телефона'),
+        array('lastname', 'message' => 'Введите фамилию'),
+        array('firstname', 'message' => 'Введите имя'),
+        array('email', 'message' => 'Введите email'),
+        array('pass', 'message' => 'Введите пароль'),
     );
 
     /*static $validates_format_of = array(
@@ -61,8 +65,8 @@ class User extends ActiveRecord\Model
             }
         } else {
             $model->errors = array(
-                array('message' => 'не существующий логин'),
-                array('message' => 'не существующий email')
+                array('message' => 'Логин уже занят'),
+                array('message' => 'email уже занят')
             );
         }
         return $model;
@@ -120,6 +124,50 @@ class User extends ActiveRecord\Model
     public function auth($login, $pass){
         $user = User::find(array('conditions' => array('login = ? and pass = ?', $login, md5($pass))));
         return $user;
+    }
+
+    public function findForgotten($email, $login){
+        $user = new User;
+        if ( !empty($email) ) {
+            $user = User::find(array('conditions' => array('email = ?', $email)));
+        } elseif ( !empty($login) ) {
+            $user = User::find(array('conditions' => array('login = ?', $login)));
+        } elseif ( !empty($email) && !empty($login) ) {
+            $user = User::find(array('conditions' => array('login = ? and email = ?', $login, $email)));
+        } else {
+            $user->errors = array(
+                array('message' => 'Введите email и/или логин!')
+            );
+        }
+        if ( empty($user) ) {
+            $user->errors = array(
+                array('message' => 'Пользователь не найден!')
+            );
+        } else {
+            $data = new stdClass();
+            $user->resetkey = md5(rand(0,27031990));
+            $user->save(false);
+            $data->user = $user;
+            $data->link = App::getConfig('baseLink') . DIRECTORY_SEPARATOR . '?reset=' . $user->resetkey;
+            App::helper()->sendMail('forgotRequest', $user->email, 'Восстановление данных', $data);
+        }
+        return $user;
+    }
+
+    public function resetPassByKey($key){
+        $user = User::find(array('conditions' => array('resetKey = ?', $key)));
+        if ( $user ) {
+            $newPass = 'rcvry' . rand(0,2468);
+            $user->pass = md5($newPass);
+            $user->resetkey = null;
+            $user->save(false);
+            $data = new stdClass();
+            $data->user = $user;
+            $data->newpass = $newPass;
+            App::helper()->sendMail('forgotDone', $user->email, 'Восстановление данных', $data);
+            return true;
+        }
+        return false;
     }
 
     public function isExist($login, $email){

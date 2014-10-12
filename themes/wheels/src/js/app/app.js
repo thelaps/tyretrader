@@ -69,6 +69,17 @@ $(document).ready(function(){
             logout: function(){
                 window.location.reload(true);
             },
+            forgot: function(){
+                $('#dialog-error > span.errorTitle').text('Запрос отправлен.');
+                $('#dialog-error > ul.errorList').html('<li>Проверьте почту пожалуйста.</li>');
+                $("#dialog-error").dialog({
+                    modal: true,
+                    title: 'Запрос восстановления',
+                });
+                setTimeout(function(){
+                    window.location = App.options.base;
+                },5000);
+            },
             opt: function(e){
                 if($('#optHolder').css('display') == 'none'){
                     $('#pageContent').slideUp(200,function(){
@@ -440,7 +451,7 @@ $(document).ready(function(){
             }else{
                 var errorsList = '';
                 for ( var i in response.errors) {
-                    errorsList += '<li>Введите '+response.errors[i].message+'</li>';
+                    errorsList += '<li>'+response.errors[i].message+'</li>';
                 }
                 $('#dialog-error > span.errorTitle').text('Причина ошибки:');
                 $('#dialog-error > ul.errorList').html(errorsList);
@@ -454,6 +465,12 @@ $(document).ready(function(){
             companies = json.completeData.items;
         });
     });
+    if ( $('#dialog-auto') != undefined ) {
+        $("#dialog-auto").dialog({
+            modal: true,
+            title: 'Уведомление'
+        });
+    }
 });
 
 
