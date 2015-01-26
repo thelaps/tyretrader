@@ -82,6 +82,100 @@ class phpexel{
         return $data;
     }
 
+    public function createCsv($items, $post)
+    {
+        $baseFolder = $this->filename;
+        $tmpName = uniqid('price_');
+        $output = $baseFolder.$tmpName.'.csv';
+
+        $extras = Helper::extras();
+        if ( $this->filename != null ) {
+            $sheetKey = 0;
+            $csvArray = array();
+            foreach ( $items->items as $typeKey => $sheetItem ) {
+                $rowKey = 1;
+                foreach ( $sheetItem as $cellItems ) {
+                    if (isset($post['export'][$cellItems->manufacturer_type])) {
+                        foreach ($post['export'][$cellItems->manufacturer_type] as $attribute => $need) {
+                            $attributeAlias = array('company' => 'company_id');
+                            $lastAttribute = (array_key_exists($attribute, $attributeAlias)) ? $attributeAlias[$attribute] : $attribute;
+                            if ( array_key_exists($lastAttribute, $cellItems->attributes()) ) {
+                                $rawValue = $cellItems->read_attribute($lastAttribute);
+                                $completedValue = '';
+                                switch ($attribute) {
+                                    case 'color':
+                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        break;
+                                    case 'technology':
+                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        break;
+                                    case 'spike':
+                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        break;
+                                    case 'marking':
+                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        break;
+                                    case 'currency':
+                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        break;
+                                    case 'season':
+                                        $know = array('', 'Зима', 'Лето', 'Всесезонка');
+                                        if ( !empty($rawValue) ) {
+                                            $completedValue = $know[$rawValue];
+                                        }
+                                        break;
+                                    case 'type_transport':
+                                        $know = array('', 'Легковой/4x4', 'Легкогрузовой', 'Индустриальный', 'Грузовой', 'Мото');
+                                        if ( !empty($rawValue) ) {
+                                            $completedValue = $know[$rawValue];
+                                        }
+                                        break;
+                                    case 'manufacturer_wheel_type':
+                                        $know = array('', 'Стальной', 'Литой', 'Кованый', 'Составной');
+                                        if ( !empty($rawValue) ) {
+                                            $completedValue = $know[$rawValue];
+                                        }
+                                        break;
+                                    case 'date':
+                                        $completedValue = date('d.m.Y', $rawValue);
+                                        break;
+                                    case 'company':
+                                        $company = Company::getCompanyById($rawValue);
+                                        $completedValue = $company->items->name;
+                                        break;
+                                    case 'src':
+                                        if ( !empty($rawValue) ) {
+                                            if ( is_file(ROOT_DIR.'images/'.$rawValue) ) {
+                                                $completedValue = ROOT_DIR.'images/'.$rawValue;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        $completedValue = $rawValue;
+                                        break;
+                                }
+                                $encoding = mb_detect_encoding( $completedValue, "auto" );
+                                $csvArray[$rowKey][] = mb_convert_encoding( $completedValue, 'Windows-1251', $encoding);
+                            }
+                        }
+                        $rowKey++;
+                    } else {
+
+                    }
+                }
+                $sheetKey++;
+            }
+
+            $fp = fopen($output, 'w');
+            foreach ($csvArray as $fields) {
+                fputcsv($fp, $fields);
+            }
+            fclose($fp);
+
+            return $tmpName.'.csv';
+        }
+    }
+
     public function createXlsx($items, $post)
     {
         $baseFolder = $this->filename;
@@ -91,7 +185,7 @@ class phpexel{
         $extras = Helper::extras();
 
         require_once 'PHPExcel/IOFactory.php';
-        if ( $this->filename != null ) {
+        if ( $this->filename != null && isset($items->items) ) {
             /** PHPExcel */
             require_once('PHPExcel.php');
 
@@ -203,6 +297,12 @@ class phpexel{
                                                 $completedValue = ROOT_DIR.'images/'.$rawValue;
                                             }
                                         }
+                                        break;
+                                    case 'price_1':
+                                        $completedValue = round($rawValue, 0);
+                                        break;
+                                    case 'price_compiled':
+                                        $completedValue = round($rawValue, 0);
                                         break;
                                     default:
                                         $completedValue = $rawValue;

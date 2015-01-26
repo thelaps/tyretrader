@@ -35,7 +35,7 @@ class Price extends ActiveRecord\Model
     {
         $model = new Price();
         $model->loadScopeData();
-        $unionsSql = $model->makeUnions($post);
+        $unionsSql = $model->makeUnions($post, false, false);
         $unionsSqlTotal = $model->makeUnions($post, true);
         $opt = new stdClass();
         $opt->total = $model->find_by_sql($unionsSqlTotal);
@@ -287,7 +287,7 @@ class Price extends ActiveRecord\Model
         $this->scopeTables = $scope;
     }
 
-    private function makeUnions($post = null, $isCountOnly = false)
+    private function makeUnions($post = null, $isCountOnly = false, $limited = true)
     {
         $filter = $this->makeFilterFromPost($post);
         $ordering = $this->makeOrderingFromPost($post);
@@ -322,7 +322,7 @@ class Price extends ActiveRecord\Model
             $completeSql = 'SELECT '.(($isCountOnly)?'COUNT(*) AS items':'SQ.*,
             CONCAT_WS(\' \',SQ.`manufacturer`, SQ.`model`, SQ.`size_w`,
                 SQ.`size_h`, SQ.`size_r`, SQ.`marking`, SQ.`technology`,
-                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename').' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.' LIMIT 0, 200');
+                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename').' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 200' : ''));
         }
         return $completeSql;
     }
@@ -382,6 +382,8 @@ class Price extends ActiveRecord\Model
                     $post['wheel']['city'] = Company::getAllByRegion($post['wheel']['city']);
                 }
                 $sqlFilter .= $this->makeRule($post['wheel'], $customRules, $tableAlias, $isCleanRule);
+            } elseif (isset($post['typeKey'])) {
+                $sqlFilter .= $this->makeRule(array('amount' => $post['export']['amount']), $customRules, $tableAlias, $isCleanRule);
             }
         }
         return $sqlFilter;
@@ -397,6 +399,10 @@ class Price extends ActiveRecord\Model
             'manufacturer'=>array(
                 'field'=>'manufacturer_id',
                 'must'=>'='
+            ),
+            'amount'=>array(
+                'field'=>'stock_1',
+                'must'=>'>='
             ),
             'size_r'=>array(
                 'field'=>'size_r',
@@ -467,7 +473,9 @@ class Price extends ActiveRecord\Model
             }
         }
         if ( !$isCleanRule ) {
-            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'stock_1 > 0';
+            if ( empty($data['amount']) ) {
+                $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'stock_1 > 0';
+            }
             $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-10 days');
         }
         if(sizeof($makedRules)>0){

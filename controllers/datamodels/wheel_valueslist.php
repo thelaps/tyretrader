@@ -55,6 +55,7 @@ class wheel_valueslist extends datamodel{
                 wheel_manufacturers2type.type
                 FROM wheel_models LEFT JOIN wheel_manufacturers2type
                 ON wheel_manufacturers2type.manufacturer_id=wheel_models.manufacturer_id
+                GROUP BY dict_id
                 ORDER BY wheel_models.name';
         $stmt = $dbo->prepare($query);
         $stmt->execute();

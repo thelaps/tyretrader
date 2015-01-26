@@ -117,7 +117,14 @@ class opt extends controller{
         try{
             $priceData = $this->getAllItems($post);
 
-            return $oExelReader->createXlsx($priceData, $post);
+            switch ($post['type_file_' . $post['typeKey']]) {
+                case 'csv':
+                    return $oExelReader->createCsv($priceData, $post);
+                    break;
+                case 'xlsx':
+                    return $oExelReader->createXlsx($priceData, $post);
+                    break;
+            }
         }catch(Exception $e){
             return null;
         }

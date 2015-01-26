@@ -63,6 +63,7 @@
                                 </select>
                                 <ul class="extraSettings">
                                 </ul>
+                                <button style="width: 100%; display: none;" class="saveExtraSettings">Сохранить шаблон</button>
                             </fieldset>
                         </div>
                     </div>

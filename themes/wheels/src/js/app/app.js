@@ -166,18 +166,18 @@ $(document).ready(function(){
                             return totalStock;
                         },
                         function(row){
-                            var totalPrice = 0;
+                            var allPrice = new Array;
                             for (var i in row) {
-                                totalPrice += row[i].price_1;
+                                allPrice.push(row[i].price_1);
                             }
-                            return parseInt(totalPrice/row.length);
+                            return parseInt(Math.min.apply(null, allPrice));
                         },
                         function(row){
-                            var totalPrice = 0;
+                            var allPrice = new Array;
                             for (var i in row) {
-                                totalPrice += row[i].price_compiled;
+                                allPrice.push(row[i].price_compiled);
                             }
-                            return parseInt(totalPrice/row.length);
+                            return parseInt(Math.min.apply(null, allPrice));
                         }
                     ],
                     beforeRows:function(){

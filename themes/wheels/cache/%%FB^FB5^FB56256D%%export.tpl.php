@@ -1,10 +1,13 @@
+<?php /* Smarty version 2.6.26, created on 2015-01-25 02:34:35
+         compiled from container/export.tpl */ ?>
 <div id="main" data-role="main">
     <h2>Настройка экспорта прайслиста</h2>
     <p>Снимите или поставьте галочку для отображения рубрики в прайсе. Перемщайте рубрики для наиболее удобного отображения</p>
         <table class="movableContainer">
             <tr>
                 <td>
-                    <form action="{$baseLink}/?view=api&load=opt" class="form form-export">
+                    <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
+/?view=api&load=opt" class="form form-export">
                         <input type="hidden" name="fnc" value="priceExport">
                         <input type="hidden" name="typeKey" value="2">
                         <input class="filter-sqlscopename" type="hidden" value="BT" name="filter[sqlscopename]">
@@ -117,7 +120,8 @@
                     </form>
                 </td>
                 <td>
-                    <form action="{$baseLink}/?view=api&load=opt" class="form form-export">
+                    <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
+/?view=api&load=opt" class="form form-export">
                         <input type="hidden" name="fnc" value="priceExport">
                         <input type="hidden" name="typeKey" value="1">
                         <input class="filter-sqlscopename" type="hidden" value="BT" name="filter[sqlscopename]">

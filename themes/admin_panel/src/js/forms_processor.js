@@ -915,6 +915,7 @@ $(document).ready(function(){
                             var selectedMod=null;
                             selectorMod.bind({
                                 change:function(){
+                                    console.log(json);
                                     selectedMod=$(this).val();
                                     table.html('');
                                     var template='' +
