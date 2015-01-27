@@ -39,6 +39,30 @@ class Manufacturer extends ActiveRecord\Model
         return $obj;
     }
 
+    public static function getManufacturerByType()
+    {
+        $model = new Manufacturer();
+        $data = $model->manufacturerAndModelByType();
+
+        $obj = new stdClass();
+        $obj->manufacturer = array();
+        foreach ( $data as $row) {
+            switch($row->manufacturer_type){
+                case 1:
+                    $row->manufacturer_type = 'tyre';
+                    break;
+                case 2:
+                    $row->manufacturer_type = 'wheel';
+                    break;
+                default:
+                    $row->manufacturer_type = NULL;
+                    break;
+            }
+            $obj->manufacturer[$row->manufacturer_type][$row->manufacturer_id] = $row;
+        }
+        return $obj;
+    }
+
     public static function getManufacturerAndModel()
     {
         $dataSorted = array();

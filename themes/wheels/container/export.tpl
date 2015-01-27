@@ -12,6 +12,17 @@
                             <div class="movableContainer">
                                 <div class="movableHeading">
                                     <div class="item">
+                                        ПРОИЗВОДИТЕЛЬ <select name="export[manufacturer]">
+                                            <option value="">Все</option>
+                                            {foreach from=$viewData->container.formData->manufacturer.wheel item=row}
+                                                <option value="{$row->manufacturer_id}">{$row->manufacturer_name}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="item"></div>
+                                </div>
+                                <div class="movableHeading">
+                                    <div class="item">
                                         ТОВАРЫ К-ВОМ НЕ МЕНЕЕ <input type="text" name="export[amount]">
                                     </div>
                                     <div class="item">
@@ -123,6 +134,17 @@
                         <input class="filter-sqlscopename" type="hidden" value="BT" name="filter[sqlscopename]">
                         <h2>Шины</h2>
                         <div class="movableContainer">
+                            <div class="movableHeading">
+                                <div class="item">
+                                    ПРОИЗВОДИТЕЛЬ <select name="export[manufacturer]">
+                                        <option value="">Все</option>
+                                        {foreach from=$viewData->container.formData->manufacturer.tyre item=row}
+                                            <option value="{$row->manufacturer_id}">{$row->manufacturer_name}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                                <div class="item"></div>
+                            </div>
                             <div class="movableHeading">
                                 <div class="item">
                                     ТОВАРЫ К-ВОМ НЕ МЕНЕЕ <input type="text" name="export[amount]">

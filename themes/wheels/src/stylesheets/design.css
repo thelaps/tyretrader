@@ -2038,7 +2038,7 @@ div.collapsedDiv table.collapsedTable tr td{
 .movableHeading{
     border-top: 2px solid #DFDFDF;
     display: table;
-    margin: 5px 5px 0;
+    margin: 0 5px 0;
     width: 470px;
     border-collapse: separate;
     background: #bdc1c5;

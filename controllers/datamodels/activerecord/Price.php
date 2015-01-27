@@ -383,7 +383,13 @@ class Price extends ActiveRecord\Model
                 }
                 $sqlFilter .= $this->makeRule($post['wheel'], $customRules, $tableAlias, $isCleanRule);
             } elseif (isset($post['typeKey'])) {
-                $sqlFilter .= $this->makeRule(array('amount' => $post['export']['amount']), $customRules, $tableAlias, $isCleanRule);
+                $ruleCollection = array(
+                    'amount' => $post['export']['amount']
+                );
+                if ( !empty($post['export']['manufacturer']) ) {
+                    $ruleCollection['manufacturer'] = $post['export']['manufacturer'];
+                }
+                $sqlFilter .= $this->makeRule($ruleCollection, $customRules, $tableAlias, $isCleanRule);
             }
         }
         return $sqlFilter;
@@ -476,7 +482,7 @@ class Price extends ActiveRecord\Model
             if ( empty($data['amount']) ) {
                 $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'stock_1 > 0';
             }
-            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-10 days');
+            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-1000 days');
         }
         if(sizeof($makedRules)>0){
             $strRule = implode(' AND ', $makedRules);

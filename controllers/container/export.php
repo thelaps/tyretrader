@@ -12,6 +12,7 @@ class export extends controller{
         /*$profiler = $this->getModel('profilerModel');
         $profiler->user();*/
         //$this->viewData['sold'] = Price::getSoldItems();
+        $this->viewData['formData'] = Manufacturer::getManufacturerByType();
         return 'container/export.tpl';
     }
 }

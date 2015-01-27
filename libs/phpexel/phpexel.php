@@ -87,7 +87,6 @@ class phpexel{
         $baseFolder = $this->filename;
         $tmpName = uniqid('price_');
         $output = $baseFolder.$tmpName.'.csv';
-
         $extras = Helper::extras();
         if ( $this->filename != null ) {
             $sheetKey = 0;
@@ -168,7 +167,7 @@ class phpexel{
 
             $fp = fopen($output, 'w');
             foreach ($csvArray as $fields) {
-                fputcsv($fp, $fields);
+                fputcsv($fp, $fields, ';');
             }
             fclose($fp);
 

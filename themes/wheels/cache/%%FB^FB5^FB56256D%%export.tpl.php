@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-25 02:34:35
+<?php /* Smarty version 2.6.26, created on 2015-01-28 00:14:34
          compiled from container/export.tpl */ ?>
 <div id="main" data-role="main">
     <h2>Настройка экспорта прайслиста</h2>
@@ -13,6 +13,21 @@
                         <input class="filter-sqlscopename" type="hidden" value="BT" name="filter[sqlscopename]">
                             <h2>Диски</h2>
                             <div class="movableContainer">
+                                <div class="movableHeading">
+                                    <div class="item">
+                                        ПРОИЗВОДИТЕЛЬ <select name="export[manufacturer]">
+                                            <option value="">Все</option>
+                                            <?php $_from = $this->_tpl_vars['viewData']->container['formData']->manufacturer['wheel']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['row']):
+?>
+                                                <option value="<?php echo $this->_tpl_vars['row']->manufacturer_id; ?>
+"><?php echo $this->_tpl_vars['row']->manufacturer_name; ?>
+</option>
+                                            <?php endforeach; endif; unset($_from); ?>
+                                        </select>
+                                    </div>
+                                    <div class="item"></div>
+                                </div>
                                 <div class="movableHeading">
                                     <div class="item">
                                         ТОВАРЫ К-ВОМ НЕ МЕНЕЕ <input type="text" name="export[amount]">
@@ -127,6 +142,21 @@
                         <input class="filter-sqlscopename" type="hidden" value="BT" name="filter[sqlscopename]">
                         <h2>Шины</h2>
                         <div class="movableContainer">
+                            <div class="movableHeading">
+                                <div class="item">
+                                    ПРОИЗВОДИТЕЛЬ <select name="export[manufacturer]">
+                                        <option value="">Все</option>
+                                        <?php $_from = $this->_tpl_vars['viewData']->container['formData']->manufacturer['tyre']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['row']):
+?>
+                                            <option value="<?php echo $this->_tpl_vars['row']->manufacturer_id; ?>
+"><?php echo $this->_tpl_vars['row']->manufacturer_name; ?>
+</option>
+                                        <?php endforeach; endif; unset($_from); ?>
+                                    </select>
+                                </div>
+                                <div class="item"></div>
+                            </div>
                             <div class="movableHeading">
                                 <div class="item">
                                     ТОВАРЫ К-ВОМ НЕ МЕНЕЕ <input type="text" name="export[amount]">
