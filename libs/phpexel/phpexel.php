@@ -49,37 +49,65 @@ class phpexel{
 
         foreach ( $sheetsNames as $name ) {
             $sheetObj = $objPHPExcel->getSheetByName($name);
-            $highestRow = $sheetObj->getHighestRow();
-            $highestColumn = PHPExcel_Cell::columnIndexFromString($sheetObj->getHighestColumn());
+            $highestRow = $sheetObj->getHighestDataRow();
+            //$highestColumn = PHPExcel_Cell::columnIndexFromString($sheetObj->getHighestDataColumn());
+            $_cells = phpexel::getAllData($objPHPExcel->getSheetByName($name), $highestColumn);
             $excelCollection[] = array(
                 'numRows'=>$highestRow,
                 'numCols'=>$highestColumn,
                 'maxrow'=>0,
                 'maxcol'=>0,
                 'name' => $name,
-                'cells' => phpexel::getAllData($objPHPExcel->getSheetByName($name))
+                'cells' => $_cells
             );
         }
         return json_encode($excelCollection);
     }
 
-    private static function getAllData($sheetObj)
+    private static function getAllData($sheetObj, &$highestColumn)
     {
+        $_maxLength = 0;
+        $_keys = array();
+        $dataTmp = array();
         $data = array();
 
-        $highestRow = $sheetObj->getHighestRow();
-        $highestColumn = PHPExcel_Cell::columnIndexFromString($sheetObj->getHighestColumn());
+        $highestRow = $sheetObj->getHighestDataRow();
+        $highestColumn = PHPExcel_Cell::columnIndexFromString($sheetObj->getHighestDataColumn());
 
         for ( $row = 1; $row <= $highestRow; $row++) {
+            $_maxLengthTmp = 0;
             for ( $head = 0; $head < $highestColumn; $head++ ) {
                 $tmpValue = $sheetObj->getCellByColumnAndRow($head, $row)->getValue();
                 if ( $tmpValue instanceof PHPExcel_RichText ) {
                     $tmpValue = $tmpValue->getPlainText();
                 }
-                $data[$row][$head+1] = trim(str_replace(chr(194).chr(160), '',$tmpValue));
+                $dataTmp[$row][$head+1] = trim(str_replace(chr(194).chr(160), '',$tmpValue));
+                if (strlen($dataTmp[$row][$head+1]) > 0) {
+                    $_maxLengthTmp = $head+1;
+                }
+            }
+            if ( $_maxLengthTmp > $_maxLength ) {
+                $_maxLength = $_maxLengthTmp;
             }
         }
+        $_keys = array();
+        for ( $i = 1; $i < $_maxLength; $i++ ) {
+            $_keys[] = $i;
+        }
+        foreach ($dataTmp as $row => $itemCells) {
+            $tmpRow = array_slice($itemCells, 0, $_maxLength);
+            foreach ( $tmpRow as $_key => $_item ) {
+                $data[$row][$_key+1] = $_item;
+            }
+        }
+        $highestColumn = $_maxLength;
+
         return $data;
+    }
+
+    private static function cellsOffsetLength(&$_maxLength, $_row)
+    {
+
     }
 
     public function createCsv($items, $post)
