@@ -629,6 +629,9 @@ $.extend({
                 case 33:
                     source=$.parser.getMatchFrom('spike',getter); //fnc
                     break;
+                case 20:
+                    source=$.parser.getMatchFrom('manufacturedCountries',getter); //fnc
+                    break;
                 case 39:
                     source=$.parser.getMatchFrom('marking',getter,true); //fnc
                     break;
@@ -707,7 +710,7 @@ $.extend({
                 var collection=extras[type];
                 for(var item in collection){
                     var pattern=collection[item].name.toLowerCase();
-                    var isOnceAdvanced = (isOnce != undefined) ? isOnce : (type!='spike' && type!='marking');
+                    var isOnceAdvanced = (isOnce != undefined) ? isOnce : (type!='spike' && type!='marking' && type!='manufacturedCountries');
                     var template=$.parser.makeRegExp(pattern,isOnceAdvanced);
                     var regexp = new RegExp(template, 'i');
                     if(source.match(regexp)!=null){

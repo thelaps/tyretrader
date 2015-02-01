@@ -18,7 +18,8 @@ class wheel_extras extends datamodel{
             'technology'=>'',
             'spike'=>'',
             'marking'=>'',
-            'currency'=>''
+            'currency'=>'',
+            'manufacturedCountries'=>''
         );
         $ids=array();
         $cleanValues=array();
@@ -42,6 +43,7 @@ class wheel_extras extends datamodel{
         $viewData['spike']=$viewDataTmp[33];
         $viewData['marking']=$viewDataTmp[39];
         $viewData['currency']=$viewDataTmp[40];
+        $viewData['manufacturedCountries']=$viewDataTmp[20];
         return json_encode($viewData);
     }
 

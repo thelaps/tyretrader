@@ -343,6 +343,7 @@ class api_panel extends controller{
                   `pcd_1` int(3) NOT NULL,
                   `pcd_2` int(3) NOT NULL,
                   `bolt` int(3) NOT NULL,
+                  `manufactured_country` int(3) DEFAULT NULL,
                   PRIMARY KEY (`id`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 
@@ -416,8 +417,8 @@ class api_panel extends controller{
             $query='INSERT INTO wheel_settings2company
                     (company_id, price_name, settings)
                     VALUES
-                    ('.$post['company_id'].', \''.$post['price_name'].'\', \''.json_encode($post['settings']).'\')
-                    ON DUPLICATE KEY UPDATE price_name=\''.$post['price_name'].'\', settings=\''.json_encode($post['settings']).'\';';
+                    ('.$post['company_id'].', \''.str_replace("'", "\'", $post['price_name']).'\', \''.json_encode($post['settings']).'\')
+                    ON DUPLICATE KEY UPDATE price_name=\''.str_replace("'", "\'", $post['price_name']).'\', settings=\''.json_encode($post['settings']).'\';';
             $stmt = $dbo->prepare($query);
             $stmt->execute();
 
@@ -462,7 +463,7 @@ class api_panel extends controller{
             $dbo=App::DBO();
             $query='UPDATE wheel_dict2parameters
                     SET
-                    name=\''.$dict['name'].'\'
+                    name=\''.str_replace("'", "\'", $dict['name']).'\'
                     WHERE id='.$dict['parameter_id'];
             $stmt = $dbo->prepare($query);
             $status=$stmt->execute();
@@ -471,7 +472,7 @@ class api_panel extends controller{
             $query='INSERT INTO wheel_dict2parameters
                     (parameter_id, name)
                     VALUES
-                    ('.$type.',\''.$dict['name'].'\')';
+                    ('.$type.',\''.str_replace("'", "\'", $dict['name']).'\')';
             $stmt = $dbo->prepare($query);
             $status=$stmt->execute();
         }
@@ -493,14 +494,14 @@ class api_panel extends controller{
                 array(
                     'name'=>array(
                         'type' => 'string',
-                        'value' => $dict['name']
+                        'value' => str_replace("'", "\'",$dict['name'])
                     )
                 ),$r,true);
             if ( !$isExistRecord ) {
                 $query='INSERT INTO wheel_manufacturers
                         (name)
                         VALUES
-                        (\''.$dict['name'].'\')';
+                        (\''.str_replace("'", "\'", $dict['name']).'\')';
                 $stmt = $dbo->prepare($query);
                 if($stmt->execute()){
                     $id=$dbo->lastInsertId();
@@ -516,7 +517,7 @@ class api_panel extends controller{
             $dbo=App::DBO();
             $query='UPDATE wheel_manufacturers
                     SET
-                    name=\''.$dict['name'].'\'
+                    name=\''.str_replace("'", "\'", $dict['name']).'\'
                     WHERE id='.$dict['parameter_id'];
             $stmt = $dbo->prepare($query);
             if($stmt->execute()){
@@ -543,7 +544,7 @@ class api_panel extends controller{
             $query='INSERT INTO wheel_manufacturers
                     (name)
                     VALUES
-                    (\''.$manufacturer['name'].'\')';
+                    (\''.str_replace("'", "\'", $manufacturer['name']).'\')';
             $stmt = $dbo->prepare($query);
             $stmt->execute();
 
@@ -571,7 +572,7 @@ class api_panel extends controller{
                 $query='INSERT INTO wheel_synonym2manufacturers
                         (manufacturer_id,synonym)
                         VALUES
-                        ('.$synonym['manufacturer_id'].',\''.$synonym['synonym'].'\')';
+                        ('.$synonym['manufacturer_id'].',\''.str_replace("'", "\'", $synonym['synonym']).'\')';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
                 $id=$dbo->lastInsertId();
@@ -591,7 +592,7 @@ class api_panel extends controller{
         $dbo=App::DBO();
         $query='SELECT wheel_synonym2manufacturers.id
                 FROM wheel_synonym2manufacturers
-                WHERE wheel_synonym2manufacturers.synonym=\''.$synonym.'\'';
+                WHERE wheel_synonym2manufacturers.synonym=\''.str_replace("'", "\'", $synonym).'\'';
         $stmt = $dbo->prepare($query);
         $stmt->execute();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -608,7 +609,7 @@ class api_panel extends controller{
             $query='INSERT INTO wheel_synonym2manufacturers
                         (manufacturer_id,synonym)
                         VALUES
-                        ('.$id.',\''.$synonym['synonym'].'\')';
+                        ('.$id.',\''.str_replace("'", "\'", $synonym['synonym']).'\')';
             $stmt = $dbo->prepare($query);
             $stmt->execute();
         }
@@ -660,7 +661,7 @@ class api_panel extends controller{
                 array(
                     'name'=>array(
                         'type' => 'string',
-                        'value' => $dict['name']
+                        'value' => str_replace("'", "\'",$dict['name'])
                     ),
                     'manufacturer_id'=>array(
                         'type' => 'string',
@@ -672,7 +673,7 @@ class api_panel extends controller{
                 $query='INSERT INTO wheel_models
                         (`manufacturer_id`,`name`,`description`,`season`,`use`,`type_transport`,`axle`,`src`)
                         VALUES
-                        ('.$dict['manufacturer_id'].',\''.$dict['name'].'\',\''.$model['description'].'\',
+                        ('.$dict['manufacturer_id'].',\''.str_replace("'", "\'", $dict['name']).'\',\''.str_replace("'", "\'", $model['description']).'\',
                         '.$season.','.$use.','.$typeTransport.','.$axle.',
                         \''.$model['src'].'\')';
                 $stmt = $dbo->prepare($query);
@@ -682,8 +683,8 @@ class api_panel extends controller{
             $dbo=App::DBO();
             $query='UPDATE wheel_models
                     SET
-                    `manufacturer_id`='.$dict['manufacturer_id'].',`name`=\''.$dict['name'].'\',
-                    `description`=\''.$model['description'].'\',`season`='.$season.',`use`='.$use.',
+                    `manufacturer_id`='.$dict['manufacturer_id'].',`name`=\''.str_replace("'", "\'",$dict['name']).'\',
+                    `description`=\''.str_replace("'", "\'", $model['description']).'\',`season`='.$season.',`use`='.$use.',
                     `type_transport`='.$typeTransport.',`axle`='.$axle.',`src`=\''.$model['src'].'\'
                     WHERE `id`='.$dict['parameter_id'];
             $stmt = $dbo->prepare($query);
@@ -756,14 +757,14 @@ class api_panel extends controller{
                     ),
                     'name'=>array(
                         'type' => 'string',
-                        'value' => $model['name']
+                        'value' => str_replace("'", "\'",$model['name'])
                     )
                 ),$record);
             if (!$isExistRecord) {
                 $query='INSERT INTO wheel_models
                         (manufacturer_id,name,description)
                         VALUES
-                        ('.$model['manufacturer_id'].',\''.$model['name'].'\',NULL)';
+                        ('.$model['manufacturer_id'].',\''.str_replace("'", "\'", $model['name']).'\',NULL)';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
                 $id = $dbo->lastInsertId();
@@ -835,7 +836,7 @@ class api_panel extends controller{
                 $query='INSERT INTO wheel_synonym2model
                         (model_id,synonym)
                         VALUES
-                        ('.$id.',\''.$synonym['synonym'].'\')';
+                        ('.$id.',\''.str_replace("'", "\'", $synonym['synonym']).'\')';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
             }
@@ -849,7 +850,7 @@ class api_panel extends controller{
         $dbo=App::DBO();
         $query='SELECT wheel_synonym2model.id
                 FROM wheel_synonym2model
-                WHERE wheel_synonym2model.synonym=\''.$synonym.'\'';
+                WHERE wheel_synonym2model.synonym=\''.str_replace("'", "\'", $synonym).'\'';
         $stmt = $dbo->prepare($query);
         $stmt->execute();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -992,7 +993,7 @@ class api_panel extends controller{
                 $query='INSERT INTO wheel_synonym2dict
                         (dict_id,synonym)
                         VALUES
-                        ('.$field['dict'].',\''.$field['synonym'].'\')';
+                        ('.$field['dict'].',\''.str_replace("'", "\'", $field['synonym']).'\')';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
                 return $query;
@@ -1023,7 +1024,7 @@ class api_panel extends controller{
             if($field['id']!=null && $field['synonym']!=null && $field['dict']!=null){
                 $dbo=App::DBO();
                 $query='UPDATE wheel_synonym2dict
-                        SET dict_id='.$field['dict'].' ,synonym=\''.$field['synonym'].'\'
+                        SET dict_id='.$field['dict'].' ,synonym=\''.str_replace("'", "\'", $field['synonym']).'\'
                         WHERE id='.$field['id'];
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
@@ -1041,7 +1042,7 @@ class api_panel extends controller{
             $dbo=App::DBO();
             $query='UPDATE wheel_synonym2model
                     SET model_id='.$synonym['dict'].',
-                    synonym=\''.$synonym['synonym'].'\'
+                    synonym=\''.str_replace("'", "\'", $synonym['synonym']).'\'
                     WHERE id='.$synonym['id'].'';
             $stmt = $dbo->prepare($query);
             $stmt->execute();
@@ -1056,7 +1057,7 @@ class api_panel extends controller{
             $dbo=App::DBO();
             $query='UPDATE wheel_synonym2manufacturers
                     SET manufacturer_id='.$synonym['dict'].',
-                    synonym=\''.$synonym['synonym'].'\'
+                    synonym=\''.str_replace("'", "\'", $synonym['synonym']).'\'
                     WHERE id='.$synonym['id'].'';
             $stmt = $dbo->prepare($query);
             $stmt->execute();

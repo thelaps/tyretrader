@@ -211,6 +211,7 @@ class priceExtractor extends connector{
                     'pcd_1' => $this->extractParameter($row->parameters,9),
                     'pcd_2' => $this->extractParameter($row->parameters,10),
                     'bolt' => $this->extractParameter($row->parameters,15),
+                    'manufactured_country' => $this->extractParameter($row->parameters,20),
                 );
 
                 if(in_array($modelManufacturer->id, $currentPrice)){
@@ -322,6 +323,7 @@ class priceExtractor extends connector{
               `pcd_1` int(3) NOT NULL,
               `pcd_2` int(3) NOT NULL,
               `bolt` int(3) NOT NULL,
+              `manufactured_country` int(3) DEFAULT NULL,
               PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 

@@ -64,7 +64,7 @@ class price_panel extends controller{
         $oFileWriter=App::newJump('fileWriter','libs');
         try{
             $oFileWriter->write('exel_1.json',ROOT_DIR.'tmp',$oExelProcessor);
-            return 'exel_1.json';
+            return 'exel_1.json?version='.rand(0,999);
         }catch (Exception $e){
             $this->sError=$e->getMessage();
         }

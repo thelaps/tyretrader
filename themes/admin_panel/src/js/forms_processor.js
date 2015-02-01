@@ -897,6 +897,7 @@ $(document).ready(function(){
             $.get(App.baseLink()+'?view=admin_panel&load=api_panel&fnc=show&case=values_list', function(json){
                 json = App.ajax(json);
                 var list=json.data.list;
+                console.log(json);
                 App.storage('valuesList',list);
                 selector.buildSelect(list,0);
                 selector.bind({
