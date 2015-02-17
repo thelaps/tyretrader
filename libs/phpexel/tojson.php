@@ -66,7 +66,7 @@ class toJson{
                 if ( $tmpValue instanceof PHPExcel_RichText ) {
                     $tmpValue = $tmpValue->getPlainText();
                 }
-                $data[$row-1][] = $tmpValue;
+                $data[$row-1][] = str_replace('_', ' ', $tmpValue);
             }
         }
         return $data;
