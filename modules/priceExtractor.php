@@ -53,7 +53,7 @@ class priceExtractor extends connector{
     }
 
     public function syncPrices(){
-        $this->syncView();
+        return $this->syncView();
     }
 
     private function makeSqlProcess($priceAction){
@@ -375,8 +375,9 @@ class priceExtractor extends connector{
                     LEFT JOIN wheel_models ON wheel_models.id=model_id';
             }
             $stmt = $dbo->prepare($unionsSql);
-            $stmt->execute();
+            return $stmt->execute();
         }
+        return false;
     }
 
 }

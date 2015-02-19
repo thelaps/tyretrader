@@ -508,6 +508,22 @@ $(document).ready(function(){
     });
 
 
+    $('.syncProcessor').bind({
+        click: function(){
+            $('body').jPopup({isActive:true, text: 'Синхронизирую каталоги...'});
+            $.get(App.baseLink()+'?view=admin_panel&load=api_panel&fnc=sync', function(json){
+                json = App.ajax(json);
+                if (json.status) {
+                    $.jPopupChange('Синхронизировано!');
+                } else {
+                    $.jPopupChange('Синхронизация не удалась!');
+                }
+                setTimeout(function(){
+                    $('body').jPopup({isActive:false});
+                },2000);
+            });
+        }
+    });
 
 
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-25 03:05:13
+<?php /* Smarty version 2.6.26, created on 2015-02-19 20:50:59
          compiled from price.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -111,6 +111,7 @@ unset($_smarty_tpl_vars);
                     <button type="button" class="company_editor">Поставщики (0.15a)</button>
                     <button type="button" class="locations_editor">Населенные пункты  (0.12a)</button>
                     <button type="button" class="currencyRate_editor">Курс валют  (0.13a)</button>
+                    <button type="button" class="syncProcessor">Синхронизация каталогов)</button>
                 </fieldset>
             </form>
 		</div>

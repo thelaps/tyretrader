@@ -77,6 +77,7 @@
                     <button type="button" class="company_editor">Поставщики (0.15a)</button>
                     <button type="button" class="locations_editor">Населенные пункты  (0.12a)</button>
                     <button type="button" class="currencyRate_editor">Курс валют  (0.13a)</button>
+                    <button type="button" class="syncProcessor">Синхронизация каталогов)</button>
                 </fieldset>
             </form>
 		</div>
