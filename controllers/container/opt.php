@@ -9,7 +9,6 @@
 class opt extends controller{
 
     public function render(){
-
         $this->viewData['opt'] = null;//Price::getOptItems();
         $this->viewData['formData'] = Manufacturer::getManufacturerAndModelByType();
         $this->viewData['formData']->cities = City::getCapitals();

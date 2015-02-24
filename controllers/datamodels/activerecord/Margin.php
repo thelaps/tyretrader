@@ -130,51 +130,62 @@ class Margin extends ActiveRecord\Model
              4,2,5 Бренду+модель+типоразмер
              4,2,6 поставщик+ Бренду+ модель+ типоразмер*/
 
+        $template = array(
+            'manufacturer_id',
+            'model_id',
+            'city_id',
+            'company_id',
+            'season',
+            'size_w',
+            'size_h',
+            'size_r'
+        );
 
-        $rules = array();
         foreach ( $marginItems as $marginItem ) {
-            if ($marginItem->manufacturer_id != NULL && $marginItem->model_id != NULL &&
-                $marginItem->size_w != NULL && $marginItem->size_h != NULL && $marginItem->size_r != NULL) {
-                if ( $item->manufacturer_id == $marginItem->manufacturer_id && $item->model_id == $marginItem->model_id &&
-                    $item->size_w == $marginItem->size_w && $item->size_h == $marginItem->size_h && $item->size_r == $marginItem->size_r ) {
-                    $rules[]=$marginItem;
-                }
-            } elseif ($marginItem->manufacturer_id != NULL && $marginItem->model_id != NULL) {
-                if ( $item->manufacturer_id == $marginItem->manufacturer_id && $item->model_id == $marginItem->model_id ) {
-                    $rules[]=$marginItem;
-                }
-            } elseif ($marginItem->manufacturer_id != NULL) {
-                if ( $item->manufacturer_id == $marginItem->manufacturer_id ) {
-                    $rules[]=$marginItem;
-                }
-            } elseif ($marginItem->size_w != NULL && $marginItem->size_h != NULL && $marginItem->size_r != NULL) {
-                if ( $item->size_w == $marginItem->size_w && $item->size_h == $marginItem->size_h && $item->size_r == $marginItem->size_r ) {
-                    $rules[]=$marginItem;
+            $attributeRule = (object)array(
+                'rule' => null,
+                'item' => null,
+                'ruleValues' => array(),
+                'itemValues' => array(),
+                'attributes' => array()
+            );
+            foreach ( $marginItem->attributes() as $attribute => $value ) {
+                if ( !empty($value) ) {
+                    if ( $value > 0 ) {
+                        if ( in_array($attribute, $template) ) {
+                            $attributeRule->ruleValues[] = $value;
+                            $attributeRule->itemValues[] = $item->$attribute;
+                            $attributeRule->attributes[] = $attribute;
+                        }
+                    }
                 }
             }
-        }
+            $attributeRule->rule = implode(':',$attributeRule->ruleValues);
+            $attributeRule->item = implode(':',$attributeRule->itemValues);
 
-        if ( isset($rules[0]) ) {
-            if ($rules[0]->percentage > 0) {
-                $totalTmp = $total + (($total/100) * $rules[0]->percentage);
-                if ( $rules[0]->not_more > 0 ) {
-                    if ( $totalTmp <= $rules[0]->not_more && $totalTmp >= $rules[0]->not_less ) {
+            if ( $attributeRule->rule == $attributeRule->item ) {
+                if ( $marginItem->percentage > 0 ) {
+                    $totalTmp = $total + (($total/100) * $marginItem->percentage);
+                    if ( $marginItem->not_more > 0 ) {
+                        if ( $totalTmp <= $marginItem->not_more && $totalTmp >= $marginItem->not_less ) {
+                            $total = $totalTmp;
+                        }
+                    } else {
                         $total = $totalTmp;
                     }
-                } else {
-                    $total = $totalTmp;
                 }
-            } elseif ($rules[0]->fixed_cost > 0) {
-                $totalTmp = $total + $rules[0]->fixed_cost;
-                if ( $rules[0]->not_more > 0 ) {
-                    if ( $totalTmp <= $rules[0]->not_more && $totalTmp >= $rules[0]->not_less ) {
+                if ( $marginItem->fixed_cost > 0 ) {
+                    $totalTmp = $total + $marginItem->fixed_cost;
+                    if ( $marginItem->not_more > 0 ) {
+                        if ( $totalTmp <= $marginItem->not_more && $totalTmp >= $marginItem->not_less ) {
+                            $total = $totalTmp;
+                        }
+                    } else {
                         $total = $totalTmp;
                     }
-                } else {
-                    $total = $totalTmp;
                 }
+                $total = $total + $marginItem->shipping + $marginItem->transfer + $marginItem->bank;
             }
-            $total = $total + $rules[0]->shipping + $rules[0]->transfer + $rules[0]->bank;
         }
     }
 
