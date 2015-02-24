@@ -140,7 +140,7 @@ class phpexel{
                                         $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
                                         break;
                                     case 'marking':
-                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        //$completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
                                         break;
                                     case 'currency':
                                         $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
@@ -288,7 +288,7 @@ class phpexel{
                                         $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
                                         break;
                                     case 'marking':
-                                        $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
+                                        //$completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);
                                         break;
                                     case 'currency':
                                         $completedValue = Helper::getObjBy($rawValue, $extras[$attribute], $attribute);

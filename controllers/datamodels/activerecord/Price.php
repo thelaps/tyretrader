@@ -537,8 +537,8 @@ class Price extends ActiveRecord\Model
                 $size_i_c.' '.
                 $sw_index.' '.
                 ((isset($technology->name))?$technology->name:'').' '.
-                ((isset($spike->name))?$spike->name:'').' '.
-                ((isset($marking->name))?$marking->name:'').' '
+                ((isset($spike->name))?$spike->name:'').' '
+                //((isset($marking->name))?$marking->name:'').' '
         );
 
         $scopename = implode(' ',$scopename);
