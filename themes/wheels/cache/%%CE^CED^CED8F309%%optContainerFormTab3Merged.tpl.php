@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-25 00:50:34
+<?php /* Smarty version 2.6.26, created on 2015-02-28 15:46:14
          compiled from container/forms/optTabs/optContainerFormTab3Merged.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -161,7 +161,7 @@ unset($_smarty_tpl_vars);
                             <label for="s_radial">Диаметр</label>
                             <!--<input id="s_radial" class="size-s" type="text" name="tyre[size_r][]">-->
                         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreRadius.tpl", 'smarty_include_vars' => array('id' => 's_radial')));
+$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreRadiusComercial.tpl", 'smarty_include_vars' => array('id' => 's_radial')));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>

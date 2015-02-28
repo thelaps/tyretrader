@@ -524,7 +524,7 @@ class Price extends ActiveRecord\Model
         if ( $this->size_i != null ) {
             switch ($this->size_i) {
                 case 'C':
-                   $size_i_c = 'C';
+                   $size_i_c = (in_array($this->type_transport, array(3, 4))) ? 'C' : '';
                     break;
                 case 'Z':
                    $size_i_z = 'Z';
