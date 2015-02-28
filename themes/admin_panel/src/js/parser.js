@@ -1251,7 +1251,7 @@ $.extend({
                 if ( priceData[item].size_i.length>0 ) {
                     switch (priceData[item].size_i) {
                         case 'C':
-                            size_i_c = 'C';
+                            size_i_c = (priceData[item].type_transport == 3 || priceData[item].type_transport == 4) ? 'C' : '';
                             break;
                         case 'Z':
                             size_i_z = 'Z';
