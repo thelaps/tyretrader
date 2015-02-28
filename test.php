@@ -15,7 +15,7 @@
             'where'=>null, //:field=>value
 */
 
-$items=array('0','1',':table','I:table','field');
+/*$items=array('0','1',':table','I:table','field');
 
 $pattern='((\d)|(\:[a-zA-Z_]+)|([L|I|R|O]\:[a-zA-Z_]+))';
 foreach($items as $value){
@@ -23,4 +23,12 @@ preg_match_all($pattern,$value,$out, PREG_SET_ORDER);
 
 print_r($out);
     print "<br>";
+}*/
+$rawYear = '14од';
+$intYear = filter_var($rawYear, FILTER_SANITIZE_NUMBER_INT);
+print_r(array(strlen((string)$intYear), date('d-m-'.$intYear), strtotime(date($intYear.'-m-d'))));
+if ( strlen((string)$intYear) == 2 ) {
+    print_r(array('20'.$intYear, date('d-m-Y', strtotime(date($intYear.'-m-d')))));
+} else {
+
 }

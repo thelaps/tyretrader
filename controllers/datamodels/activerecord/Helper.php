@@ -40,6 +40,15 @@ class Helper extends ActiveRecord\Model
         return $viewData;
     }
 
+    public static function getLabelById($id = null){
+        if ( $id != null ) {
+            $model = new Helper();
+            $item = $model->find($id);
+            return $item->name;
+        }
+        return '-';
+    }
+
     private function getAliasesFrom($cleanValues){
         $aliases=array();
         $query='SELECT wheel_synonym2dict.id,

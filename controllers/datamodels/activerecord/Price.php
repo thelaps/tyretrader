@@ -50,6 +50,10 @@ class Price extends ActiveRecord\Model
 
                 $item->price_1 = $compiledPrice->wholesale;
 
+                if ( empty($item->manufactured_year) ) {
+                    $item->manufactured_year = '-';
+                }
+
                 $timeDiff = abs($currentTime - $item->date);
                 $numberDays = $timeDiff/86400;
                 $numberDays = intval($numberDays);
@@ -85,10 +89,15 @@ class Price extends ActiveRecord\Model
 
                 $item->price_1 = $compiledPrice->wholesale;
 
+                if ( empty($item->manufactured_year) ) {
+                    $item->manufactured_year = '-';
+                }
+
                 $timeDiff = abs($currentTime - $item->date);
                 $numberDays = $timeDiff/86400;
                 $numberDays = intval($numberDays);
                 $item->assign_attribute('daysago', $numberDays);
+                $item->assign_attribute('manufactured_country_label', Helper::getLabelById($item->manufactured_country));
 
                 $item->assign_attribute('price_compiled', $compiledPrice->retail);
 

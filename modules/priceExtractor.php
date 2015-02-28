@@ -42,6 +42,7 @@ class priceExtractor extends connector{
                 for($i=0; $i<$total; $i++){
                     $this->addRowToPriceAction($this->companyId,$priceData[$i],$currentPrice,$priceAction);
                 }
+
                 if($this->makeSqlProcess($priceAction)){
                     $price = $this->getPriceData($this->companyId);
                     $status = true;
@@ -212,6 +213,7 @@ class priceExtractor extends connector{
                     'pcd_2' => $this->extractParameter($row->parameters,10),
                     'bolt' => $this->extractParameter($row->parameters,15),
                     'manufactured_country' => $this->extractParameter($row->parameters,20),
+                    'manufactured_year' => $this->prepareYear($this->extractParameter($row->parameters,43)),
                 );
 
                 if(in_array($modelManufacturer->id, $currentPrice)){
@@ -234,6 +236,18 @@ class priceExtractor extends connector{
         }
         return ($this->is_int($alias) || is_object($alias))?$alias:((!empty($alias))?'\''.$alias.'\'':'NULL');
 
+    }
+
+    private function prepareYear($rawYear = null){
+        if ( $rawYear != null ) {
+            $intYear = filter_var($rawYear, FILTER_SANITIZE_NUMBER_INT);
+            if ( strlen((string)$intYear) == 2 ) {
+                return date('Y', strtotime(date($intYear.'-m-d')));
+            } else {
+                return (empty($intYear)) ? date('Y') : $intYear;
+            }
+        }
+        return date('Y');
     }
 
     private function is_int($data){

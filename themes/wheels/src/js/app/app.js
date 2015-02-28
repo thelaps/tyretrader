@@ -122,12 +122,14 @@ $(document).ready(function(){
                                 'stock_1',
                                 'price_1',
                                 'price_compiled',
+                                'manufactured_country_label',
+                                'manufactured_year',
                                 function(row){
                                     return '<a href="#">Создать заявку</a>';
                                 }
                             ],
                             beforeRows:function(){
-                                return '<tr><td><div>компания</div></td><td><div>инфо</div></td><td><div>дата добавления</div></td><td><div>остаток</div></td><td><div>закупка</div></td><td><div>цена</div></td><td><div><a href="#"><b>заявка всем</b></a></div></td></tr>';
+                                return '<tr><td><div>компания</div></td><td><div>инфо</div></td><td><div>дата добавления</div></td><td><div>остаток</div></td><td><div>закупка</div></td><td><div>цена</div></td><td><div>Страна пр-ва</div></td><td><div>Год пр-ва</div></td><td><div><a href="#"><b>заявка всем</b></a></div></td></tr>';
                             }
                         });
                         html += '</div></td></tr>';
