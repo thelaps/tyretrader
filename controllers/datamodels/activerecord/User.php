@@ -11,6 +11,9 @@ class User extends ActiveRecord\Model
     const NORESET = 0;
     const RESETTED = 1;
     const RESETFAIL = 2;
+    const TYPE_USER = 1;
+    const TYPE_SHOP = 2;
+    const TYPE_COMPANY = 3;
 
     public static $table_name = 'wheel_user';
 
@@ -59,6 +62,26 @@ class User extends ActiveRecord\Model
         if ( !$model->isExist($model->login, $model->email) ) {
             if($model->is_valid()){
                 $model->pass = md5($attributes['pass']);
+
+                if ( $model->usertype == User::TYPE_SHOP ) {
+                    $company = new Company();
+                    $company->cityid = $model->cityid;
+                    $company->active = 0;
+                    $company->iso = 'UAH';
+                    $company->rate = 1.000;
+                    $company->save();
+
+                    $companyBilling = new Companybilling();
+                    $companyBilling->companyid = $company->id;
+                    $companyBilling->email = $model->email;
+                    $companyBilling->phone_1 = $model->phone;
+                    $companyBilling->cityid = $model->cityid;
+                    $companyBilling->save();
+
+                    $model->companyid = $company->id;
+                }
+
+
                 $model->save();
                 $model->pass = $attributes['pass'];
                 App::helper()->sendMail('registerSuccess', $attributes['email'], 'Регистрация на портале', $model);
