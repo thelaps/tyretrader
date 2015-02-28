@@ -10,6 +10,11 @@ class Margin extends ActiveRecord\Model
 {
     public static $table_name = 'wheel_margins';
 
+    private static $marginItems;
+
+    const WHOLESALE = 'wholesale';
+    const RETAIL = 'retail';
+
     public static function addMarginItem($attributes){
         $model = null;
         if ( !empty($attributes['calculator']['id']) ) {
@@ -104,32 +109,34 @@ class Margin extends ActiveRecord\Model
         return $model->delete();
     }
 
-    public static function useMargin($item, &$total)
+    public static function useMargin($item, &$totalWholesale, &$totalRetail)
     {
         $company_id = $item->company_id;
         $manufacturer_id = $item->manufacturer_id;
         $model = new Margin();
         $marginItems = array();
-        $marginItems = $model->find_by_sql('
-            SELECT `wheel_margins`.*
-            FROM `wheel_margins`
-            WHERE `wheel_margins`.`company_id`='.$company_id.'
-            ORDER BY
-            `wheel_margins`.`model_id` DESC,
-            `wheel_margins`.`size_w` DESC,
-            `wheel_margins`.`size_h` DESC,
-            `wheel_margins`.`size_r` DESC
-        ');
+        $wholesaleMarginToRetail = 0;
+        if ( empty(self::$marginItems) ) {
+            $marginItems = $model->find_by_sql('
+                SELECT `wheel_margins`.*
+                FROM `wheel_margins`
+                ORDER BY
+                `wheel_margins`.`type` DESC
+            ');
 
-        /*
-         *   4,2,1 - поставщик
-             4,2,1,1- поставщик+типоразмер
-             4,2,2- типоразмер
-             4,2,3- Бренду
-             4,2,4- Бренду+модель
-             4,2,5 Бренду+модель+типоразмер
-             4,2,6 поставщик+ Бренду+ модель+ типоразмер*/
+            /*
+             *   4,2,1 - поставщик
+                 4,2,1,1- поставщик+типоразмер
+                 4,2,2- типоразмер
+                 4,2,3- Бренду
+                 4,2,4- Бренду+модель
+                 4,2,5 Бренду+модель+типоразмер
+                 4,2,6 поставщик+ Бренду+ модель+ типоразмер*/
 
+            self::$marginItems = $marginItems;
+        } else {
+            $marginItems = self::$marginItems;
+        }
         $template = array(
             'manufacturer_id',
             'model_id',
@@ -140,6 +147,8 @@ class Margin extends ActiveRecord\Model
             'size_h',
             'size_r'
         );
+
+        $total = $totalWholesale;
 
         foreach ( $marginItems as $marginItem ) {
             $attributeRule = (object)array(
@@ -163,12 +172,27 @@ class Margin extends ActiveRecord\Model
             $attributeRule->rule = implode(':',$attributeRule->ruleValues);
             $attributeRule->item = implode(':',$attributeRule->itemValues);
 
+            if ( $marginItem->type == self::RETAIL ) {
+                $total = $totalWholesale;
+            }
+            if ( $marginItem->type == self::WHOLESALE ) {
+                $total = $totalWholesale;
+            }
+
             if ( $attributeRule->rule == $attributeRule->item ) {
                 if ( $marginItem->percentage > 0 ) {
-                    $totalTmp = $total + (($total/100) * $marginItem->percentage);
+                    $percentage = (($total/100) * $marginItem->percentage);
+                    $totalTmp = $total + $percentage;
                     if ( $marginItem->not_more > 0 ) {
-                        if ( $totalTmp <= $marginItem->not_more && $totalTmp >= $marginItem->not_less ) {
+                        if ( $percentage <= $marginItem->not_more && $percentage >= $marginItem->not_less ) {
                             $total = $totalTmp;
+                        } else {
+                            if ( $percentage > $marginItem->not_more ) {
+                                $total = $total + $marginItem->not_more;
+                            }
+                            if ( $percentage < $marginItem->not_less ) {
+                                $total = $total + $marginItem->not_less;
+                            }
                         }
                     } else {
                         $total = $totalTmp;
@@ -177,14 +201,30 @@ class Margin extends ActiveRecord\Model
                 if ( $marginItem->fixed_cost > 0 ) {
                     $totalTmp = $total + $marginItem->fixed_cost;
                     if ( $marginItem->not_more > 0 ) {
-                        if ( $totalTmp <= $marginItem->not_more && $totalTmp >= $marginItem->not_less ) {
+                        if ( $marginItem->fixed_cost <= $marginItem->not_more && $marginItem->fixed_cost >= $marginItem->not_less ) {
                             $total = $totalTmp;
+                        } else {
+                            if ( $marginItem->fixed_cost > $marginItem->not_more ) {
+                                $total = $total + $marginItem->not_more;
+                            }
+                            if ( $marginItem->fixed_cost < $marginItem->not_less ) {
+                                $total = $total + $marginItem->not_less;
+                            }
                         }
                     } else {
                         $total = $totalTmp;
                     }
                 }
                 $total = $total + $marginItem->shipping + $marginItem->transfer + $marginItem->bank;
+                if ( $marginItem->type == self::RETAIL ) {
+                    $totalRetail = $total;
+                }
+                if ( $marginItem->type == self::WHOLESALE ) {
+                    $totalWholesale = $total;
+                    if ( $totalRetail < $totalWholesale ) {
+                        $totalRetail = $totalWholesale;
+                    }
+                }
             }
         }
     }

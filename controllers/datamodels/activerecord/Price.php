@@ -46,12 +46,16 @@ class Price extends ActiveRecord\Model
             $opt_items = $model->find_by_sql($unionsSql);
             foreach ($opt_items as $item) {
 
+                $compiledPrice = $item->makePriceWtihMargin();
+
+                $item->price_1 = $compiledPrice->wholesale;
+
                 $timeDiff = abs($currentTime - $item->date);
                 $numberDays = $timeDiff/86400;
                 $numberDays = intval($numberDays);
                 $item->assign_attribute('daysago', $numberDays);
 
-                $item->assign_attribute('price_compiled', $item->makePriceWtihMargin());
+                $item->assign_attribute('price_compiled', $compiledPrice->retail);
 
                 $item->assign_attribute('scopename', $item->makeName());
                 $item->assign_attribute('time', date('d.m.Y', $item->date));
@@ -77,12 +81,16 @@ class Price extends ActiveRecord\Model
             $opt->items = $model->find_by_sql($unionsSql);
             foreach ($opt->items as $item) {
 
+                $compiledPrice = $item->makePriceWtihMargin();
+
+                $item->price_1 = $compiledPrice->wholesale;
+
                 $timeDiff = abs($currentTime - $item->date);
                 $numberDays = $timeDiff/86400;
                 $numberDays = intval($numberDays);
                 $item->assign_attribute('daysago', $numberDays);
 
-                $item->assign_attribute('price_compiled', $item->makePriceWtihMargin());
+                $item->assign_attribute('price_compiled', $compiledPrice->retail);
 
                 $item->assign_attribute('scopename', $item->makeName());
                 $item->assign_attribute('time', date('d.m.Y', $item->date));
@@ -493,8 +501,11 @@ class Price extends ActiveRecord\Model
 
     public function makePriceWtihMargin()
     {
-        $totalPrice = $this->price_1;
-        Margin::useMargin($this, $totalPrice);
+        $totalPrice = (object)array(
+            'retail' => $this->price_1,
+            'wholesale' => $this->price_1
+        );
+        Margin::useMargin($this, $totalPrice->wholesale, $totalPrice->retail);
         return $totalPrice;
     }
 
