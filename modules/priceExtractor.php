@@ -212,8 +212,8 @@ class priceExtractor extends connector{
                     'pcd_1' => $this->extractParameter($row->parameters,9),
                     'pcd_2' => $this->extractParameter($row->parameters,10),
                     'bolt' => $this->extractParameter($row->parameters,15),
-                    'manufactured_country' => $this->extractParameter($row->parameters,20),
-                    'manufactured_year' => $this->prepareYear($this->extractParameter($row->parameters,43)),
+                    'manufactured_country' => $this->extractMCountry($row->parameters),
+                    'manufactured_year' => $this->extractMYear($row->parameters),
                 );
 
                 if(in_array($modelManufacturer->id, $currentPrice)){
@@ -226,6 +226,18 @@ class priceExtractor extends connector{
             }
         }
         return false;
+    }
+
+    private function extractMCountry($parameters){
+        $_simpleValue = $this->extractParameter($parameters,20);
+        $_mixedValue = $this->extractParameter($parameters,44);
+        return ($_mixedValue != 'NULL' && !empty($_mixedValue->country)) ? $_mixedValue->country : $_simpleValue;
+    }
+
+    private function extractMYear($parameters){
+        $_simpleValue = $this->extractParameter($parameters,43);
+        $_mixedValue = $this->extractParameter($parameters,44);
+        return $this->prepareYear(($_mixedValue != 'NULL' && !empty($_mixedValue->year)) ? $_mixedValue->year : $_simpleValue);
     }
 
     private function extractParameter($parameters,$needle,$alias = null){

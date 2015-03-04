@@ -605,6 +605,10 @@ $.extend({
         getValidate:function(getter,pid,attached,strSource){
             var source=null;
             switch(pid){
+                case 44:
+                    console.log(getter,pid,attached,strSource);
+                    source=$.parser.getCountryAndYear(getter); //fnc
+                    break;
                 case 21:
                     source=$.parser.getPriceAndCurrency(getter); //fnc
                     break;
@@ -645,6 +649,13 @@ $.extend({
                     source=(getter.length>0 && pid!=0)?getter:null;
             }
             return source;
+        },
+        getCountryAndYear:function(source){
+            var country = $.parser.getMatchFrom('manufacturedCountries',source);
+            return {
+                country:parseInt(country),
+                year:parseInt(source.replace ( /[^\d.]/g, '' ))
+            };
         },
         getPriceAndCurrency:function(source){
             var match=null;
