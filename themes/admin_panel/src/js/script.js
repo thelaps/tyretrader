@@ -233,6 +233,7 @@ $.extend({
             manufacturerSelect.createOptions($.extraTab.manufacturers,0);
             parametersBox.createParameters($.extraTab.parameters,0,false,i);
         }
+        $('.process').show();
         $('.saveExtraSettings').show().bind({
             click: function(){
                 if($.extraTab.priceName!=null && $.extraTab.company!=null){

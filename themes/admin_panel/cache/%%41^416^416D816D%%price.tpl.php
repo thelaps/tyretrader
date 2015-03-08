@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-02-19 20:50:59
+<?php /* Smarty version 2.6.26, created on 2015-03-08 13:25:08
          compiled from price.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -83,7 +83,10 @@ unset($_smarty_tpl_vars);
                         <div class="panel four">
                             <fieldset>
                                 <legend>Настройка импорта</legend>
-                                <button style="width: 100%; display: none;" class="saveExtraSettings">Сохранить шаблон</button>
+                                <div class="separatedExtraButton">
+                                    <button class="saveExtraSettings" style="display: none;">Сохранить шаблон</button>
+                                    <button class="process" style="display: none;" type="button">Обработать</button>
+                                </div>
                                 <label for="company_id">Компания</label>
                                 <select id="company_id" class="extraCompany" name="company_id">
                                     <option disabled selected value=""> - </option>

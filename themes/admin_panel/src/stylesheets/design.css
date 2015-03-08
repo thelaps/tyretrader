@@ -399,3 +399,22 @@ table.evenodd tr:first-child td {
 table.evenodd tr:last-child td {
     border-bottom: medium none;
 }
+.separatedExtraButton button {
+    border-collapse: collapse;
+}
+.separatedExtraButton button:first-child {
+    -webkit-border-radius: 3px 0px 0px 3px;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -o-border-radius: 3px 0px 0px 3px;
+    -ms-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 0px 3px;
+    border-right: none;
+}
+.separatedExtraButton button:last-child {
+    -webkit-border-radius: 0px 3px 3px 0px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -o-border-radius: 0px 3px 3px 0px;
+    -ms-border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+}

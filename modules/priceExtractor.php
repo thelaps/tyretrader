@@ -256,10 +256,10 @@ class priceExtractor extends connector{
             if ( strlen((string)$intYear) == 2 ) {
                 return date('Y', strtotime(date($intYear.'-m-d')));
             } else {
-                return (empty($intYear)) ? date('Y') : $intYear;
+                return (empty($intYear)) ? '-' : $intYear;
             }
         }
-        return date('Y');
+        return '-';
     }
 
     private function is_int($data){

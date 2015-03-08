@@ -53,7 +53,10 @@
                         <div class="panel four">
                             <fieldset>
                                 <legend>Настройка импорта</legend>
-                                <button style="width: 100%; display: none;" class="saveExtraSettings">Сохранить шаблон</button>
+                                <div class="separatedExtraButton">
+                                    <button class="saveExtraSettings" style="display: none;">Сохранить шаблон</button>
+                                    <button class="process" style="display: none;" type="button">Обработать</button>
+                                </div>
                                 <label for="company_id">Компания</label>
                                 <select id="company_id" class="extraCompany" name="company_id">
                                     <option disabled selected value=""> - </option>
