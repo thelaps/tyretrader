@@ -344,6 +344,7 @@ class api_panel extends controller{
                   `pcd_2` int(3) NOT NULL,
                   `bolt` int(3) NOT NULL,
                   `manufactured_country` int(3) DEFAULT NULL,
+                  `manufactured_year` varchar(12) DEFAULT NULL,
                   PRIMARY KEY (`id`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 

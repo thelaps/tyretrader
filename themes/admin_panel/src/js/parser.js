@@ -1232,6 +1232,7 @@ $.extend({
                 '<td>Наличие</td>' +
                 '<td>Цена</td>' +
                 '<td>Типоразмер</td>' +
+                '<td>Изображение</td>' +
                 '</tr>';
             for(var item in priceData){
                 var spike = $.getObjBy(priceData[item].spike, $.extraTab.extras.spike,'id');
@@ -1293,6 +1294,7 @@ $.extend({
                     '<td>'+priceData[item].price_3+'</td>' +
                     '<td>'+priceData[item].price_4+'</td>' +*/
                     '<td>'+priceData[item].size_w+((priceData[item].size_h!=null)?'/'+priceData[item].size_h:'')+' '+((size_i_z.length>0)?size_i_z:'')+'R'+priceData[item].size_r+((size_i_c.length>0)?size_i_c:'')+'</td>' +
+                    '<td>'+priceData[item].src+'</td>' +
                     '</tr>';
 
                 html += tmpHtml;
@@ -1324,6 +1326,7 @@ $.extend({
                 '<td>Тип диска</td>' +
                 '<td>Наличие</td>' +
                 '<td>Цена</td>' +
+                '<td>Изображение</td>' +
                 '</tr>';
             for(var item in priceData){
                 var color = $.getObjBy(priceData[item].color, $.extraTab.extras.color,'id');
@@ -1344,6 +1347,7 @@ $.extend({
                     '<td>'+wheel_type+'</td>' +
                     '<td>'+priceData[item].stock_1+'</td>' +
                     '<td>'+priceData[item].price_1+'</td>' +
+                    '<td>'+priceData[item].src+'</td>' +
                     '</tr>';
 
                 html += tmpHtml;

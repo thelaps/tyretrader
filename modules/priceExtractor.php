@@ -237,7 +237,7 @@ class priceExtractor extends connector{
     private function extractMYear($parameters){
         $_simpleValue = $this->extractParameter($parameters,43);
         $_mixedValue = $this->extractParameter($parameters,44);
-        return $this->prepareYear(($_mixedValue != 'NULL' && !empty($_mixedValue->year)) ? $_mixedValue->year : $_simpleValue);
+        return $this->prepareYear(($_mixedValue != 'NULL' && !empty($_mixedValue->year)) ? $_mixedValue->year : $_simpleValue, true);
     }
 
     private function extractParameter($parameters,$needle,$alias = null){
@@ -250,16 +250,16 @@ class priceExtractor extends connector{
 
     }
 
-    private function prepareYear($rawYear = null){
+    private function prepareYear($rawYear = null, $allowEmpty = false){
         if ( $rawYear != null ) {
             $intYear = filter_var($rawYear, FILTER_SANITIZE_NUMBER_INT);
             if ( strlen((string)$intYear) == 2 ) {
                 return date('Y', strtotime(date($intYear.'-m-d')));
             } else {
-                return (empty($intYear)) ? '-' : $intYear;
+                return (empty($intYear)) ? (($allowEmpty) ? 'NULL' : '-') : $intYear;
             }
         }
-        return '-';
+        return (($allowEmpty) ? 'NULL' : '-');
     }
 
     private function is_int($data){
@@ -276,6 +276,7 @@ class priceExtractor extends connector{
         $dbo=$this->dbo;
         $query='SELECT wheel_price_com'.$company_id.'.*, wheel_manufacturers.name AS manufacturer,
             wheel_models.name AS model,
+            wheel_models.src,
             wheel_models.season, wheel_models.use,
             wheel_models.type_transport, wheel_models.axle,
             wheel_manufacturers2type.type as manufacturer_type,
@@ -350,6 +351,7 @@ class priceExtractor extends connector{
               `pcd_2` int(3) NOT NULL,
               `bolt` int(3) NOT NULL,
               `manufactured_country` int(3) DEFAULT NULL,
+              `manufactured_year` varchar(12) DEFAULT NULL,
               PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 
