@@ -62,7 +62,7 @@
         <li>Услуги</li>
     </ul>
     <div class="tabs-holder">
-    {include file="container/forms/homeTabs/homeContainerFormTab1.tpl"}
+        {include file="container/forms/homeTabs/homeContainerFormTab1.tpl"}
         <div class="tab" data-role="tab">
             <img src="{$src}/images/under-construction.png">
             Раздел в разработке...
@@ -79,13 +79,9 @@
             <img src="{$src}/images/under-construction.png">
             Раздел в разработке...
         </div>
+        {include file="container/forms/homeTabs/homeContainerFormTabAccountBalance.tpl"}
         <div class="tab" data-role="tab">
-            <img src="{$src}/images/under-construction.png">
-            Раздел в разработке...
-        </div>
-        <div class="tab" data-role="tab">
-            <img src="{$src}/images/under-construction.png">
-            Раздел в разработке...
+            {include file="container/forms/homeTabs/homeContainerFormTabPackages.tpl"}
         </div>
     </div>
 </div>

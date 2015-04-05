@@ -10,6 +10,8 @@ class home extends controller{
 
     public function render(){
         $this->viewData['city'] = City::getWithRegions();
+        $this->viewData['packages'] = Package::all();
+        $this->viewData['expiration'] = Invoice::getExpirationIntervals();
         return 'container/home.tpl';
     }
 }

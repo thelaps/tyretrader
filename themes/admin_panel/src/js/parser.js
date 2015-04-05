@@ -23,6 +23,7 @@ $.extend({
         waitFrom:0,
         accepted:null,
         notaccepted:new Array,
+        namingIsSet:false,
         process:function(){
             $('body').jPopup({isActive:true});
             //var form=$('form[name="priceProcessing"]');
@@ -60,7 +61,7 @@ $.extend({
                         error.push(' - Не указан ст. остатка\r\n');
                     }
                     if($.parser.internalError[k].naming){
-                        error.push(' - Не указан ст. наименования\r\n');
+                        error.push(' - Не указан ст. наименования или высоты и диаметра\r\n');
                     }
                     error.push('------------------------------\r\n');
                 }
@@ -92,17 +93,18 @@ $.extend({
                     settingObj.parameter.push($(this).val());
                 });
 
-                if($.inArray('21', settingObj.parameter)!=-1 && $.inArray('25', settingObj.parameter)!=-1 && $.inArray('2', settingObj.parameter)!=-1){
+                if($.inArray('21', settingObj.parameter)!=-1 && $.inArray('25', settingObj.parameter)!=-1 && ($.inArray('2', settingObj.parameter)!=-1 || (settingObj.parameter.indexOf('13')!=-1 && settingObj.parameter.indexOf('17')!=-1))){
                     $.parser.collection.settings.push(settingObj);
                 }else{
                     var errorIn = {
                         tab: '>> Вкладка №: '+i,
                         price: (settingObj.parameter.indexOf('21')==-1),
                         quantity: (settingObj.parameter.indexOf('25')==-1),
-                        naming: (settingObj.parameter.indexOf('2')==-1)
+                        naming: (settingObj.parameter.indexOf('2')==-1) ? (settingObj.parameter.indexOf('13')==-1 && settingObj.parameter.indexOf('17')==-1) : false
                     };
                     $.parser.internalError.push(errorIn);
                 }
+                $.parser.namingIsSet = ($.inArray('2', settingObj.parameter)!=-1);
             }
             if($.parser.internalError.length>0){
                 return false;
@@ -178,46 +180,57 @@ $.extend({
             return exploded;
         },
         checkIn:function(strSource,domKey){
+            var specifiedSizes = null;
+            var wheelSizes = null;
+            var tyreSizes = null;
+            var indexes = null;
             var settings=$.parser.collection.settings[domKey];
             var company=$.extraTab.company;
-
             var extraCell=strSource.split('|');
 
-
-
-            //Типоразмеры
-            var tyreSizes = $.parser.regulate(strSource,domKey,'tyresize');
-            console.log(tyreSizes);
-
-            //Индексы Скорость-нагрузка
-            if(tyreSizes!=null){
-                var strSourceNext=strSource.replace(new RegExp(tyreSizes[0],'g'),'');
-                var indexes = $.parser.regulate(strSourceNext,domKey,'tyreindex');
-            }else{
-                var strSourceNext=null;
-                var indexes=null;
-            }
-
-            //Производитель
-            /*strSourceNext=strSourceNext.replace(new RegExp(indexes[0],'g'),'');
-            var manufacturer = $.parser.regulate(strSourceNext,domKey,1);*/
-
-
-
-            //settings.type
-            //var parameters=$.extraTab.parameters[settings.type];
-
             var checkedParameters=settings.parameter;
-
             var attachParameters=$.parser.getValuesByParameter(extraCell,checkedParameters,strSource);
 
-            var modelObj = $.findParameter(attachParameters.required, 4);
-            var wheelSizes = null;
-            if ( modelObj.type == 2 ) {
-                var wheelSizes = $.parser.regulate(strSource,domKey,'wheelsize');
+
+            if (!$.parser.namingIsSet) {
+                specifiedSizes = {
+                    R: $.findParameter(attachParameters.parameters, 13, true),
+                    W: $.findParameter(attachParameters.parameters, 17, true),
+                    H: $.findParameter(attachParameters.parameters, 45, true),
+                    I: $.findParameter(attachParameters.parameters, 30, true),
+                    Si: {
+                        F: $.findParameter(attachParameters.parameters, 36, true),
+                        B: $.findParameter(attachParameters.parameters, 37, true)
+                    },
+                    Sw: {
+                        F: $.findParameter(attachParameters.parameters, 34, true),
+                        B: $.findParameter(attachParameters.parameters, 35, true)
+                    }
+                };
+            } else {
+                //Типоразмеры
+                tyreSizes = $.parser.regulate(strSource,domKey,'tyresize');
+
+                //Индексы Скорость-нагрузка
+                if(tyreSizes!=null){
+                    var strSourceNext=strSource.replace(new RegExp(tyreSizes[0],'g'),'');
+                    indexes = $.parser.regulate(strSourceNext,domKey,'tyreindex');
+                }else{
+                    var strSourceNext=null;
+                    indexes=null;
+                }
+
+                var modelObj = $.findParameter(attachParameters.required, 4, false);
+                if ( modelObj.type == 2 ) {
+                    wheelSizes = $.parser.regulate(strSource,domKey,'wheelsize');
+                }
             }
 
-            if(tyreSizes!=null || wheelSizes!=null){
+
+
+console.log(strSource, extraCell, attachParameters, checkedParameters, $.parser.namingIsSet, specifiedSizes);
+
+            if(tyreSizes!=null || wheelSizes!=null || specifiedSizes!=null){
                 var tmpObj={
                     company:company,
                     currency:settings.currency,
@@ -227,24 +240,24 @@ $.extend({
                     //H колеса: 5,7
                     //Si индекс скорости F - перед, B - зад
                     //Sw индекс нагрузки F - перед, B - зад
-                    R:(wheelSizes!=null)?$.parser.replaceComa($.parser.getParameter(wheelSizes, new Array('15'))):$.parser.replaceComa($.parser.getParameter(tyreSizes, new Array(3,10,14))),
-                    W:(wheelSizes!=null)?$.parser.replaceComa($.parser.getParameter(wheelSizes, new Array('16'))):$.parser.replaceComa($.parser.getParameter(tyreSizes, new Array(4,6,13))),
-                    H:(wheelSizes!=null)?null:$.parser.replaceComa($.parser.getParameter(tyreSizes, new Array(5,7))),
-                    I:(tyreSizes[11]!=null)?tyreSizes[11]:((tyreSizes[9]=='ZR')?'Z':null),
+                    R:(specifiedSizes!= null) ? specifiedSizes.R : ((wheelSizes!=null)?$.parser.replaceComa($.parser.getParameter(wheelSizes, new Array('15'))):$.parser.replaceComa($.parser.getParameter(tyreSizes, new Array(3,10,14)))),
+                    W:(specifiedSizes!= null) ? specifiedSizes.W : ((wheelSizes!=null)?$.parser.replaceComa($.parser.getParameter(wheelSizes, new Array('16'))):$.parser.replaceComa($.parser.getParameter(tyreSizes, new Array(4,6,13)))),
+                    H:(specifiedSizes!= null) ? specifiedSizes.H : ((wheelSizes!=null)?null:$.parser.replaceComa($.parser.getParameter(tyreSizes, new Array(5,7)))),
+                    I:(specifiedSizes!= null) ? specifiedSizes.I : ((tyreSizes[11]!=null)?tyreSizes[11]:((tyreSizes[9]=='ZR')?'Z':null)),
                     type:settings.type,
                     manufacturer:settings.manufacturer,
                     model:null,
                     Si:{
-                        F:(indexes!=null && (indexes[8]!=undefined || indexes[4]!=undefined))?((indexes[8]!=undefined)?indexes[8]:((indexes[5]!=undefined)?indexes[5]:null)):null,
-                        B:(indexes!=null && indexes[10]!=undefined)?indexes[10]:null
+                        F:(specifiedSizes!= null) ? specifiedSizes.Si.F : ((indexes!=null && (indexes[8]!=undefined || indexes[4]!=undefined))?((indexes[8]!=undefined)?indexes[8]:((indexes[5]!=undefined)?indexes[5]:null)):null),
+                        B:(specifiedSizes!= null) ? specifiedSizes.Si.B : ((indexes!=null && indexes[10]!=undefined)?indexes[10]:null)
                     },
                     Sw:{
-                        F:(indexes!=null && (indexes[7]!=undefined || indexes[4]!=undefined))?((indexes[7]!=undefined)?indexes[7]:((indexes[4]!=undefined)?indexes[4]:null)):null,
-                        B:(indexes!=null && indexes[9]!=undefined)?indexes[9]:null
+                        F:(specifiedSizes!= null) ? specifiedSizes.Sw.F : ((indexes!=null && (indexes[7]!=undefined || indexes[4]!=undefined))?((indexes[7]!=undefined)?indexes[7]:((indexes[4]!=undefined)?indexes[4]:null)):null),
+                        B:(specifiedSizes!= null) ? specifiedSizes.Sw.B : ((indexes!=null && indexes[9]!=undefined)?indexes[9]:null)
                     },
                     parameters:attachParameters.parameters,
                     required:attachParameters.required,
-                    raw:tyreSizes.input
+                    raw:(specifiedSizes!= null) ? '' : tyreSizes.input
                 };
 
                 if($.checkVal(4, attachParameters.required)){
@@ -431,13 +444,14 @@ $.extend({
                 parameters:new Array,
                 required:new Array
             };
+            console.log(extraCell, checkedParameters, strSource);
             var presets=new Array;
             for(var item in extraCell){
                 var pid=parseInt(checkedParameters[item]);
                 var getter=extraCell[item].trim();
-                if(pid!=4 && pid!=1){
+                if(pid!=4 && pid!=1){ //4 - произв. 1 - назв. модели
                     if(pid!=null){
-                        if(pid==2 || pid==3){
+                        if(pid==2 || pid==3){ // 2 - наименование 3 - наименование2
                             var validArray=$.parser.getValidate(getter,pid,attached.parameters,strSource);
                             attached.parameters=validArray;
                         }else{
@@ -446,7 +460,7 @@ $.extend({
                                     parameter_id:pid,
                                     value:$.parser.getValidate(getter,pid,attached.parameters,strSource)
                                 }
-                                if(pid==25 || pid==26 || pid==27){
+                                if(pid==25 || pid==26 || pid==27 || pid==17 || pid==45 || pid==13 || pid==34 || pid==35){
                                     wrapper.value = $.parseIntFix(wrapper.value)
                                 }
                                 attached.parameters.push(wrapper);
@@ -603,10 +617,10 @@ $.extend({
             return null;
         },
         getValidate:function(getter,pid,attached,strSource){
+            console.log('parametryzed', getter, getter.length, pid, strSource);
             var source=null;
             switch(pid){
                 case 44:
-                    console.log(getter,pid,attached,strSource);
                     source=$.parser.getCountryAndYear(getter); //fnc
                     break;
                 case 21:
@@ -1004,7 +1018,7 @@ $.extend({
                     var span = li.children('span');
                     var font = li.children('label');
                     if(span.attr('data-type')=='manufacturer'){
-                        var res = $.findParameter(unaccepted.required, 4);
+                        var res = $.findParameter(unaccepted.required, 4, false);
                         var manufacturer = res.value;
                         var cData = $.cData.read();
                         $('#errorList li').each(function(){
@@ -1038,7 +1052,7 @@ $.extend({
                         $.cData.drop();
                     }else if(span.attr('data-type')=='model'){
                         //find models and process
-                        var res = $.findParameter(unaccepted.required, 1);
+                        var res = $.findParameter(unaccepted.required, 1, false);
                         var model = res.value.model;
                         var alias = $.mergeSynonymous(res.value.alias);
                         var model2alias = new Array;
@@ -1158,15 +1172,15 @@ $.extend({
 });
 
 $.extend({
-    findParameter:function(required,needle){
+    findParameter:function(required,needle, isClearValue){
         for(var i in required){
             if(required[i]!=undefined){
                 if(required[i].parameter_id==needle){
-                    return required[i];
+                    return (isClearValue) ? required[i].value : required[i];
                 }
             }
         }
-        return false;
+        return (isClearValue) ? null : false;
     },
     mergeSynonymous:function(alias){
         var synonymous = new Array;
