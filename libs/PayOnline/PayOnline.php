@@ -64,8 +64,8 @@ class PayOnline
             'description'    => $invoice->title,
             'order_id'       => $invoice->id,
             'sandbox'        => '1',
-            'server_url'     => '/?view=api&load=paymentcenter&fnc=payVerify',
-            'result_url'     => '/?load=home',
+            'server_url'     => 'http://release.pp.ua/?view=api&load=paymentcenter&fnc=payVerify',
+            'result_url'     => 'http://release.pp.ua/?load=home',
             'pay_way'        => 'card',
             'language'       => 'ru'
         ));
