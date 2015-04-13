@@ -67,6 +67,7 @@ class LiqPay
         $url = $this->_api_url . $path;
         $public_key = $this->_public_key;
         $private_key = $this->_private_key;
+        print_r($params);
         $data = base64_encode(json_encode(array_merge(compact('public_key'), $params)));
         $signature = base64_encode(sha1($private_key.$data.$private_key, 1));
         $postfields = http_build_query(array(
@@ -113,6 +114,26 @@ class LiqPay
             sprintf('<input type="hidden" name="%s" value="%s" />', 'data', $data),
             sprintf('<input type="hidden" name="%s" value="%s" />', 'signature', $signature),
             $language
+        );
+    }
+    /**
+     * cnb_form_data
+     *
+     * @param array $params
+     *
+     * @return string
+     *
+     * @throws InvalidArgumentException
+     */
+    public function cnb_form_data($params)
+    {
+        $params = $this->cnb_params($params);
+        $data = base64_encode( json_encode($params) );
+        $signature = $this->cnb_signature($params);
+        return array(
+            'data' => $data,
+            'signature' => $signature,
+            'action' => $this->_checkout_url
         );
     }
     /**

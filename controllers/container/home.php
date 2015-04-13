@@ -9,6 +9,10 @@
 class home extends controller{
 
     public function render(){
+        $PayOnline=App::newJump('PayOnline','libs');
+
+        //$this->viewData['paymentData'] = $PayOnline->
+
         $this->viewData['city'] = City::getWithRegions();
         $this->viewData['packages'] = Package::all();
         $this->viewData['expiration'] = Invoice::getExpirationIntervals();

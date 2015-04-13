@@ -24,15 +24,37 @@ class paymentcenter extends controller{
                 case 'payBallance':
                     $completeData = $this->payBalance();
                     break;
+                case 'getFormBalance':
+                    $completeData = $this->getFormBalance();
+                    break;
             }
             //App::ajax(json_encode($response));
+        } elseif (isset($get['fnc'])) {
+            $action = $get['fnc'];
+            switch ($get['fnc']) {
+                case 'payVerify':
+                    $completeData = $this->payVerify();
+                    break;
+            }
         }
         $response = array(
             'action' => $action,
-            'completeData' => (!empty($completeData)) ? $completeData->attributes() : null,
+            'completeData' => (!empty($completeData)) ? (($post['fnc'] != 'getFormBalance') ? $completeData->attributes() : $completeData) : null,
             'errors' => (isset($completeData->errors))?((is_array($completeData->errors)) ? $completeData->errors : $completeData->errors->full_array()):$this->errors
         );
         App::ajax(json_encode($response));
+    }
+
+    public function getFormBalance()
+    {
+        $post = $this->getRequest('post');
+        if ( $this->profiler->isLoggedIn() ) {
+            $user = $this->profiler->user;
+            $invoice = Invoice::createNew(Invoice::TYPE_BALANCE, $user->id, $post['payment']['phone'], $post['payment']['amount']);
+            $PayOnline=App::newJump('PayOnline','libs');
+            return $PayOnline->makePaymentFormData(PayOnline::LIQPAY, $invoice, $post['payment']);
+        }
+        return false;
     }
 
     public function payBalance()
@@ -46,5 +68,17 @@ class paymentcenter extends controller{
             return $invoice;
         }
         return false;
+    }
+
+    public function payVerify()
+    {
+        $post = $this->getRequest('post');
+
+        $PayOnline=App::newJump('PayOnline','libs');
+
+        $post = $this->getRequest('post');
+        $get = $this->getRequest('get');
+        mail('rimmerz@gmail.com', 'LiqAnswerPost1', $post['data']);
+        mail('rimmerz@gmail.com', 'LiqAnswerPost2', $post['signature']);
     }
 }

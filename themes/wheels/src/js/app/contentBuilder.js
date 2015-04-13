@@ -64,8 +64,32 @@
                 }
             }
             return html;
-        }
+        };
 
+        CB.prototype.form = function(data, attributes){
+            var _options = {
+                id : null,
+                action : null,
+                exclude : null,
+                autosubmit : false
+            };
+            _options = $.extend(_options, attributes);
+            var html = '<form id="cb_form_'+((attributes.id!=null)? attributes.id :'')+'" action="'+((attributes.action!=undefined)? attributes.action :'/')+'" enctype="multipart/form-data">';
+            for (var item in data) {
+                if ( attributes.exclude != item ) {
+                    if(typeof(data[item])=='string'){
+                        html += '<input type="hidden" value="'+data[item]+'" name="'+item+'">';
+                    }
+                }
+            }
+            html += '</form>';
+            console.log(html);
+            if ( _options.autosubmit ) {
+                $('body').append(html);
+                $('#cb_form_'+((attributes.id!=null)? attributes.id :'')).submit();
+            }
+            return html;
+        };
 
         return CB;
     })();

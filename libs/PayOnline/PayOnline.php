@@ -9,8 +9,8 @@
 class PayOnline
 {
     const LIQPAY = 'LiqPay';
-    const LIQPAY_PUB = 'i45972314943';
-    const LIQPAY_PRT = 'SJ0EG00shPzFFFEohhHZsj6QzhyC90afmjxS3buD';
+    const LIQPAY_PUB = 'i42003954328';
+    const LIQPAY_PRT = 'tpYKt4sw08xpMC0mibz7KtJ1WE6ENZrfoYU0SVZY';
     private $paymentInstance = null;
 
     public function makePayment($paymentSystem, $invoice, $card)
@@ -18,6 +18,15 @@ class PayOnline
         $payment = new PayOnline();
         if ($payment->initPaymentInstance($paymentSystem)) {
             return $payment->{'pay'.$paymentSystem}($invoice, $card);
+        }
+        return false;
+    }
+
+    public function makePaymentFormData($paymentSystem, $invoice, $card)
+    {
+        $payment = new PayOnline();
+        if ($payment->initPaymentInstance($paymentSystem)) {
+            return $payment->{'pay'.$paymentSystem.'Sign'}($invoice, $card);
         }
         return false;
     }
@@ -45,33 +54,43 @@ class PayOnline
         return false;
     }
 
-    private function payLiqPay($invoice, $card)
+    private function payLiqPaySign($invoice, $card)
     {
-        try {
-        $result = $this->paymentInstance->api("payment/pay", array(
+        $signature = $this->paymentInstance->cnb_form_data(array(
             'version'        => '3',
-            'phone'          => $invoice->phone,
             'amount'         => $invoice->price,
             'currency'       => 'UAH',
             'description'    => $invoice->title,
             'order_id'       => $invoice->id,
-            'card'           => $card['card_num'],
-            'card_exp_month' => $card['card_exp_month'],
-            'card_exp_year'  => $card['card_exp_year'],
-            'card_cvv'       => $card['card_cvv'],
-            'sandbox'       => 1,
+            'sandbox'        => '1',
+            'server_url'     => 'http://release.pp.ua/?view=api&load=paymentcenter&fnc=payVerify',
+            'result_url'     => 'http://release.pp.ua/?load=home',
+            'pay_way'        => 'card',
+            'language'       => 'ru'
         ));
-print_r(array($result));
-        if ( $result->status == 'otp_verify' ) {
-            $invoice->token = $result->token;
-            $invoice->status = Invoice::STATUS_PENDING;
-            $invoice->save();
-            return true;
-        }
-        } catch (Exception $e) {
-            print_r($e);die;
-        }
-        return false;
+        $invoice->token = $signature['signature'];
+        $invoice->save();
+        return $signature;
+    }
+
+    private function payLiqPaySignVerify($post)
+    {
+        /*$data = $post['data'];
+        $signature = $post['signature'];*/
+        //$signature = $this->paymentInstance->str_to_sign($data);
+        /*$signature = $this->paymentInstance->cnb_form_data(array(
+            'version'        => '3',
+            'amount'         => $invoice->price,
+            'currency'       => 'UAH',
+            'description'    => $invoice->title,
+            'order_id'       => $invoice->id,
+            'sandbox'        => '1',
+            'server_url'     => 'For callback answer',
+            'result_url'     => 'For UI redirect',
+            'pay_way'        => 'card',
+            'language'       => 'ru'
+        ));
+        return $signature;*/
     }
 
     private function confirmLiqPay($invoice, $card)
