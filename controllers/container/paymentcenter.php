@@ -12,7 +12,23 @@ class paymentcenter extends controller{
 
     public $profiler = null;
     public function render(){
-        $this->viewData = '';
+
+        $get = $this->getRequest('get');
+        if (isset($get['fnc'])) {
+            $action = $get['fnc'];
+            switch ($get['fnc']) {
+                case 'buy':
+                    if ( isset($get['sku']) ) {
+                        $this->viewData['package'] = $this->getPackage($get['sku']);
+                    }
+                    break;
+            }
+        }
         return 'container/paymentCenter.tpl';
+    }
+
+    public function getPackage($sku)
+    {
+        return Package::find_by_sku($sku);
     }
 }

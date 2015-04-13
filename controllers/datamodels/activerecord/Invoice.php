@@ -70,9 +70,18 @@ class Invoice extends ActiveRecord\Model
                     $this->userBalanceIncrease();
                     break;
                 case self::TYPE_PACKAGE:
-
+                    $this->userBalanceDecrease();
                     break;
             }
+        }
+    }
+
+    private function userBalanceDecrease()
+    {
+        $this->user->balance = $this->user->balance - $this->price;
+        if ( $this->user->save() ) {
+            $this->status = self::STATUS_CLOSED;
+            $this->save();
         }
     }
 

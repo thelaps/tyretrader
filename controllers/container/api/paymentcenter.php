@@ -24,6 +24,9 @@ class paymentcenter extends controller{
                 case 'payBallance':
                     $completeData = $this->payBalance();
                     break;
+                case 'buyPackage':
+                    $completeData = $this->payPackage();
+                    break;
                 case 'getFormBalance':
                     $completeData = $this->getFormBalance();
                     break;
@@ -66,6 +69,22 @@ class paymentcenter extends controller{
             $PayOnline=App::newJump('PayOnline','libs');
             $PayOnline->makePayment(PayOnline::LIQPAY, $invoice, $post['payment']);
             return $invoice;
+        }
+        return false;
+    }
+
+    public function payPackage()
+    {
+        $post = $this->getRequest('post');
+        if ( $this->profiler->isLoggedIn() ) {
+            $package = Package::find_by_sku($post['sku']);
+            if ( $package ) {
+                $user = $this->profiler->user;
+                $invoice = Invoice::createNew(Invoice::TYPE_PACKAGE, $user->id, null, $package->cost);
+                $invoiceItem = Invoiceitem::createNew($invoice->id, 'Пакет услуг: ' . $package->title, 1, $package->cost, $package->cost);
+                $invoice->completePayment();
+                return $invoice;
+            }
         }
         return false;
     }

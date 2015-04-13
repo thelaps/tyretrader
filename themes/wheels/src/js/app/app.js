@@ -436,13 +436,15 @@ $(document).ready(function(){
                 });
             },
             getFormBalance : function(e) {
-                console.log(e);
                 CB.form(e, {
                     id : 'balancePay',
                     action : e.action,
                     exclude : 'action',
                     autosubmit: true
                 });
+            },
+            buyPackage : function(e) {
+                window.location = App.options.base + '?load=home';
             }
         });
         App.com.import(App.options.dir + '/js/app/ajaxFormWorker.js',function(){
