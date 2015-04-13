@@ -31,12 +31,13 @@ class PayOnline
         return false;
     }
 
-    public static function confirmPayment($paymentSystem, $invoice, $card)
+    public static function confirmPayment($paymentSystem, $data)
     {
         $payment = new PayOnline();
         if ($payment->initPaymentInstance($paymentSystem)) {
-            $payment->{'confirm'.$paymentSystem}($invoice, $card);
+            return $payment->{'confirm'.$paymentSystem}($data);
         }
+        return false;
     }
 
     public function initPaymentInstance($paymentSystem)
@@ -63,8 +64,8 @@ class PayOnline
             'description'    => $invoice->title,
             'order_id'       => $invoice->id,
             'sandbox'        => '1',
-            'server_url'     => 'http://release.pp.ua/?view=api&load=paymentcenter&fnc=payVerify',
-            'result_url'     => 'http://release.pp.ua/?load=home',
+            'server_url'     => '/?view=api&load=paymentcenter&fnc=payVerify',
+            'result_url'     => '/?load=home',
             'pay_way'        => 'card',
             'language'       => 'ru'
         ));
@@ -73,45 +74,44 @@ class PayOnline
         return $signature;
     }
 
-    private function payLiqPaySignVerify($post)
+    private function confirmLiqPay($data)
     {
-        /*$data = $post['data'];
-        $signature = $post['signature'];*/
-        //$signature = $this->paymentInstance->str_to_sign($data);
-        /*$signature = $this->paymentInstance->cnb_form_data(array(
-            'version'        => '3',
-            'amount'         => $invoice->price,
-            'currency'       => 'UAH',
-            'description'    => $invoice->title,
-            'order_id'       => $invoice->id,
-            'sandbox'        => '1',
-            'server_url'     => 'For callback answer',
-            'result_url'     => 'For UI redirect',
-            'pay_way'        => 'card',
-            'language'       => 'ru'
-        ));
-        return $signature;*/
-    }
-
-    private function confirmLiqPay($invoice, $card)
-    {
-        $result = $this->paymentInstance->api("payment/verify", array(
-            'version' => '3',
-            'token'   => $invoice->token,
-            'otp'     => $card['sms_pass']
-        ));
-
-        switch ( $result->status ) {
-            case '3ds_verify':
-                $invoice->status = Invoice::STATUS_VERIFY;
-                $invoice->save();
-                return true;
-                break;
-            case 'success':
-                $invoice->status = Invoice::STATUS_PAID;
-                $invoice->save();
-                return true;
-                break;
+        if ( $data['signature'] == base64_encode(sha1( self::LIQPAY_PRT . $data['data'] . self::LIQPAY_PRT, 1)) ) {
+            $result = json_decode(base64_decode($data['data']));
+            $invoice = Invoice::find($result->order_id);
+            if ( !empty($invoice) && $invoice->status != Invoice::STATUS_CLOSED ) {
+                switch ( $result->status ) {
+                    case 'processing':
+                        $invoice->status = Invoice::STATUS_PENDING;
+                        $invoice->save();
+                        break;
+                    case 'failure':
+                        $invoice->status = Invoice::STATUS_FAILED;
+                        $invoice->save();
+                        break;
+                    case 'sandbox':
+                        $invoice->status = Invoice::STATUS_PAID;
+                        $invoice->save();
+                        break;
+                    case 'sandbox':
+                        $invoice->status = Invoice::STATUS_PAID;
+                        $invoice->save();
+                        break;
+                    case 'success':
+                        $invoice->status = Invoice::STATUS_PAID;
+                        $invoice->save();
+                        break;
+                    case 'wait_secure':
+                        $invoice->status = Invoice::STATUS_VERIFY;
+                        $invoice->save();
+                        break;
+                    case 'wait_accept':
+                        $invoice->status = Invoice::STATUS_VERIFY;
+                        $invoice->save();
+                        break;
+                }
+                return $invoice;
+            }
         }
         return false;
     }

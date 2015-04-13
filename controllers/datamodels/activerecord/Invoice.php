@@ -13,6 +13,7 @@ class Invoice extends ActiveRecord\Model
     const STATUS_VERIFY = 2;
     const STATUS_PAID = 3;
     const STATUS_FAILED = 4;
+    const STATUS_CLOSED = 5;
     const TYPE_BALANCE = 0;
     const TYPE_PACKAGE = 1;
 
@@ -20,6 +21,9 @@ class Invoice extends ActiveRecord\Model
 
     static $has_many = array(
         array('invoiceitem', 'readonly' => false, 'order' => 'name asc',)
+    );
+    static $belongs_to = array(
+        array('user', 'readonly' => false)
     );
 
     public function getExpirationIntervals()
@@ -56,5 +60,28 @@ class Invoice extends ActiveRecord\Model
             'Package Revenue'
         );
         return (isset($titles[$type])) ? $titles[$type] : 'Unknown Payment';
+    }
+
+    public function completePayment()
+    {
+        if ( $this->status != self::STATUS_CLOSED ) {
+            switch ($this->type) {
+                case self::TYPE_BALANCE:
+                    $this->userBalanceIncrease();
+                    break;
+                case self::TYPE_PACKAGE:
+
+                    break;
+            }
+        }
+    }
+
+    private function userBalanceIncrease()
+    {
+        $this->user->balance = $this->user->balance + $this->price;
+        if ( $this->user->save() ) {
+            $this->status = self::STATUS_CLOSED;
+            $this->save();
+        }
     }
 }

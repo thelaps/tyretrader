@@ -39,7 +39,7 @@ class paymentcenter extends controller{
         }
         $response = array(
             'action' => $action,
-            'completeData' => (!empty($completeData)) ? (($post['fnc'] != 'getFormBalance') ? $completeData->attributes() : $completeData) : null,
+            'completeData' => (!empty($completeData)) ? (($action != 'getFormBalance') ? $completeData->attributes() : $completeData) : null,
             'errors' => (isset($completeData->errors))?((is_array($completeData->errors)) ? $completeData->errors : $completeData->errors->full_array()):$this->errors
         );
         App::ajax(json_encode($response));
@@ -73,12 +73,17 @@ class paymentcenter extends controller{
     public function payVerify()
     {
         $post = $this->getRequest('post');
-
         $PayOnline=App::newJump('PayOnline','libs');
 
-        $post = $this->getRequest('post');
-        $get = $this->getRequest('get');
-        mail('rimmerz@gmail.com', 'LiqAnswerPost1', $post['data']);
-        mail('rimmerz@gmail.com', 'LiqAnswerPost2', $post['signature']);
+        $invoice = $PayOnline->confirmPayment(PayOnline::LIQPAY, $post);
+
+        App::helper()->sendMail('paymentVerify', 'rimmerz@gmail.com', 'Верификация: '.md5($invoice->id), array('invoice' => $invoice, 'post' => $post));
+        if ( !empty($invoice) ) {
+            if ( $invoice->status == Invoice::STATUS_PAID ) {
+                $invoice->completePayment();
+            }
+        }
+
+        return $invoice;
     }
 }
