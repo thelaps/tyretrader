@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-28 22:50:12
+<?php /* Smarty version 2.6.26, created on 2015-04-29 00:02:45
          compiled from container/forms/homeTabs/homeContainerFormTab1.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -47,6 +47,28 @@
                         </div>
                         <div class="cell">
                             <input type="text" name="user[phone]" value="<?php echo $this->_tpl_vars['viewData']->profile->user->phone; ?>
+">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field align-right two-cell">
+                        <div class="cell">
+                            <label>Телефон опт.</label>
+                        </div>
+                        <div class="cell">
+                            <input type="text" name="company[phone_1]" value="<?php echo $this->_tpl_vars['viewData']->profile->company->items->phone_1; ?>
+">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field align-right two-cell">
+                        <div class="cell">
+                            <label>Телефон розн.</label>
+                        </div>
+                        <div class="cell">
+                            <input type="text" name="company[phone_2]" value="<?php echo $this->_tpl_vars['viewData']->profile->company->items->phone_2; ?>
 ">
                         </div>
                     </div>

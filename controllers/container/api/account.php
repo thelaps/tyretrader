@@ -117,6 +117,12 @@ class account extends controller{
                 if ( App::isActive($post['company']['conditions']) ) {
                     $companyBilling->conditions = $post['company']['conditions'];
                 };
+                if ( App::isActive($post['company']['phone_1']) ) {
+                    $companyBilling->phone_1 = $post['company']['phone_1'];
+                };
+                if ( App::isActive($post['company']['phone_2']) ) {
+                    $companyBilling->phone_2 = $post['company']['phone_2'];
+                };
                 if ( App::isActive($post['company']['noncache_conditions']) ) {
                     $companyBilling->noncache_conditions = $post['company']['noncache_conditions'];
                 };

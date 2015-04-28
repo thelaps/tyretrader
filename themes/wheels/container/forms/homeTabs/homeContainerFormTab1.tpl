@@ -47,6 +47,26 @@
                 <div class="row">
                     <div class="field align-right two-cell">
                         <div class="cell">
+                            <label>Телефон опт.</label>
+                        </div>
+                        <div class="cell">
+                            <input type="text" name="company[phone_1]" value="{$viewData->profile->company->items->phone_1}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field align-right two-cell">
+                        <div class="cell">
+                            <label>Телефон розн.</label>
+                        </div>
+                        <div class="cell">
+                            <input type="text" name="company[phone_2]" value="{$viewData->profile->company->items->phone_2}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field align-right two-cell">
+                        <div class="cell">
                             <label>Область</label>
                         </div>
                         <div class="cell">
