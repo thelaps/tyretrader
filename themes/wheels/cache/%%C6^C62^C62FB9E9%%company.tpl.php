@@ -1,11 +1,13 @@
-<?php /* Smarty version 2.6.26, created on 2015-04-28 23:52:29
+<?php /* Smarty version 2.6.26, created on 2015-04-29 00:16:51
          compiled from container/api/company.tpl */ ?>
 <article>
     <h1><?php echo $this->_tpl_vars['viewData']->container->items->name; ?>
 </h1>
     <div class="details">
         <div class="contact-info">
-            <p>Тел.: <strong><?php echo $this->_tpl_vars['viewData']->container->items->phone; ?>
+            <p>Тел. опт.: <strong><?php echo $this->_tpl_vars['viewData']->container->billing->phone_1; ?>
+</strong></p>
+            <p>Тел. розн.: <strong><?php echo $this->_tpl_vars['viewData']->container->billing->phone_2; ?>
 </strong></p>
             <p>Имя: <strong><?php echo $this->_tpl_vars['viewData']->container->items->firstname; ?>
 </strong></p>
