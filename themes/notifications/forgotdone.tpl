@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Успешная регистрация на сервисе</title>
+        <title>Сброс пароля на сервисе AutoManager</title>
     </head>
     <body>
         Приветствуем вас {$data->user->firstname} {$data->user->lastname}!<br><br>

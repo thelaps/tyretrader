@@ -8,7 +8,7 @@
     <!-- Basic Page Needs
    ================================================== -->
     <meta charset="utf-8">
-    <title>Tyremanager</title>
+    <title>Automanager</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <base href="{$baseLink}/">

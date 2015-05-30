@@ -1,5 +1,20 @@
-<?php /* Smarty version 2.6.26, created on 2015-04-13 16:45:06
+<?php /* Smarty version 2.6.26, created on 2015-05-29 21:34:34
          compiled from container/forms/homeTabs/homeContainerFormTabAccountBalance.tpl */ ?>
+<script>
+    <?php echo '
+    $(document).ready(function(){
+        var minAmount = 100;
+        $(\'input[name="payment[amount]"]\').bind({
+            change: function(){
+                if ($(this).val() < 100) {
+                    $(this).val(\'100\');
+                }
+            }
+        });
+    });
+    '; ?>
+
+</script>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
 /?view=api&load=paymentcenter" class="form form-filter" enctype="multipart/form-data">
@@ -13,7 +28,7 @@
                             <label>Сумма пополнения</label>
                         </div>
                         <div class="cell">
-                            <input type="text" name="payment[amount]" value="">
+                            <input type="text" name="payment[amount]" value="100">
                         </div>
                     </div>
                 </div>

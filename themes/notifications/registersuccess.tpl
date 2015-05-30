@@ -1,11 +1,11 @@
 <html>
     <head>
-        <title>Успешная регистрация на сервисе</title>
+        <title>Успешная регистрация на сервисе AutoManager</title>
     </head>
     <body>
         Приветствуем вас {$data->firstname} {$data->lastname}!<br><br>
 
-        Вы только что успешно ззарегистрировались на портале <a href="http://tyretrader.com">tyretrader</a><br>
+        Вы только что успешно зарегистрировались на портале <a href="http://automanager.com.ua">AutoManager</a><br>
 
         Ваши регистрационные данные для входа в систему:<br>
         <div style="background: #d6f4f9; display: block; padding: 40px;">

@@ -1,3 +1,17 @@
+<script>
+    {literal}
+    $(document).ready(function(){
+        var minAmount = 100;
+        $('input[name="payment[amount]"]').bind({
+            change: function(){
+                if ($(this).val() < 100) {
+                    $(this).val('100');
+                }
+            }
+        });
+    });
+    {/literal}
+</script>
 <div class="tab" data-role="tab">
     <form action="{$baseLink}/?view=api&load=paymentcenter" class="form form-filter" enctype="multipart/form-data">
         <input type="hidden" name="fnc" value="getFormBalance">
@@ -10,7 +24,7 @@
                             <label>Сумма пополнения</label>
                         </div>
                         <div class="cell">
-                            <input type="text" name="payment[amount]" value="">
+                            <input type="text" name="payment[amount]" value="100">
                         </div>
                     </div>
                 </div>

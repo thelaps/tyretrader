@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-01 21:57:49
+<?php /* Smarty version 2.6.26, created on 2015-05-29 22:13:13
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -10,7 +10,7 @@
     <!-- Basic Page Needs
    ================================================== -->
     <meta charset="utf-8">
-    <title>Tyremanager</title>
+    <title>Automanager</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <base href="<?php echo $this->_tpl_vars['baseLink']; ?>
