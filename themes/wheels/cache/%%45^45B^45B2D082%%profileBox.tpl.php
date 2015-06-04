@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-10-12 19:39:02
+<?php /* Smarty version 2.6.26, created on 2015-06-05 00:28:41
          compiled from widget/profileBox.tpl */ ?>
 <?php if ($this->_tpl_vars['viewData']->profile->isLoggedin()): ?>
 <div class="panel profile-panel">
@@ -58,7 +58,7 @@
         <a href="<?php echo $this->_tpl_vars['baseLink']; ?>
 /?view=index&load=registration" class="registration">Регистрация</a>
         <a href="<?php echo $this->_tpl_vars['baseLink']; ?>
-/?view=index&load=forgot" class="lostAccess">Забыл</a>
+/?view=index&load=forgot" class="lostAccess">Забыли пароль</a>
     </form>
     <ul id="nav" class="link-group align-right">
         <li><a href="<?php echo $this->_tpl_vars['baseLink']; ?>

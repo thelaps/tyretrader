@@ -56,7 +56,7 @@ class Company extends ActiveRecord\Model
                         WHERE `wheel_companies`.`id`='.$companyId);
         $company->items = (sizeof($companyItems)>0)?$companyItems[0]:$model;
         $company->total = sizeof($companyItems);
-        $company->billing = Companybilling::getCompanybillingByCompanyId($company->items->id);
+        $company->billing = Companybilling::getCompanybillingByCompanyIdClean($company->items->id);
         return $company;
     }
 

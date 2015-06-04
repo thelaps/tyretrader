@@ -154,6 +154,8 @@ hr {
     background: url('../images/logo.png') no-repeat;
     text-indent: -9999px;
     overflow: hidden;
+    text-decoration: none;
+    border: none;
 }
 .head-banner {
     float: right;
@@ -1999,6 +2001,11 @@ button.dislike-it:hover {
 
 #main div.ajaxContent table.mainTable tr td table.inset tr:last-child td:last-child > div{
     border-right: 2px solid #DFDFDF !important;
+}
+
+#main div.ajaxContent.hideFields table.mainTable tr td table.inset tr td:nth-child(1),
+#main div.ajaxContent.hideFields table.mainTable tr td table.inset tr td:nth-child(5) {
+    display: none;
 }
 
 

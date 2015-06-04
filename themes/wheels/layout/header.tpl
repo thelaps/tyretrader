@@ -61,7 +61,7 @@
 <div id="wrapper">
     <div id="wrapper-inner">
         <div id="head">
-            <h1 class="logo">TYREMANAGER. Вам с нами по пути!</h1>
+            <a class="logo" href="{$baseLink}">TYREMANAGER. Вам с нами по пути!</a>
             <div class="head-banner">
                 <img src="themes/wheels/src/images/banner.jpg" alt="banner">
             </div>

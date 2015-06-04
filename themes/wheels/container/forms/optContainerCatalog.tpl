@@ -1,3 +1,23 @@
+<script>
+    {literal}
+    $(document).ready(function(){
+        $('.clientSwitcher').bind({
+            click: function(){
+                var member = $(this).find('.member');
+                var team = $(this).find('.team');
+                var table = $('.ajaxContent');
+                member.toggleClass('active');
+                team.toggleClass('active');
+                if (team.hasClass('active')) {
+                    table.removeClass('hideFields');
+                } else {
+                    table.addClass('hideFields');
+                }
+            }
+        });
+    });
+    {/literal}
+</script>
 <div id="optHolder" style="display: none;">
     <div class="serviceHolder">
         <div class="clientSwitcher">

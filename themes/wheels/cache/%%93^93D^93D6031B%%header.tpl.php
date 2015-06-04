@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-05-29 22:13:13
+<?php /* Smarty version 2.6.26, created on 2015-06-05 00:28:41
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -88,7 +88,8 @@
 <div id="wrapper">
     <div id="wrapper-inner">
         <div id="head">
-            <h1 class="logo">TYREMANAGER. Вам с нами по пути!</h1>
+            <a class="logo" href="<?php echo $this->_tpl_vars['baseLink']; ?>
+">TYREMANAGER. Вам с нами по пути!</a>
             <div class="head-banner">
                 <img src="themes/wheels/src/images/banner.jpg" alt="banner">
             </div>

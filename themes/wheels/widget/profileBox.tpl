@@ -41,7 +41,7 @@
         <input type="password" name="pass" id="password">
         <input type="submit" value="Вход">
         <a href="{$baseLink}/?view=index&load=registration" class="registration">Регистрация</a>
-        <a href="{$baseLink}/?view=index&load=forgot" class="lostAccess">Забыл</a>
+        <a href="{$baseLink}/?view=index&load=forgot" class="lostAccess">Забыли пароль</a>
     </form>
     <ul id="nav" class="link-group align-right">
         <li><a href="{$baseLink}/">Главная</a></li>

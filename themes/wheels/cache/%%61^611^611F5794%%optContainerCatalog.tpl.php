@@ -1,5 +1,26 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-25 00:50:34
+<?php /* Smarty version 2.6.26, created on 2015-06-05 01:03:26
          compiled from container/forms/optContainerCatalog.tpl */ ?>
+<script>
+    <?php echo '
+    $(document).ready(function(){
+        $(\'.clientSwitcher\').bind({
+            click: function(){
+                var member = $(this).find(\'.member\');
+                var team = $(this).find(\'.team\');
+                var table = $(\'.ajaxContent\');
+                member.toggleClass(\'active\');
+                team.toggleClass(\'active\');
+                if (team.hasClass(\'active\')) {
+                    table.removeClass(\'hideFields\');
+                } else {
+                    table.addClass(\'hideFields\');
+                }
+            }
+        });
+    });
+    '; ?>
+
+</script>
 <div id="optHolder" style="display: none;">
     <div class="serviceHolder">
         <div class="clientSwitcher">
