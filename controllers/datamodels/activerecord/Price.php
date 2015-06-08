@@ -77,13 +77,23 @@ class Price extends ActiveRecord\Model
         $unionsSql = $model->makeUnions($post);
         $unionsSqlTotal = $model->makeUnions($post, true);
         $opt = new stdClass();
-        $opt->total = $model->find_by_sql($unionsSqlTotal);
-        $opt->total = $opt->total[0]->items;
+        //$opt->total = $model->find_by_sql($unionsSqlTotal);
+        //$opt->total = $opt->total[0]->items;
         $opt->filter = (object)$post['filter'];
         $currentTime = time();
+        $manufacturedCountries = array();
         if($unionsSql!=null){
             $opt->items = $model->find_by_sql($unionsSql);
+            $opt->total = count($opt->items);
             foreach ($opt->items as $item) {
+
+                $manufacturedCountry = ' - ';
+                if (!array_key_exists($item->manufactured_country, $manufacturedCountries)) {
+                    $manufacturedCountry = Helper::getLabelById($item->manufactured_country);
+                    $manufacturedCountries[$item->manufactured_country] = $manufacturedCountry;
+                } else {
+                    $manufacturedCountry = $manufacturedCountries[$item->manufactured_country];
+                }
 
                 $compiledPrice = $item->makePriceWtihMargin();
 
@@ -97,7 +107,7 @@ class Price extends ActiveRecord\Model
                 $numberDays = $timeDiff/86400;
                 $numberDays = intval($numberDays);
                 $item->assign_attribute('daysago', $numberDays);
-                $item->assign_attribute('manufactured_country_label', Helper::getLabelById($item->manufactured_country));
+                $item->assign_attribute('manufactured_country_label', $manufacturedCountry);
 
                 $item->assign_attribute('price_compiled', $compiledPrice->retail);
 
@@ -304,7 +314,7 @@ class Price extends ActiveRecord\Model
         $this->scopeTables = $scope;
     }
 
-    private function makeUnions($post = null, $isCountOnly = false, $limited = true)
+    private function makeUnions($post = null, $isCountOnly = false, $limited = true, $excludeScopeName = false)
     {
         $filter = $this->makeFilterFromPost($post);
         $ordering = $this->makeOrderingFromPost($post);
@@ -336,10 +346,10 @@ class Price extends ActiveRecord\Model
                     LEFT JOIN wheel_models ON wheel_models.id=model_id';
             }*/
             $unionsSql = 'wheel_priceview';
-            $completeSql = 'SELECT '.(($isCountOnly)?'COUNT(*) AS items':'SQ.*,
-            CONCAT_WS(\' \',SQ.`manufacturer`, SQ.`model`, SQ.`size_w`,
+            $completeSql = 'SELECT '.(($isCountOnly)?'COUNT(*) AS items':'SQ.*
+            ' . ((!$excludeScopeName) ? ', CONCAT_WS(\' \',SQ.`manufacturer`, SQ.`model`, SQ.`size_w`,
                 SQ.`size_h`, SQ.`size_r`, SQ.`marking`, SQ.`technology`,
-                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename').' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 200' : ''));
+                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename' : '')).' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 200' : ''));
         }
         return $completeSql;
     }
