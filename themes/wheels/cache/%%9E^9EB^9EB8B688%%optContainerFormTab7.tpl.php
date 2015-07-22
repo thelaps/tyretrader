@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-25 00:50:34
+<?php /* Smarty version 2.6.26, created on 2015-07-21 15:42:19
          compiled from container/forms/optTabs/optContainerFormTab7.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="field align-left">
                             <label>Бренд</label>
-                            <select name="wheel[manufacturer]" class="dataFilter" data-filter="#modelTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
+                            <select name="wheel[manufacturer]" class="dataFilter jcf-ignore" data-filter="#modelTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
 ">
                                 <option value="">Не выбран</option>
                             <?php $_from = $this->_tpl_vars['viewData']->container['formData']->manufacturer[$this->_tpl_vars['dataIndex']]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
@@ -36,7 +36,7 @@
                         </div>
                         <div class="field align-right">
                             <label>Модель</label>
-                            <select id="modelTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
+                            <select class="jcf-ignore" id="modelTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
 " name="wheel[model]">
                                 <option value="">Не выбрана</option>
                             <?php $_from = $this->_tpl_vars['viewData']->container['formData']->model[$this->_tpl_vars['dataIndex']]; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
@@ -57,7 +57,7 @@
                     <div class="row">
                         <div class="field align-left">
                             <label>Город</label>
-                            <select name="wheel[city]" class="cityFilter" data-filter="#companyTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
+                            <select name="wheel[city]" class="cityFilter jcf-ignore" data-filter="#companyTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
 ">
                                 <!--Легковой 1, легкогрузовой 2, индустр 3, грузовой 4, мото 5-->
                                 <option value="">Все</option>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="field align-right">
                             <label>Поставщик</label>
-                            <select id="companyTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
+                            <select class="jcf-ignore" id="companyTab_<?php echo $this->_tpl_vars['dataIndex']; ?>
 " name="wheel[company_id]">
                                 <option value="">Все</option>
                             <?php $_from = $this->_tpl_vars['viewData']->container['formData']->companies; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):

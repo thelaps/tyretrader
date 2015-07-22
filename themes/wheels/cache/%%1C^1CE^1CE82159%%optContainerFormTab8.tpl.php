@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-25 00:50:34
+<?php /* Smarty version 2.6.26, created on 2015-07-21 15:42:20
          compiled from container/forms/optTabs/optContainerFormTab8.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="field align-left">
                             <label>Производитель</label>
-                            <select>
+                            <select class="jcf-ignore">
                                 <option value="">Все</option>
                                 <option value="">Alfa Romeo</option>
                                 <option value="">BMW</option>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="field align-right">
                             <label>Модель</label>
-                            <select>
+                            <select class="jcf-ignore">
                                 <option>Все</option>
                                 <option>model 1</option>
                                 <option>model 2</option>

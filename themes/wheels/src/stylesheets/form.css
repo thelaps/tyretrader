@@ -41,7 +41,8 @@
 }
 .rad-area.rad-disabled {}
 /* custom select styles */
-.select-area {
+.select-area,
+select {
     display: inline-block;
     vertical-align: middle;
     position: relative;

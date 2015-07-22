@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="field align-left">
                             <label>Бренд</label>
-                            <select name="tyre[manufacturer]" class="dataFilter" data-filter="#modelTab_{$dataIndex}">
+                            <select name="tyre[manufacturer]" class="dataFilter jcf-ignore" data-filter="#modelTab_{$dataIndex}">
                                 <!--Легковой 1, легкогрузовой 2, индустр 3, грузовой 4, мото 5-->
                                 <option value="">Не выбран</option>
                             {foreach from=$viewData->container.formData->manufacturer.$dataIndex item=row}
@@ -31,7 +31,7 @@
                         </div>
                         <div class="field align-right">
                             <label>Модель</label>
-                            <select id="modelTab_{$dataIndex}" name="tyre[model]">
+                            <select class="jcf-ignore" id="modelTab_{$dataIndex}" name="tyre[model]">
                                 <option value="">Не выбрана</option>
                             {foreach from=$viewData->container.formData->model.$dataIndex item=row}
                                 {if $row->manufacturer_type=='tyre'}
@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="field align-left">
                             <label>Город</label>
-                            <select name="tyre[city]" class="cityFilter" data-filter="#companyTab_{$dataIndex}">
+                            <select name="tyre[city]" class="cityFilter jcf-ignore" data-filter="#companyTab_{$dataIndex}">
                                 <!--Легковой 1, легкогрузовой 2, индустр 3, грузовой 4, мото 5-->
                                 <option value="">Все</option>
                             {foreach from=$viewData->container.formData->cities item=row}
@@ -56,7 +56,7 @@
                         </div>
                         <div class="field align-right">
                             <label>Поставщик</label>
-                            <select id="companyTab_{$dataIndex}" name="tyre[company_id]">
+                            <select class="jcf-ignore" id="companyTab_{$dataIndex}" name="tyre[company_id]">
                                 <option value="">Все</option>
                             {foreach from=$viewData->container.formData->companies item=row}
                                 <option data-city="{$row->regionid}" value="{$row->id}">{$row->name} ({$row->city})</option>

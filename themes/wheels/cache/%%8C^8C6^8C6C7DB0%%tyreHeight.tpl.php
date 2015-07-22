@@ -1,6 +1,6 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-28 22:50:19
+<?php /* Smarty version 2.6.26, created on 2015-07-21 15:42:19
          compiled from container/forms/tyreHeight.tpl */ ?>
-<select id="<?php echo $this->_tpl_vars['id']; ?>
+<select class="jcf-ignore" id="<?php echo $this->_tpl_vars['id']; ?>
 " name="tyre[size_h][]" style="width: 76px;">
     <?php if ($this->_tpl_vars['isAll']): ?>
         <option value="">Все</option>

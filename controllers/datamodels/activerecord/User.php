@@ -49,7 +49,8 @@ class User extends ActiveRecord\Model
         }
     }
 
-    public function register($attributes){
+    public function register($attributes)
+    {
         $model = new User();
         $model->email = $attributes['email'];
         $model->pass = $attributes['pass'];
@@ -63,7 +64,7 @@ class User extends ActiveRecord\Model
             if($model->is_valid()){
                 $model->pass = md5($attributes['pass']);
 
-                if ( $model->usertype == User::TYPE_SHOP ) {
+                if ( $model->usertype == User::TYPE_SHOP || $model->usertype == User::TYPE_COMPANY ) {
                     $company = new Company();
                     $company->cityid = $model->cityid;
                     $company->active = 0;
@@ -79,6 +80,10 @@ class User extends ActiveRecord\Model
                     $companyBilling->save();
 
                     $model->companyid = $company->id;
+
+                    if ( $model->usertype == User::TYPE_COMPANY ) {
+                        Price::createCompanyPriceTable($company->id);
+                    }
                 }
 
 

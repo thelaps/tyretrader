@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="field align-left">
                             <label>Производитель</label>
-                            <select>
+                            <select class="jcf-ignore">
                                 <option value="">Все</option>
                                 <option value="">Alfa Romeo</option>
                                 <option value="">BMW</option>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="field align-right">
                             <label>Модель</label>
-                            <select>
+                            <select class="jcf-ignore">
                                 <option>Все</option>
                                 <option>model 1</option>
                                 <option>model 2</option>

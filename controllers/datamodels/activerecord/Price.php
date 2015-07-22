@@ -580,4 +580,49 @@ class Price extends ActiveRecord\Model
     {
         return Company::getCompanyById($this->company_id);
     }
+
+    public static function createCompanyPriceTable($companyId)
+    {
+        if ( $companyId > 0 ) {
+            $connection = \ActiveRecord\Connection::instance();
+            $connection->query(
+                'CREATE TABLE IF NOT EXISTS `wheel_price_com'.$companyId.'` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `price_1` float NOT NULL,
+                  `price_2` float DEFAULT NULL,
+                  `price_3` float DEFAULT NULL,
+                  `price_4` float DEFAULT NULL,
+                  `stock_1` int(5) NOT NULL,
+                  `stock_2` int(5) DEFAULT NULL,
+                  `stock_3` int(5) DEFAULT NULL,
+                  `manufacturer_id` int(11) NOT NULL,
+                  `model_id` int(11) NOT NULL,
+                  `artnum` varchar(32) DEFAULT NULL,
+                  `img` varchar(255) DEFAULT NULL,
+                  `company_id` int(11) NOT NULL,
+                  `date` int(11) NOT NULL,
+                  `size_r` float DEFAULT NULL,
+                  `size_w` float DEFAULT NULL,
+                  `size_h` float DEFAULT NULL,
+                  `size_i` varchar(4) DEFAULT NULL,
+                  `si_f` varchar(4) DEFAULT NULL,
+                  `si_b` varchar(4) DEFAULT NULL,
+                  `sw_f` varchar(4) DEFAULT NULL,
+                  `sw_b` varchar(4) DEFAULT NULL,
+                  `spike` int(4) DEFAULT NULL,
+                  `color` int(4) DEFAULT NULL,
+                  `technology` int(4) DEFAULT NULL,
+                  `marking` int(4) DEFAULT NULL,
+                  `et` float DEFAULT NULL,
+                  `dia` float DEFAULT NULL,
+                  `pcd_1` int(3) NOT NULL,
+                  `pcd_2` int(3) NOT NULL,
+                  `bolt` int(3) NOT NULL,
+                  `manufactured_country` int(3) DEFAULT NULL,
+                  `manufactured_year` varchar(12) DEFAULT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;'
+            );
+        }
+    }
 }

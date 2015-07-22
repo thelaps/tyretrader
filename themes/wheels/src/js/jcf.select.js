@@ -1,7 +1,7 @@
 // custom select module
 jcf.addModule({
     name:'select',
-    selector:'select',
+    selector:'select:not(.jcf-ignore)',
     defaultOptions: {
         handleDropPosition: true,
         wrapperClass:'select-area',

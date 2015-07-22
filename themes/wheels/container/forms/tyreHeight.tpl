@@ -1,4 +1,4 @@
-<select id="{$id}" name="tyre[size_h][]" style="width: 76px;">
+<select class="jcf-ignore" id="{$id}" name="tyre[size_h][]" style="width: 76px;">
     {if $isAll}
         <option value="">Все</option>
     {/if}

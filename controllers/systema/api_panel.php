@@ -349,6 +349,7 @@ class api_panel extends controller{
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 
                 $stmt = $dbo->prepare($query);
+
                 if($stmt->execute()){
                     $this->syncView();
                     $params = $this->getModel('wheel_companies'); //Getter for datamodel classes -> we have an object of class
