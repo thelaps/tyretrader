@@ -83,6 +83,7 @@ class User extends ActiveRecord\Model
 
                     if ( $model->usertype == User::TYPE_COMPANY ) {
                         Price::createCompanyPriceTable($company->id);
+                        Price::synchronisePriceStructure();
                     }
                 }
 

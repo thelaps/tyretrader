@@ -625,4 +625,79 @@ class Price extends ActiveRecord\Model
             );
         }
     }
+
+    public static function synchronisePriceStructure()
+    {
+        $companies = Company::all();
+        $_pricePartials = array();
+        $_companyPartials = array();
+        $connection = \ActiveRecord\Connection::instance();
+        $_qObj = $connection->query('SHOW TABLES WHERE `Tables_in_wheels` LIKE \'wheel_price_com%\'');
+        $_droped = array();
+        while ( $row = $_qObj->fetch(PDO::FETCH_NUM) ) {
+            $_pricePartials[str_replace('wheel_price_com', '', current($row))] = current($row);
+        }
+
+        foreach ($companies as $companyItem) {
+            if ( !array_key_exists($companyItem->id, $_pricePartials) || empty($_pricePartials) ) {
+                $_droped[] = $companyItem->id;
+                $_model = new Price();
+                $_model->createCompanyPriceTable($companyItem->id);
+            } else {
+                $_companyPartials[] = $companyItem->id;
+            }
+        }
+
+        foreach ( $_pricePartials as $_key => $_table ) {
+            if ( !in_array($_key, $_companyPartials) || empty($_companyPartials) ) {
+                $_connection = \ActiveRecord\Connection::instance();
+                $_connection->query('DROP TABLE `' . $_table . '`');
+                $_droped[] = $_table;
+            }
+        }
+
+        self::syncView();
+
+        return true;
+    }
+
+    private static function syncView()
+    {
+        $_pricePartials = array();
+        $connection = \ActiveRecord\Connection::instance();
+        $_qObj = $connection->query('SHOW TABLES WHERE `Tables_in_wheels` LIKE \'wheel_price_com%\'');
+        while ( $row = $_qObj->fetch(PDO::FETCH_NUM) ) {
+            $_pricePartials[] = current($row);
+        }
+        if(!empty($_pricePartials)){
+            $unionsSql = '
+                CREATE OR REPLACE VIEW wheel_priceview AS SELECT `wheel_price`.*, wheel_manufacturers.name AS manufacturer,
+                wheel_models.name AS model,
+                wheel_models.src,
+                wheel_models.season, wheel_models.use,
+                wheel_models.type_transport, wheel_models.axle,
+                wheel_manufacturers2type.type as manufacturer_type,
+                wheel_manufacturers2type.wheel_type as manufacturer_wheel_type
+                FROM `wheel_price`
+                LEFT JOIN wheel_manufacturers
+                ON wheel_manufacturers.id=manufacturer_id
+                LEFT JOIN wheel_manufacturers2type ON wheel_manufacturers.id=wheel_manufacturers2type.manufacturer_id
+                LEFT JOIN wheel_models ON wheel_models.id=model_id';
+            foreach ($_pricePartials as $_table){
+                $unionsSql .= ' UNION SELECT `'.$_table.'`.*, wheel_manufacturers.name AS manufacturer,
+                    wheel_models.name AS model,
+                    wheel_models.src,
+                    wheel_models.season, wheel_models.use,
+                    wheel_models.type_transport, wheel_models.axle,
+                    wheel_manufacturers2type.type as manufacturer_type,
+                    wheel_manufacturers2type.wheel_type as manufacturer_wheel_type
+                    FROM `'.$_table.'`
+                    LEFT JOIN wheel_manufacturers
+                    ON wheel_manufacturers.id=manufacturer_id
+                    LEFT JOIN wheel_manufacturers2type ON wheel_manufacturers.id=wheel_manufacturers2type.manufacturer_id
+                    LEFT JOIN wheel_models ON wheel_models.id=model_id';
+            }
+            $connection->query($unionsSql);
+        }
+    }
 }

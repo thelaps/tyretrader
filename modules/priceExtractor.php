@@ -366,7 +366,8 @@ class priceExtractor extends connector{
 
     private function syncView()
     {
-        $scopeTables = array();
+        Price::synchronisePriceStructure();
+        /*$scopeTables = array();
         $dbo=App::DBO();
         $query='SHOW TABLES WHERE `Tables_in_wheels` LIKE \'wheel_price_com%\'';
         $stmt = $dbo->prepare($query);
@@ -404,8 +405,8 @@ class priceExtractor extends connector{
             }
             $stmt = $dbo->prepare($unionsSql);
             return $stmt->execute();
-        }
-        return false;
+        }*/
+        return true;
     }
 
 }

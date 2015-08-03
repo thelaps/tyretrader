@@ -143,7 +143,8 @@ class api_panel extends controller{
             $query='DELETE FROM wheel_companies
                     WHERE id IN (\''.$ids.'\')';
             $stmt = $dbo->prepare($query);
-            return $stmt->execute();
+            $stmt->execute();
+            return (null != Price::synchronisePriceStructure());
         }
     }
 
@@ -371,7 +372,8 @@ class api_panel extends controller{
 
     private function syncView()
     {
-        $scopeTables = array();
+        Price::synchronisePriceStructure();
+        /*$scopeTables = array();
         $dbo=App::DBO();
         $query='SHOW TABLES WHERE `Tables_in_wheels` LIKE \'wheel_price_com%\'';
         $stmt = $dbo->prepare($query);
@@ -409,7 +411,7 @@ class api_panel extends controller{
             }
             $stmt = $dbo->prepare($unionsSql);
             $stmt->execute();
-        }
+        }*/
     }
 
     private function addSettings(){
