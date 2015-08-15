@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-01 21:57:49
+<?php /* Smarty version 2.6.26, created on 2015-08-15 12:44:52
          compiled from container/forms/registrationContainerForm.tpl */ ?>
 <h2>Регистрация</h2>
 <div class="widget registration">

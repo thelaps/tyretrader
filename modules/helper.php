@@ -24,13 +24,18 @@ class helper{
     public function sendMail($template, $to, $subj, $data)
     {
         $headers = "Content-type: text/html; charset=UTF-8 \r\n";
-        $headers .= "From: No reply <noreply@release.pp.ua>\r\n";
-        $headers .= "Bcc: noreply@release.pp.ua\r\n";
+        $headers .= "From: No reply <noreply@automanager.com.ua>\r\n";
+        $headers .= "Bcc: noreply@automanager.com.ua\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
 
         $this->template->assign('data', $data);
         $view = $this->template->fetch(strtolower($template).'.tpl');
-        mail($to, $subj, $view, $headers);
+        print_r(array($to, $subj, $view, $headers));
+        try{
+        mail($to, $subj, $view, $headers);die;
+        }catch(Exception $e) {
+            print_r($e->getMessage());die;
+        }
     }
 
     public function getTemplatePath($template)
