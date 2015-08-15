@@ -139,6 +139,12 @@ class account extends controller{
                         $user->companyid = $company->id;
 
                         Price::createCompanyPriceTable($company->id);
+                    } else {
+                        $company = Company::find(array('conditions' => array('id = ?', $user->companyid)));
+                        if ( $company ) {
+                            $company->warehouse = Company::WAREHOUSE;
+                            $company->save();
+                        }
                     }
                     Price::synchronisePriceStructure();
                 }

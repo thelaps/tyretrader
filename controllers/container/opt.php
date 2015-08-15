@@ -12,7 +12,7 @@ class opt extends controller{
         $this->viewData['opt'] = null;//Price::getOptItems();
         $this->viewData['formData'] = Manufacturer::getManufacturerAndModelByType();
         $this->viewData['formData']->cities = City::getCapitals();
-        $companies = Company::getCompanies();
+        $companies = Company::getCompanies(true);
         $this->viewData['formData']->companies = $companies->items;
         $this->viewData['class'] = $this;
         return 'container/opt.tpl';

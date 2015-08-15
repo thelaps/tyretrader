@@ -318,7 +318,8 @@ class priceExtractor extends connector{
                 $viewData[]=$row->model_id;
             }
         }else{
-            $query='
+            Price::createCompanyPriceTable($company_id);
+            /*$query='
             CREATE TABLE IF NOT EXISTS `wheel_price_com'.$company_id.'` (
               `id` int(11) NOT NULL AUTO_INCREMENT,
               `price_1` float NOT NULL,
@@ -357,10 +358,10 @@ class priceExtractor extends connector{
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 
             $stmt = $dbo->prepare($query);
-            if($stmt->execute()){
+            if($stmt->execute()){*/
                 $this->syncView();
                 $viewData = $this->extractPriceByCompany($company_id);
-            }
+            //}
         }
         return $viewData;
     }

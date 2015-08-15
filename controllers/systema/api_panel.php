@@ -346,6 +346,7 @@ class api_panel extends controller{
                   `bolt` int(3) NOT NULL,
                   `manufactured_country` int(3) DEFAULT NULL,
                   `manufactured_year` varchar(12) DEFAULT NULL,
+                  `price_line` text NOT NULL,
                   PRIMARY KEY (`id`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
 

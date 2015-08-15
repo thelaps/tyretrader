@@ -19,7 +19,7 @@ class Company extends ActiveRecord\Model
         array('city', 'readonly' => true)
     );
 
-    public static function getCompanies()
+    public static function getCompanies($warehousesOnly = false)
     {
         $model = new Company();
         $companies = new stdClass();
@@ -37,6 +37,7 @@ class Company extends ActiveRecord\Model
                         ON `wheel_region`.`id`=`wheel_city`.`region_id`
                         LEFT JOIN `wheel_city` C
                         ON C.`capital_id`=`wheel_region`.`id`
+                        '.(($warehousesOnly) ? 'WHERE `wheel_companies`.`warehouse`='.self::WAREHOUSE : '').'
                         ORDER BY `wheel_companies`.`name`');
         $companies->total = sizeof($companies->items);
         $companies->filter = null;
