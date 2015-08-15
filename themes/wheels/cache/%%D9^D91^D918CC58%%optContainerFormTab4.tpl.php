@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-07-21 15:42:19
+<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:37
          compiled from container/forms/optTabs/optContainerFormTab4.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -141,7 +141,7 @@
                             <label for="s_t-width">Ширина шины</label>
                             <!--<input id="s_t-width" class="size-s" type="text" name="tyre[size_w][]">-->
                         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreWidth.tpl", 'smarty_include_vars' => array('id' => "s_t-width")));
+$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreWidth.tpl", 'smarty_include_vars' => array('id' => "s_t-width",'isAll' => true)));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
@@ -151,7 +151,7 @@ unset($_smarty_tpl_vars);
                             <label for="s_t-height">Высота шины</label>
                             <!--<input id="s_t-height" class="size-s" type="text" name="tyre[size_h][]">-->
                         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreHeight.tpl", 'smarty_include_vars' => array('id' => "s_t-height")));
+$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreHeight.tpl", 'smarty_include_vars' => array('id' => "s_t-height",'isAll' => true)));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
@@ -161,7 +161,7 @@ unset($_smarty_tpl_vars);
                             <label for="s_radial">Диаметр</label>
                             <!--<input id="s_radial" class="size-s" type="text" name="tyre[size_r][]">-->
                         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreRadius.tpl", 'smarty_include_vars' => array('id' => 's_radial')));
+$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/tyreRadius.tpl", 'smarty_include_vars' => array('id' => 's_radial','isAll' => true)));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-04-04 18:44:51
+<?php /* Smarty version 2.6.26, created on 2015-08-15 09:12:31
          compiled from container/forms/homeContainerForm.tpl */ ?>
 
 <div class="sidebar-widget">
@@ -66,11 +66,19 @@
         <li>Услуги</li>
     </ul>
     <div class="tabs-holder">
-        <?php $_smarty_tpl_vars = $this->_tpl_vars;
+        <?php if ($this->_tpl_vars['viewData']->profile->user->usertype == 1): ?>
+            <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/homeTabs/homeContainerFormTab1_user.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+        <?php else: ?>
+            <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/homeTabs/homeContainerFormTab1.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
+        <?php endif; ?>
         <div class="tab" data-role="tab">
             <img src="<?php echo $this->_tpl_vars['src']; ?>
 /images/under-construction.png">

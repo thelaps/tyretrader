@@ -62,7 +62,11 @@
         <li>Услуги</li>
     </ul>
     <div class="tabs-holder">
-        {include file="container/forms/homeTabs/homeContainerFormTab1.tpl"}
+        {if $viewData->profile->user->usertype == 1}
+            {include file="container/forms/homeTabs/homeContainerFormTab1_user.tpl"}
+        {else}
+            {include file="container/forms/homeTabs/homeContainerFormTab1.tpl"}
+        {/if}
         <div class="tab" data-role="tab">
             <img src="{$src}/images/under-construction.png">
             Раздел в разработке...

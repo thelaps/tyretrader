@@ -155,6 +155,20 @@ $(function() {
     });
 });
 
+function prepareUserToChangeType(_obj) {
+    var _self = $(_obj);
+    var _changer = _self.closest('form').find('.accountChanger');
+    var _enable = _self.is(':checked');
+    _changer.each(function(){
+        var _item = $(this);
+        if ( _enable ) {
+            _item.removeAttr('disabled');
+        } else {
+            _item.attr('disabled', true);
+        }
+    });
+}
+
 (function($) {
     function setActiveTab(tabs, index) {
         tabs.removeClass('active')

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-04-29 00:02:45
+<?php /* Smarty version 2.6.26, created on 2015-08-15 09:28:12
          compiled from container/forms/homeTabs/homeContainerFormTab1.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -209,7 +209,7 @@
                             <label>Я являюсь поставщиком</label>
                         </div>
                         <div class="cell">
-                            <input type="checkbox" name="user[userType]" value="3"<?php if ($this->_tpl_vars['viewData']->profile->user->usertype == 3): ?> checked<?php endif; ?>>
+                            <input type="checkbox" name="user[userType]" value="3"<?php if ($this->_tpl_vars['viewData']->profile->user->usertype == 3): ?> checked disabled="true" <?php endif; ?>>
                         </div>
                     </div>
                 </div>

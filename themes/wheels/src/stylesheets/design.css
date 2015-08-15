@@ -489,7 +489,13 @@ hr {
     color: #ffffff;
 }
 
-
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="file"]:disabled,
+textarea:disabled {
+    background: #efefef !important;
+    cursor: not-allowed;
+}
 /* Custom form */
 .form input[type="text"],
 .form input[type="password"],

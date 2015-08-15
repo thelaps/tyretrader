@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-06-05 00:28:41
+<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:27
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -36,6 +36,8 @@
 /stylesheets/design.css">
     <link rel="stylesheet" href="<?php echo $this->_tpl_vars['src']; ?>
 /stylesheets/ui-lightness/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="<?php echo $this->_tpl_vars['src']; ?>
+/js/select2/css/select2.css">
 
     <!-- JS
    ================================================== -->
@@ -70,8 +72,10 @@
 /js/jcf.checkbox.js"></script>
     <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
 /js/jcf.radio.js"></script>
+    <!--<script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
+/js/jcf.select.js"></script>-->
     <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
-/js/jcf.select.js"></script>
+/js/select2/js/select2.min.js"></script>
     <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
 /js/main.js"></script>
     <!--[if lt IE 9]>

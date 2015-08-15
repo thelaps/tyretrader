@@ -85,7 +85,62 @@ class account extends controller{
                 $user->subscribe = $post['user']['subscribe'];
             }
             if ( App::isActive($post['user']['userType']) ) {
+                $_lastUserType = $user->usertype;
                 $user->usertype = $post['user']['userType'];
+                if ( $post['user']['userType'] == User::TYPE_COMPANY && in_array($_lastUserType, array(User::TYPE_USER, User::TYPE_SHOP)) ) {
+                    if ( $_lastUserType == User::TYPE_USER ) {
+                        $company = new Company();
+                        $company->cityid = $user->cityid;
+                        $company->active = 0;
+                        $company->iso = 'UAH';
+                        $company->rate = 1.000;
+                        $company->expire = date('Y-m-d H:i:s', strtotime('+2 days'));
+                        $company->save();
+
+                        $companyBilling = new Companybilling();
+                        if ( App::isActive($post['company']['shop_name']) ) {
+                            $companyBilling->shop_name = $post['company']['shop_name'];
+                        };
+                        if ( App::isActive($post['company']['certificate']) ) {
+                            $companyBilling->certificate = $post['company']['certificate'];
+                        };
+                        if ( App::isActive($post['company']['site']) ) {
+                            $companyBilling->site = $post['company']['site'];
+                        };
+                        if ( App::isActive($post['company']['payment_details']) ) {
+                            $companyBilling->payment_details = $post['company']['payment_details'];
+                        };
+                        if ( App::isActive($post['company']['affiliates']) ) {
+                            $companyBilling->affiliates = $post['company']['affiliates'];
+                        };
+                        if ( App::isActive($post['company']['conditions']) ) {
+                            $companyBilling->conditions = $post['company']['conditions'];
+                        };
+                        if ( App::isActive($post['company']['phone_1']) ) {
+                            $companyBilling->phone_1 = $post['company']['phone_1'];
+                        };
+                        if ( App::isActive($post['company']['phone_2']) ) {
+                            $companyBilling->phone_2 = $post['company']['phone_2'];
+                        };
+                        if ( App::isActive($post['company']['noncache_conditions']) ) {
+                            $companyBilling->noncache_conditions = $post['company']['noncache_conditions'];
+                        };
+                        if ( App::isActive($post['company']['logo']) ) {
+                            if ( $this->uploadLogo() ) {
+                                $companyBilling->logo = $_FILES['logo']['name'];
+                            }
+                        };
+                        $companyBilling->companyid = $company->id;
+                        $companyBilling->email = $user->email;
+                        $companyBilling->cityid = $user->cityid;
+                        $companyBilling->save();
+
+                        $user->companyid = $company->id;
+
+                        Price::createCompanyPriceTable($company->id);
+                    }
+                    Price::synchronisePriceStructure();
+                }
             };
             $user->save();
 

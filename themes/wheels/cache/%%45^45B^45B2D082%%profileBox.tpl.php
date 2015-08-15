@@ -1,6 +1,30 @@
-<?php /* Smarty version 2.6.26, created on 2015-06-05 00:28:41
+<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:27
          compiled from widget/profileBox.tpl */ ?>
+<?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'widget/profileBox.tpl', 58, false),)), $this); ?>
 <?php if ($this->_tpl_vars['viewData']->profile->isLoggedin()): ?>
+<?php echo '
+<!-- Start SiteHeart code -->
+<script>
+    (function(){
+        var widget_id = 795350;
+        _shcp =[{widget_id : widget_id}];
+        var lang =(navigator.language || navigator.systemLanguage
+                || navigator.userLanguage ||"en")
+                .substr(0,2).toLowerCase();
+        var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";
+        var hcc = document.createElement("script");
+        hcc.type ="text/javascript";
+        hcc.async =true;
+        hcc.src =("https:"== document.location.protocol ?"https":"http")
+                +"://"+ url;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hcc, s.nextSibling);
+    })();
+</script>
+<!-- End SiteHeart code -->
+'; ?>
+
 <div class="panel profile-panel">
     <div class="profile-info">
                     <span class="name">
@@ -44,6 +68,16 @@
 /?load=opt">Опт</a></li>
         <!--<li><a href="#">Объявления</a></li>-->
     </ul>
+</div>
+<div class="currency-panel">
+   Курс валют:
+    <?php $_from = $this->_tpl_vars['viewData']->profile->currency; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['currency']):
+?>
+        <?php echo $this->_tpl_vars['currency']->iso; ?>
+ - <?php echo ((is_array($_tmp=$this->_tpl_vars['currency']->rate)) ? $this->_run_mod_handler('number_format', true, $_tmp, 2) : number_format($_tmp, 2)); ?>
+
+    <?php endforeach; endif; unset($_from); ?>
 </div>
 <?php else: ?>
 <div class="panel">
