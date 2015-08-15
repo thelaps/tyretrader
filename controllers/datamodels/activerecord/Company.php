@@ -11,6 +11,7 @@ class Company extends ActiveRecord\Model
     const STATUS_ACTIVE = 1;
     const STATUS_SUSPENDED = 2;
     const STATUS_INACTIVE = 0;
+    const WAREHOUSE = 1;
 
     public static $table_name = 'wheel_companies';
 

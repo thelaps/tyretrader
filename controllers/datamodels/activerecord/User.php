@@ -67,7 +67,10 @@ class User extends ActiveRecord\Model
                 if ( $model->usertype == User::TYPE_SHOP || $model->usertype == User::TYPE_COMPANY ) {
                     $company = new Company();
                     $company->cityid = $model->cityid;
-                    $company->active = 0;
+                    $company->active = Company::STATUS_ACTIVE;
+                    if ( $model->usertype == User::TYPE_COMPANY ) {
+                        $company->warehouse = Company::WAREHOUSE;
+                    }
                     $company->iso = 'UAH';
                     $company->rate = 1.000;
                     $company->expire = date('Y-m-d H:i:s', strtotime('+2 days'));

@@ -634,7 +634,7 @@ class Price extends ActiveRecord\Model
 
     public static function synchronisePriceStructure()
     {
-        $companies = Company::all();
+        $companies = Company::all(array('conditions' => 'warehouse = ' . Company::WAREHOUSE));
         $_pricePartials = array();
         $_companyPartials = array();
         $connection = \ActiveRecord\Connection::instance();

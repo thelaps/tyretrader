@@ -91,7 +91,8 @@ class account extends controller{
                     if ( $_lastUserType == User::TYPE_USER ) {
                         $company = new Company();
                         $company->cityid = $user->cityid;
-                        $company->active = 0;
+                        $company->active = Company::STATUS_ACTIVE;
+                        $company->warehouse = Company::WAREHOUSE;
                         $company->iso = 'UAH';
                         $company->rate = 1.000;
                         $company->expire = date('Y-m-d H:i:s', strtotime('+2 days'));
