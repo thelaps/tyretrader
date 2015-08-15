@@ -30,12 +30,7 @@ class helper{
 
         $this->template->assign('data', $data);
         $view = $this->template->fetch(strtolower($template).'.tpl');
-        print_r(array($to, $subj, $view, $headers));
-        try{
-        print_r(array(mail($to, $subj, $view, $headers)));die;
-        }catch(Exception $e) {
-            print_r($e->getMessage());die;
-        }
+        mail($to, $subj, $view, $headers);
     }
 
     public function getTemplatePath($template)
