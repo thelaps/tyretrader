@@ -74,7 +74,7 @@ $(document).ready(function(){
                 $('#dialog-error > ul.errorList').html('<li>Проверьте почту пожалуйста.</li>');
                 $("#dialog-error").dialog({
                     modal: true,
-                    title: 'Запрос восстановления',
+                    title: 'Запрос восстановления'
                 });
                 setTimeout(function(){
                     window.location = App.options.base;
@@ -113,15 +113,19 @@ $(document).ready(function(){
                             class:'inset',
                             cells:[
                                 function(row){
-                                    return '<a href="'+App.options.base+'?view=api&load=customer&company_id='+row.company_id+'" class="details-link">'+companies[row.company_id].name+' '+companies[row.company_id].city+'</a>';
+                                    return CB.isMasked('<a href="'+App.options.base+'?view=api&load=customer&company_id='+row.company_id+'" class="details-link">'+companies[row.company_id].name+' '+companies[row.company_id].city+'</a>', '***', row.paid_access);
+//                                    return '<a href="'+App.options.base+'?view=api&load=customer&company_id='+row.company_id+'" class="details-link">'+companies[row.company_id].name+' '+companies[row.company_id].city+'</a>';
                                 },
                                 function(row){
-                                    return '<a href="'+App.options.base+'?view=api&load=product&model_id='+row.model_id+'&company_id='+row.company_id+'&price_id='+row.id+'&type=raw" class="details-link info"></a>';
+                                    return CB.isMasked('<a href="'+App.options.base+'?view=api&load=product&model_id='+row.model_id+'&company_id='+row.company_id+'&price_id='+row.id+'&type=raw" class="details-link info"></a>', '<a class="info" disabled></a>', row.paid_access);
+//                                    return '<a href="'+App.options.base+'?view=api&load=product&model_id='+row.model_id+'&company_id='+row.company_id+'&price_id='+row.id+'&type=raw" class="details-link info"></a>';
                                 },
                                 'time',
-                                'stock_1',
-                                'price_1',
-                                'price_compiled',
+                                function(row){
+                                    return CB.isMasked(row.stock_1, '***', row.paid_access);
+                                },
+                                'wholesale_price',
+                                'retail_price',
                                 'manufactured_country_label',
                                 'manufactured_year',
                                 function(row){

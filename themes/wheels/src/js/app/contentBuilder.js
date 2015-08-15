@@ -91,6 +91,13 @@
             return html;
         };
 
+        CB.prototype.isMasked = function(needle, mask, disabled) {
+            if ( !disabled ) {
+                return mask;
+            }
+            return needle;
+        };
+
         return CB;
     })();
 

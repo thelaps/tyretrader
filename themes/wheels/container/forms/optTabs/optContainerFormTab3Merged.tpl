@@ -114,19 +114,19 @@
                         <div>
                             <label for="s_t-width">Ширина шины</label>
                             <!--<input id="s_t-width" class="size-s" type="text" name="tyre[size_w][]">-->
-                        {include file="container/forms/tyreWidth.tpl" id="s_t-width"}
+                        {include file="container/forms/tyreWidth.tpl" id="s_t-width" isAll=true}
                         </div>
                         <span>/</span>
                         <div>
                             <label for="s_t-height">Высота шины</label>
                             <!--<input id="s_t-height" class="size-s" type="text" name="tyre[size_h][]">-->
-                        {include file="container/forms/tyreHeight.tpl" id="s_t-height"}
+                        {include file="container/forms/tyreHeight.tpl" id="s_t-height" isAll=true}
                         </div>
                         <span>R</span>
                         <div>
                             <label for="s_radial">Диаметр</label>
                             <!--<input id="s_radial" class="size-s" type="text" name="tyre[size_r][]">-->
-                        {include file="container/forms/tyreRadiusComercial.tpl" id="s_radial"}
+                        {include file="container/forms/tyreRadiusComercial.tpl" id="s_radial" isAll=true}
                         </div>
                     </div>
                 </div>

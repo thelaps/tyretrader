@@ -10,6 +10,7 @@ class profilerModel extends datamodel{
 
     public $user = null;
     public $company = null;
+    public $currency = null;
 
     public function commit(){
 
@@ -19,6 +20,15 @@ class profilerModel extends datamodel{
         return $this->checkToken();
     }
 
+    public function isPaidForView(){
+        if ($this->isLoggedIn()) {
+            if ( ($this->user->usertype == User::TYPE_SHOP && $this->user->isPaidForView()) || $this->user->usertype == User::TYPE_COMPANY ) {
+                return $this->user->getCompanyPaidStatus();
+            }
+        }
+        return false;
+    }
+
     private function checkToken(){
         $token = (isset($_SESSION['userToken'])) ? $_SESSION['userToken'] : null;
         if ( $token != null ) {
@@ -26,6 +36,7 @@ class profilerModel extends datamodel{
             if(!empty($user)){
                 $this->user = $user;
                 $this->company = $user->getCompanyBilling();
+                $this->currency = CurrencyRate::all(array('conditions' => 'ISO != \'' . CurrencyRate::ISO_UAH . '\''));
                 return true;
             }
         }

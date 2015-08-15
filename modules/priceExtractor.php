@@ -214,6 +214,7 @@ class priceExtractor extends connector{
                     'bolt' => $this->extractParameter($row->parameters,15),
                     'manufactured_country' => $this->extractMCountry($row->parameters),
                     'manufactured_year' => $this->extractMYear($row->parameters),
+                    'price_line' => '\''.$row->price_line.'\'',
                 );
 
                 if(in_array($modelManufacturer->id, $currentPrice)){

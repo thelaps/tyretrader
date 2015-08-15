@@ -173,7 +173,7 @@ class Margin extends ActiveRecord\Model
             $attributeRule->item = implode(':',$attributeRule->itemValues);
 
             if ( $marginItem->type == self::RETAIL ) {
-                $total = $totalWholesale;
+                $total = (!empty($totalRetail) && $totalRetail > $totalWholesale) ? $totalRetail : $totalWholesale;
             }
             if ( $marginItem->type == self::WHOLESALE ) {
                 $total = $totalWholesale;

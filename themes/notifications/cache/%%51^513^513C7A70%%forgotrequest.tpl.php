@@ -1,8 +1,8 @@
-<?php /* Smarty version 2.6.26, created on 2014-10-12 21:26:33
+<?php /* Smarty version 2.6.26, created on 2015-08-13 12:19:11
          compiled from forgotrequest.tpl */ ?>
 <html>
     <head>
-        <title>Успешная регистрация на сервисе</title>
+        <title>Сброс пароля на сервисе AutoManager</title>
     </head>
     <body>
         Приветствуем вас <?php echo $this->_tpl_vars['data']->user->firstname; ?>

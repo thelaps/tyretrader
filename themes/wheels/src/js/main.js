@@ -1,6 +1,9 @@
 // Document ready
 $(document).ready(function(){
     jcf.customForms.replaceAll();
+    $('select').select2({
+
+    });
 
     $('[data-role="tabs"]').tabsManager();
     $('[data-role="switcher"]').radioSwitcher();
@@ -35,13 +38,20 @@ $(document).ready(function(){
             change: function(){
                 var id = $(this).val();
                 var filter = $($(this).attr('data-filter'));
-                var needed = filter.find('[data-manufacturer="'+id+'"]');
-                filter.children().each(function(){
-                    $(this).hide();
-                });
-                needed.each(function(){
-                    $(this).show();
-                });
+                if(id==''){
+                    filter.children().each(function(){
+                        $(this).show().removeAttr('disabled');
+                    });
+                } else {
+                    var needed = filter.find('[data-manufacturer="'+id+'"]');
+                    filter.children().each(function(){
+                        $(this).hide().attr('disabled', true);
+                    });
+                    needed.each(function(){
+                        $(this).show().removeAttr('disabled');
+                    });
+                }
+                filter.select2();
             }
         });
     });
@@ -53,17 +63,18 @@ $(document).ready(function(){
                 console.log(e, id, filter);
                 if(id==''){
                     filter.children().each(function(){
-                        $(this).show();
+                        $(this).show().removeAttr('disabled');
                     });
                 }else{
                     var needed = filter.find('[data-city="'+id+'"]');
                     filter.children().each(function(){
-                        $(this).hide();
+                        $(this).hide().attr('disabled', true);
                     });
                     needed.each(function(){
-                        $(this).show();
+                        $(this).show().removeAttr('disabled');
                     });
                 }
+                filter.select2();
             }
         });
     });

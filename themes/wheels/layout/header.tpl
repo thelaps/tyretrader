@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{$src}/stylesheets/form.css">
     <link rel="stylesheet" href="{$src}/stylesheets/design.css">
     <link rel="stylesheet" href="{$src}/stylesheets/ui-lightness/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="{$src}/js/select2/css/select2.css">
 
     <!-- JS
    ================================================== -->
@@ -47,7 +48,8 @@
     <script type="text/javascript" src="{$src}/js/jcf.js"></script>
     <script type="text/javascript" src="{$src}/js/jcf.checkbox.js"></script>
     <script type="text/javascript" src="{$src}/js/jcf.radio.js"></script>
-    <script type="text/javascript" src="{$src}/js/jcf.select.js"></script>
+    <!--<script type="text/javascript" src="{$src}/js/jcf.select.js"></script>-->
+    <script type="text/javascript" src="{$src}/js/select2/js/select2.min.js"></script>
     <script type="text/javascript" src="{$src}/js/main.js"></script>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{$src}/js/html5.js"></script>

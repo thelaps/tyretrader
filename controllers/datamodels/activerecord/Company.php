@@ -87,6 +87,21 @@ class Company extends ActiveRecord\Model
         return $sqlIds;
     }
 
+    public function getPaidStatusByAllUsers()
+    {
+        $model = new Company();
+        $paidItems = $model->find_by_sql('
+        SELECT * FROM `wheel_invoice` AS i
+        INNER JOIN `wheel_user` AS u ON i.`user_id` = u.`id`
+        WHERE u.`companyId` = ' . $this->id . '
+        AND i.`type`=' . Invoice::TYPE_PACKAGE . '
+        AND i.`status`=' . Invoice::STATUS_PAID . '
+        AND i.`expire` > NOW()
+        ORDER BY i.`expire`
+        ');
+        return (sizeof($paidItems) > 0);
+    }
+
     /*public static  function getAllAssocRates()
     {
         $companies = array();

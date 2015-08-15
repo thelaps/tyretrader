@@ -1,4 +1,25 @@
 {if $viewData->profile->isLoggedin()}
+{literal}
+<!-- Start SiteHeart code -->
+<script>
+    (function(){
+        var widget_id = 795350;
+        _shcp =[{widget_id : widget_id}];
+        var lang =(navigator.language || navigator.systemLanguage
+                || navigator.userLanguage ||"en")
+                .substr(0,2).toLowerCase();
+        var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";
+        var hcc = document.createElement("script");
+        hcc.type ="text/javascript";
+        hcc.async =true;
+        hcc.src =("https:"== document.location.protocol ?"https":"http")
+                +"://"+ url;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hcc, s.nextSibling);
+    })();
+</script>
+<!-- End SiteHeart code -->
+{/literal}
 <div class="panel profile-panel">
     <div class="profile-info">
                     <span class="name">
@@ -30,6 +51,12 @@
         <li><a href="{$baseLink}/?load=opt">Опт</a></li>
         <!--<li><a href="#">Объявления</a></li>-->
     </ul>
+</div>
+<div class="currency-panel">
+   Курс валют:
+    {foreach item=currency from=$viewData->profile->currency}
+        {$currency->iso} - {$currency->rate|number_format:2}
+    {/foreach}
 </div>
 {else}
 <div class="panel">

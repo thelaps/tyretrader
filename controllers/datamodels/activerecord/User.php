@@ -70,6 +70,7 @@ class User extends ActiveRecord\Model
                     $company->active = 0;
                     $company->iso = 'UAH';
                     $company->rate = 1.000;
+                    $company->expire = date('Y-m-d H:i:s', strtotime('+2 days'));
                     $company->save();
 
                     $companyBilling = new Companybilling();
@@ -99,6 +100,24 @@ class User extends ActiveRecord\Model
             );
         }
         return $model;
+    }
+
+    public function getCompanyPaidStatus()
+    {
+        if ( $this->companyid > 0 ) {
+            $company = $this->getActiveCompany();
+            return (!empty($company));
+        }
+        return false;
+    }
+
+    public function getActiveCompany()
+    {
+        if ( $this->companyid > 0 ) {
+            return Company::find($this->companyid, array('conditions' => "expire > NOW()"));
+        } else {
+            return null;
+        }
     }
 
     public function getCompany()
@@ -203,6 +222,15 @@ class User extends ActiveRecord\Model
         $user = User::find(array('conditions' => array('login = ? OR email = ?', $login, $email)));
         return ($user);
     }
+
+    public function isPaidForView()
+    {
+        if ( $this->exists() ) {
+            return true;
+        }
+        return false;
+    }
+
     /*// order can have many payments by many people
     // the conditions is just there as an example as it makes no logical sense
     static $has_many = array(

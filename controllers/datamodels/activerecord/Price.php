@@ -72,6 +72,8 @@ class Price extends ActiveRecord\Model
 
     public static function getOptItems($post = null)
     {
+        $profiler = new profilerModel;
+        $isPaid = $profiler->isPaidForView();
         $model = new Price();
         $model->loadScopeData();
         $unionsSql = $model->makeUnions($post);
@@ -109,7 +111,10 @@ class Price extends ActiveRecord\Model
                 $item->assign_attribute('daysago', $numberDays);
                 $item->assign_attribute('manufactured_country_label', $manufacturedCountry);
 
+                $item->assign_attribute('retail_price', ($isPaid) ? $compiledPrice->retail : '***');
+                $item->assign_attribute('wholesale_price', ($isPaid) ? $compiledPrice->wholesale : '***');
                 $item->assign_attribute('price_compiled', $compiledPrice->retail);
+                $item->assign_attribute('paid_access', $isPaid);
 
                 $item->assign_attribute('scopename', $item->makeName());
                 $item->assign_attribute('time', date('d.m.Y', $item->date));
@@ -521,8 +526,8 @@ class Price extends ActiveRecord\Model
     public function makePriceWtihMargin()
     {
         $totalPrice = (object)array(
-            'retail' => $this->price_1,
-            'wholesale' => $this->price_1
+            'retail' => ((!empty($this->price_2)) ? $this->price_2 : $this->price_1), //Розничная
+            'wholesale' => $this->price_1 //Оптовая
         );
         Margin::useMargin($this, $totalPrice->wholesale, $totalPrice->retail);
         return $totalPrice;
@@ -620,6 +625,7 @@ class Price extends ActiveRecord\Model
                   `bolt` int(3) NOT NULL,
                   `manufactured_country` int(3) DEFAULT NULL,
                   `manufactured_year` varchar(12) DEFAULT NULL,
+                  `price_line` text NOT NULL,
                   PRIMARY KEY (`id`)
                 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;'
             );
@@ -669,6 +675,7 @@ class Price extends ActiveRecord\Model
         while ( $row = $_qObj->fetch(PDO::FETCH_NUM) ) {
             $_pricePartials[] = current($row);
         }
+
         if(!empty($_pricePartials)){
             $unionsSql = '
                 CREATE OR REPLACE VIEW wheel_priceview AS SELECT `wheel_price`.*, wheel_manufacturers.name AS manufacturer,

@@ -2,7 +2,7 @@
     <h1>{$viewData->container->makeName()}</h1>
     <div class="details">
         <div class="contact-info">
-            <p>Строка: <strong>Нет данных{*if $viewData->container->raw}{$viewData->container->raw}{/if*}</strong></p>
+            <p>Строка: <strong>{if $viewData->container->price_line}{$viewData->container->price_line}{else}Нет данных{/if}</strong></p>
         </div>
         <fieldset>
             <legend>Исправить:</legend>

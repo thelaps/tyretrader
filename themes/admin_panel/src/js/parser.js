@@ -257,7 +257,8 @@ console.log(strSource, extraCell, attachParameters, checkedParameters, $.parser.
                     },
                     parameters:attachParameters.parameters,
                     required:attachParameters.required,
-                    raw:(specifiedSizes!= null) ? '' : tyreSizes.input
+                    raw:(specifiedSizes!= null) ? '' : tyreSizes.input,
+                    price_line: strSource
                 };
 
                 if($.checkVal(4, attachParameters.required)){
@@ -1247,6 +1248,7 @@ $.extend({
                 '<td>Цена</td>' +
                 '<td>Типоразмер</td>' +
                 '<td>Изображение</td>' +
+                '<td>Исходная строка</td>' +
                 '</tr>';
             for(var item in priceData){
                 var spike = $.getObjBy(priceData[item].spike, $.extraTab.extras.spike,'id');
@@ -1289,8 +1291,8 @@ $.extend({
                 var tmpHtml = '<tr>' +
                     '<td>'+priceData[item].manufacturer+'</td>' +
                     '<td>'+priceData[item].model+'</td>' +
-                    '<td>'+priceData[item].size_w+((priceData[item].size_h!=null)?'/'+priceData[item].size_h:'')+' '+((size_i_z.length>0)?size_i_z:'')+'R'+priceData[item].size_r+((size_i_c.length>0)?size_i_c:'')+' '+((technology!=null)?technology.name:'')+' '+priceData[item].manufacturer+' '+priceData[item].model+'' +
-                    ' '+sw_index+'</td>' +
+                    '<td>'+priceData[item].size_w+((priceData[item].size_h!=null)?'/'+priceData[item].size_h:'')+' '+((size_i_z.length>0)?size_i_z:'')+'R'+priceData[item].size_r+((size_i_c.length>0)?size_i_c:'')+' '+priceData[item].manufacturer+' '+priceData[item].model+'' +
+                    ' '+sw_index+' '+((technology!=null)?technology.name:'')+'</td>' +
                     '<td>'+((season[priceData[item].season]!=undefined)?season[priceData[item].season]:'-')+'</td>' +
                     '<td>'+((type_transport[priceData[item].type_transport]!=undefined)?type_transport[priceData[item].type_transport]:'-')+'</td>' +
                     '<td>'+priceData[item].size_w+'</td>' +
@@ -1309,6 +1311,7 @@ $.extend({
                     '<td>'+priceData[item].price_4+'</td>' +*/
                     '<td>'+priceData[item].size_w+((priceData[item].size_h!=null)?'/'+priceData[item].size_h:'')+' '+((size_i_z.length>0)?size_i_z:'')+'R'+priceData[item].size_r+((size_i_c.length>0)?size_i_c:'')+'</td>' +
                     '<td>'+priceData[item].src+'</td>' +
+                    '<td>'+priceData[item].price_line+'</td>' +
                     '</tr>';
 
                 html += tmpHtml;
@@ -1341,6 +1344,7 @@ $.extend({
                 '<td>Наличие</td>' +
                 '<td>Цена</td>' +
                 '<td>Изображение</td>' +
+                '<td>Исходная строка</td>' +
                 '</tr>';
             for(var item in priceData){
                 var color = $.getObjBy(priceData[item].color, $.extraTab.extras.color,'id');
@@ -1362,6 +1366,7 @@ $.extend({
                     '<td>'+priceData[item].stock_1+'</td>' +
                     '<td>'+priceData[item].price_1+'</td>' +
                     '<td>'+priceData[item].src+'</td>' +
+                    '<td>'+priceData[item].price_line+'</td>' +
                     '</tr>';
 
                 html += tmpHtml;
