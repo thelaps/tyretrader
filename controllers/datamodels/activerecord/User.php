@@ -120,12 +120,12 @@ class User extends ActiveRecord\Model
         }
     }
 
-    public function getCompany()
+    public function getCompany($allowEmptyObject = true)
     {
         if ( $this->companyid > 0 ) {
             return Company::find($this->companyid);
         } else {
-            return new Company();
+            return ($allowEmptyObject) ? new Company() : null;
         }
     }
 
