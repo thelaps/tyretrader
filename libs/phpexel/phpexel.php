@@ -97,7 +97,7 @@ class phpexel{
         foreach ($dataTmp as $row => $itemCells) {
             $tmpRow = array_slice($itemCells, 0, $_maxLength);
             foreach ( $tmpRow as $_key => $_item ) {
-                $data[$row][$_key+1] = str_replace('_', ' ', $_item);
+                $data[$row][$_key+1] = str_replace(array('_', '.'), array(' ', ','), $_item);
             }
         }
         $highestColumn = $_maxLength;

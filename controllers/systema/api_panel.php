@@ -144,6 +144,17 @@ class api_panel extends controller{
                     WHERE id IN (\''.$ids.'\')';
             $stmt = $dbo->prepare($query);
             $stmt->execute();
+            $queryBilling='DELETE FROM wheel_company2billing
+                    WHERE companyId IN (\''.$ids.'\')';
+            $stmt = $dbo->prepare($queryBilling);
+            $stmt->execute();
+            $queryUser='DELETE FROM wheel_user
+                    WHERE companyId IN (\''.$ids.'\')';
+            $stmt = $dbo->prepare($queryUser);
+            $stmt->execute();
+            $queryPrice='DROP TABLE wheel_price_com'.$ids;
+            $stmt = $dbo->prepare($queryPrice);
+            $stmt->execute();
             return (null != Price::synchronisePriceStructure());
         }
     }
@@ -303,15 +314,33 @@ class api_panel extends controller{
                 $companyList = array();
                 $dbo=App::DBO();
                 $query='INSERT INTO wheel_companies
-                        (name, cityId, active, iso, rate)
+                        (name, cityId, active, warehouse, iso, rate, expire)
                         VALUES
-                        (\''.$company['name'].'\', \''.$company['city_id'].'\', 1, \''.$company['iso'].'\', \''.$company['rate'].'\')';
+                        (\''.$company['name'].'\', \''.$company['city_id'].'\', 1, 1, \''.$company['iso'].'\', \''.$company['rate'].'\', \''.date('Y-m-d H:i:s', strtotime('+2 days')).'\')';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
 
                 $id=$dbo->lastInsertId();
 
-                $query='
+                $login = $post['user']['email'];
+                $pass = md5(123123);
+
+                $queryUser='INSERT INTO wheel_user
+                (email, pass, firstName, lastName, phone, cityId, login, roleId, userType, balance, companyId, subscribe)
+                VALUES
+                (\''.$post['user']['email'].'\', \''.$pass.'\', \''.$post['user']['firstName'].'\', \''.$post['user']['lastName'].'\', \''.$post['user']['phone'].'\', \''.$company['city_id'].'\', \''.$login.'\', 1, 3, \''.$post['user']['balance'].'\', '.$id.', 1)';
+                $stmt = $dbo->prepare($queryUser);
+                $stmt->execute();
+
+                $queryBilling='INSERT INTO wheel_company2billing
+                (companyId, shop_name, email, phone_1, cityId, active)
+                VALUES
+                ('.$id.', \''.$company['name'].'\', \''.$post['user']['email'].'\', \''.$post['user']['phone'].'\', '.$company['city_id'].', 1)';
+                $stmt = $dbo->prepare($queryBilling);
+                $stmt->execute();
+
+                Price::createCompanyPriceTable($id);
+                /*$query='
                 CREATE TABLE IF NOT EXISTS `wheel_price_com'.$id.'` (
                   `id` int(11) NOT NULL AUTO_INCREMENT,
                   `price_1` float NOT NULL,
@@ -352,13 +381,13 @@ class api_panel extends controller{
 
                 $stmt = $dbo->prepare($query);
 
-                if($stmt->execute()){
+                if($stmt->execute()){*/
                     $this->syncView();
                     $params = $this->getModel('wheel_companies'); //Getter for datamodel classes -> we have an object of class
                     $params->setId($id);
                     $params->commit(true); //Commit - set data to storage from model - this able us to controlling models
                     $companyList = $params->datamodel;
-                }
+                //}
 
                 return array(
                     'add'=>'company',
@@ -927,6 +956,7 @@ class api_panel extends controller{
 
     private function getCompanyList(){
         $params=$this->getModel('wheel_companies'); //Getter for datamodel classes -> we have an object of class
+        $params->setWarehouse(1);
         $params->commit(true); //Commit - set data to storage from model - this able us to controlling models
         return $params->datamodel; //"->datamodel" - pseudo storage. After commit this is not empty)
     }

@@ -9,9 +9,14 @@
 class wheel_companies extends datamodel{
 
     private $companyId = null;
+    private $warehouse = null;
 
     public function commit($isRaw=false){
         $this->datamodel=$this->getCompanies($isRaw);
+    }
+
+    public function setWarehouse($bool = null){
+        $this->warehouse = $bool;
     }
 
     public function setId($id){
@@ -34,6 +39,7 @@ class wheel_companies extends datamodel{
                             wheel_companies.rate,
                     wheel_city.name as city
                     FROM wheel_companies LEFT JOIN wheel_city ON wheel_city.id=wheel_companies.cityId
+                    ' . (($this->warehouse != null) ? 'WHERE warehouse='.$this->warehouse : '') . '
                 ORDER BY wheel_companies.name ASC';
         }
         $stmt = $dbo->prepare($query);

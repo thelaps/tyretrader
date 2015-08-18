@@ -481,7 +481,8 @@ $(document).ready(function(){
             var companyId = (tar.attr('data-id')!=undefined)?tar.attr('data-id'):null;
             var self=$(this);
             if(companyId!=null){
-                self.find('.companyLegend').text('Редактировать компанию');
+                self.find('.hideIfEdit').hide();
+                self.find('.companyLegend').text('Редактировать поставщика');
                 self.find('[name="company[id]"]').val(companyId);
 
                 self.find('[name="company[name]"]').val(tar.attr('data-name'));
@@ -489,7 +490,8 @@ $(document).ready(function(){
                 self.find('[name="company[iso]"]').val((tar.attr('data-iso')!='null')?tar.attr('data-iso'):'');
                 self.find('[name="company[rate]"]').val((tar.attr('data-rate')!='null')?tar.attr('data-rate'):'');
             }else{
-                self.find('.companyLegend').text('Добавить компанию');
+                self.find('.hideIfEdit').show();
+                self.find('.companyLegend').text('Добавить поставщика');
                 self.find('[name="company[id]"]').val('');
 
                 self.find('[name="company[name]"]').val('');

@@ -63,7 +63,21 @@
         <legend class="companyLegend">Добавить поставщика</legend>
         <input type="hidden" name="fnc" value="company">
         <input type="hidden" name="company[id]" value="">
-        <input type="text" name="company[name]" value="" placeholder="Название компании">
+        <fieldset>
+            <legend>Поставщик <text class="hideIfEdit">(логин - почта, пароль - "123123")</text></legend>
+            <label class="hideIfEdit">Сумма на счету</label>
+            <input class="hideIfEdit" type="text" name="user[balance]" value="0.00">
+            <label class="hideIfEdit">Email</label>
+            <input class="hideIfEdit" type="text" name="user[email]">
+            <label class="hideIfEdit">Имя</label>
+            <input class="hideIfEdit" type="text" name="user[firstName]">
+            <label class="hideIfEdit">Фамилия</label>
+            <input class="hideIfEdit" type="text" name="user[lastName]">
+            <label class="hideIfEdit">Телефон</label>
+            <input class="hideIfEdit" type="text" name="user[phone]">
+            <label>Название компании</label>
+            <input type="text" name="company[name]" value="">
+        </fieldset>
                     <fieldset>
                         <legend>Регион</legend>
                         <select name="company[city_id]">

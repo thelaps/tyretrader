@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-09-30 01:07:01
+<?php /* Smarty version 2.6.26, created on 2015-08-18 00:46:27
          compiled from container/calculator.tpl */ ?>
 <div id="main" data-role="main">
 <h2>Калькулятор цен</h2>
