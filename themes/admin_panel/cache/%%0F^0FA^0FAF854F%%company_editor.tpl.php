@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-18 01:56:55
+<?php /* Smarty version 2.6.26, created on 2015-08-21 00:31:21
          compiled from widget/company_editor.tpl */ ?>
 <div class="widget_editor company_table">
     <button class="close">Закрыть</button>
@@ -85,7 +85,7 @@
         <input type="hidden" name="fnc" value="company">
         <input type="hidden" name="company[id]" value="">
         <fieldset>
-            <legend>Пользователь <text class="hideIfEdit">(логин - почта, пароль - "123123")</text></legend>
+            <legend>Поставщик <text class="hideIfEdit">(логин - почта, пароль - "123123")</text></legend>
             <label class="hideIfEdit">Сумма на счету</label>
             <input class="hideIfEdit" type="text" name="user[balance]" value="0.00">
             <label class="hideIfEdit">Email</label>

@@ -652,7 +652,7 @@ console.log(strSource, extraCell, attachParameters, checkedParameters, $.parser.
                     source=$.parser.getMatchFrom('manufacturedCountries',getter); //fnc
                     break;
                 case 39:
-                    source=$.parser.getMatchFrom('marking',getter,true); //fnc
+                    source=$.parser.getMatchFrom('marking',getter,false); //fnc
                     break;
                 case 16:
                     source=$.parser.getMatchFrom('color',getter); //fnc
@@ -1235,6 +1235,8 @@ $.extend({
                 '<td>Производитель</td>' +
                 '<td>Модель</td>' +
                 '<td>Наименование</td>' +
+                '<td>Изображение</td>' +
+                '<td>Исходная строка</td>' +
                 '<td>Сезон</td>' +
                 '<td>Тип авто</td>' +
                 '<td>Ширина</td>' +
@@ -1247,8 +1249,6 @@ $.extend({
                 '<td>Наличие</td>' +
                 '<td>Цена</td>' +
                 '<td>Типоразмер</td>' +
-                '<td>Изображение</td>' +
-                '<td>Исходная строка</td>' +
                 '</tr>';
             for(var item in priceData){
                 var spike = $.getObjBy(priceData[item].spike, $.extraTab.extras.spike,'id');
@@ -1293,6 +1293,8 @@ $.extend({
                     '<td>'+priceData[item].model+'</td>' +
                     '<td>'+priceData[item].size_w+((priceData[item].size_h!=null)?'/'+priceData[item].size_h:'')+' '+((size_i_z.length>0)?size_i_z:'')+'R'+priceData[item].size_r+((size_i_c.length>0)?size_i_c:'')+' '+priceData[item].manufacturer+' '+priceData[item].model+'' +
                     ' '+sw_index+' '+((technology!=null)?technology.name:'')+'</td>' +
+                    '<td>'+priceData[item].src+'</td>' +
+                    '<td>'+priceData[item].price_line+'</td>' +
                     '<td>'+((season[priceData[item].season]!=undefined)?season[priceData[item].season]:'-')+'</td>' +
                     '<td>'+((type_transport[priceData[item].type_transport]!=undefined)?type_transport[priceData[item].type_transport]:'-')+'</td>' +
                     '<td>'+priceData[item].size_w+'</td>' +
@@ -1310,8 +1312,6 @@ $.extend({
                     '<td>'+priceData[item].price_3+'</td>' +
                     '<td>'+priceData[item].price_4+'</td>' +*/
                     '<td>'+priceData[item].size_w+((priceData[item].size_h!=null)?'/'+priceData[item].size_h:'')+' '+((size_i_z.length>0)?size_i_z:'')+'R'+priceData[item].size_r+((size_i_c.length>0)?size_i_c:'')+'</td>' +
-                    '<td>'+priceData[item].src+'</td>' +
-                    '<td>'+priceData[item].price_line+'</td>' +
                     '</tr>';
 
                 html += tmpHtml;
@@ -1332,6 +1332,8 @@ $.extend({
                 '<td>Производитель</td>' +
                 '<td>Модель</td>' +
                 '<td>Наименование</td>' +
+                '<td>Изображение</td>' +
+                '<td>Исходная строка</td>' +
                 '<td>Ширина</td>' +
                 '<td>Диаметр</td>' +
                 '<td>Крепеж</td>' +
@@ -1343,8 +1345,6 @@ $.extend({
                 '<td>Тип диска</td>' +
                 '<td>Наличие</td>' +
                 '<td>Цена</td>' +
-                '<td>Изображение</td>' +
-                '<td>Исходная строка</td>' +
                 '</tr>';
             for(var item in priceData){
                 var color = $.getObjBy(priceData[item].color, $.extraTab.extras.color,'id');
@@ -1354,6 +1354,8 @@ $.extend({
                     '<td>'+priceData[item].manufacturer+'</td>' +
                     '<td>'+priceData[item].model+'</td>' +
                     '<td>'+priceData[item].manufacturer+' '+priceData[item].model+'</td>' +
+                    '<td>'+priceData[item].src+'</td>' +
+                    '<td>'+priceData[item].price_line+'</td>' +
                     '<td>'+priceData[item].size_w+'</td>' +
                     '<td>'+priceData[item].size_r+'</td>' +
                     '<td>'+((priceData[item].bolt != 0)?priceData[item].bolt:'-')+'</td>' +
@@ -1365,8 +1367,6 @@ $.extend({
                     '<td>'+wheel_type+'</td>' +
                     '<td>'+priceData[item].stock_1+'</td>' +
                     '<td>'+priceData[item].price_1+'</td>' +
-                    '<td>'+priceData[item].src+'</td>' +
-                    '<td>'+priceData[item].price_line+'</td>' +
                     '</tr>';
 
                 html += tmpHtml;

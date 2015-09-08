@@ -180,7 +180,7 @@ $.extend({
                 }
             });
 
-            $('.wrapperSelector').bind({
+            /*$('.wrapperSelector').bind({
                 change:function(){
                     var listId= $.extraTab.active;
                     var selected=$(this).val();
@@ -189,7 +189,7 @@ $.extend({
                     manufacturerSelect.createOptions($.extraTab.manufacturers,selected);
                     parametersBox.createParameters($.extraTab.parameters,selected,true,null);
                 }
-            });
+            });*/
 
             $('.process').bind({
                 click:function(){

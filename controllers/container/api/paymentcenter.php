@@ -81,16 +81,16 @@ class paymentcenter extends controller{
             if ( $package ) {
                 $user = $this->profiler->user;
                 $invoice = Invoice::createNew(Invoice::TYPE_PACKAGE, $user->id, null, $package->cost);
-                $invoiceItem = Invoiceitem::createNew($invoice->id, 'Пакет услуг: ' . $package->title, 1, $package->cost, $package->cost);
+                $invoiceItem = Invoiceitem::createNew($invoice->id, 'Пакет услуг: ' . $package->title, $package->amount, $package->cost, $package->cost);
                 $invoice->completePayment();
                 switch ($package->sku) {
                     case 'company-prolongation':
                         $company = $user->getCompany(false);
                         if ( $company ) {
                             if ( strtotime($company->expire->format('Y-m-d H:i:s')) >= time() ) {
-                                $company->expire = date('Y-m-d H:i:s', strtotime($company->expire->format('Y-m-d H:i:s') . ' +1 month'));
+                                $company->expire = date('Y-m-d H:i:s', strtotime($company->expire->format('Y-m-d H:i:s') . ' +'.$package->amount.' month'));
                             } else {
-                                $company->expire = date('Y-m-d H:i:s', strtotime('+1 month'));
+                                $company->expire = date('Y-m-d H:i:s', strtotime('+'.$package->amount.' month'));
                             }
                             $company->active = Company::STATUS_ACTIVE;
                             $company->save();
