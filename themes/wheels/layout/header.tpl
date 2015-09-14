@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{$src}/stylesheets/design.css">
     <link rel="stylesheet" href="{$src}/stylesheets/ui-lightness/jquery-ui-1.10.4.custom.css">
     <link rel="stylesheet" href="{$src}/js/select2/css/select2.css">
+    <link rel="shortcut icon" href="{$src}/images/favicon.png">
 
     <!-- JS
    ================================================== -->

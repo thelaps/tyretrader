@@ -1,5 +1,10 @@
-{include file='layout/header.tpl'}
-{*include file='layout/menu.tpl'*}
+<?php /* Smarty version 2.6.26, created on 2015-09-14 01:58:14
+         compiled from error.tpl */ ?>
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
 
 
 
@@ -10,8 +15,10 @@
 
 	<div class="container">
 		<div class="sixteen columns head">
-			<h1 class="remove-bottom" style="margin-top: 40px">{$viewData->error->code}</h1>
-			<h5>{$viewData->error->message}</h5>
+			<h1 class="remove-bottom" style="margin-top: 40px"><?php echo $this->_tpl_vars['viewData']->error->code; ?>
+</h1>
+			<h5><?php echo $this->_tpl_vars['viewData']->error->message; ?>
+</h5>
 			<hr />
 		</div>
 		<div class="one-third column">
@@ -39,4 +46,8 @@
 	</div><!-- container -->
 
 
-{include file='layout/footer.tpl'}
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => 'layout/footer.tpl', 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>

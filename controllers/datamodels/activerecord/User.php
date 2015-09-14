@@ -14,6 +14,8 @@ class User extends ActiveRecord\Model
     const TYPE_USER = 1;
     const TYPE_SHOP = 2;
     const TYPE_COMPANY = 3;
+    const ROLE_USER = 1;
+    const ROLE_ADMIN = 2;
 
     public static $table_name = 'wheel_user';
 
@@ -232,6 +234,19 @@ class User extends ActiveRecord\Model
             return true;
         }
         return false;
+    }
+
+    public function getAllGroupedUsres()
+    {
+        $model = new User();
+        $items = new stdClass();
+        $items->users = $model->find_by_sql('
+        SELECT `wheel_user`.*,
+        `wheel_companies`.`name`
+        FROM `wheel_user` LEFT JOIN `wheel_companies`
+        ON `wheel_companies`.`id`=`wheel_user`.`companyId`
+        ORDER BY `wheel_companies`.`name`, `wheel_user`.`firstName`, `wheel_user`.`lastName`');
+        return $items->users;
     }
 
     /*// order can have many payments by many people

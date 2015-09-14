@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-21 00:31:21
+<?php /* Smarty version 2.6.26, created on 2015-09-14 01:19:24
          compiled from widget/company_editor.tpl */ ?>
 <div class="widget_editor company_table">
     <button class="close">Закрыть</button>
@@ -86,17 +86,24 @@
         <input type="hidden" name="company[id]" value="">
         <fieldset>
             <legend>Поставщик <text class="hideIfEdit">(логин - почта, пароль - "123123")</text></legend>
-            <label class="hideIfEdit">Сумма на счету</label>
-            <input class="hideIfEdit" type="text" name="user[balance]" value="0.00">
-            <label class="hideIfEdit">Email</label>
-            <input class="hideIfEdit" type="text" name="user[email]">
-            <label class="hideIfEdit">Имя</label>
-            <input class="hideIfEdit" type="text" name="user[firstName]">
-            <label class="hideIfEdit">Фамилия</label>
-            <input class="hideIfEdit" type="text" name="user[lastName]">
-            <label class="hideIfEdit">Телефон</label>
-            <input class="hideIfEdit" type="text" name="user[phone]">
-            <label>Название компании</label>
+            <label>Сумма на счету</label>
+            <input type="text" name="user[balance]" value="0.00">
+            <label>Продлить на</label>
+            <select name="company[expire]">
+                <option value="0" selected>не продлевать</option>
+                <option value="1">1 мес.</option>
+                <option value="2">2 мес.</option>
+                <option value="3">3 мес.</option>
+            </select>
+            <label>Email</label>
+            <input type="text" name="user[email]">
+            <label>Имя</label>
+            <input type="text" name="user[firstName]">
+            <label>Фамилия</label>
+            <input type="text" name="user[lastName]">
+            <label>Телефон</label>
+            <input type="text" name="user[phone]">
+            <label>Юр. Название компании</label>
             <input type="text" name="company[name]" value="">
         </fieldset>
                     <fieldset>

@@ -25,6 +25,9 @@ class api_panel extends controller{
                 case 'show':
                     $isComplete=$this->api_show();
                     break;
+                case 'editCompany':
+                    $isComplete=$this->api_editCompany();
+                    break;
                 case 'add':
                     $isComplete=$this->api_add();
                     break;
@@ -51,6 +54,37 @@ class api_panel extends controller{
             //return 'price.tpl';
         }
         App::ajax($this->sError);
+    }
+
+    public function api_editCompany()
+    {
+        $get=$this->getRequest('get');
+        if(isset($get['case'])){
+            switch ($get['case']) {
+                case 'saveCompany':
+
+                    break;
+                case 'showCompany':
+                    return $this->_showCompany($get['id']);
+                    break;
+            }
+        }
+    }
+
+    private function _showCompany($id)
+    {
+        $model = new Company();
+        $_tmp = $model->getCompanyByIdBE($id);
+        if ($_tmp->total > 0) {
+            $_company = $_tmp->items->attributes();
+            $this->showData = (object)array(
+                'company' => $_company,
+                'billing' => $_tmp->billing->attributes()
+            );
+            return true;
+        }
+        $this->showData = null;
+        return false;
     }
 
     public function sync(){
@@ -300,23 +334,39 @@ class api_panel extends controller{
         $company = $post['company'];
         if(!empty($company['name'])){
             if(!empty($company['id'])){
+                $prolongation = ($company['expire'] > 0) ? '+'.$company['expire'].' months' : null;
                 $dbo=App::DBO();
                 $query='UPDATE wheel_companies
                         SET
                         name=\''.$company['name'].'\',
                         cityId=\''.$company['city_id'].'\',
                         iso=\''.$company['iso'].'\',
-                        rate=\''.$company['rate'].'\'
+                        rate=\''.$company['rate'].'\',
+                        ' . (($prolongation != null)?'expire=\'' . $prolongation . '\', active=1' : '') . '
                         WHERE id='.$company['id'].'';
                 $stmt = $dbo->prepare($query);
+                $stmt->execute();
+
+                $user = $post['user'];
+                $queryUser='UPDATE wheel_user
+                        SET
+                        email=\''.$user['email'].'\',
+                        firstName=\''.$user['firstName'].'\',
+                        lastName=\''.$user['lastName'].'\',
+                        phone=\''.$user['phone'].'\',
+                        ' . (($user['balance'] != null)?'balance=\'' . $user['balance'] . '\'' : '') . '
+                        WHERE companyId='.$company['id'];
+                $stmt = $dbo->prepare($queryUser);
                 return $stmt->execute();
+
             }else{
                 $companyList = array();
                 $dbo=App::DBO();
+                $prolongation = ($company['expire'] > 0) ? '+'.$company['expire'].' months' : '+2 days';
                 $query='INSERT INTO wheel_companies
                         (name, cityId, active, warehouse, iso, rate, expire)
                         VALUES
-                        (\''.$company['name'].'\', \''.$company['city_id'].'\', 1, 1, \''.$company['iso'].'\', \''.$company['rate'].'\', \''.date('Y-m-d H:i:s', strtotime('+2 days')).'\')';
+                        (\''.$company['name'].'\', \''.$company['city_id'].'\', 1, 1, \''.$company['iso'].'\', \''.$company['rate'].'\', \''.date('Y-m-d H:i:s', strtotime($prolongation)).'\')';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
 

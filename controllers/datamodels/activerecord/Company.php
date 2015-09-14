@@ -66,6 +66,34 @@ class Company extends ActiveRecord\Model
         return $company;
     }
 
+    public static function getCompanyByIdBE($companyId)
+    {
+        $model = new Company();
+        $company = new stdClass();
+        $companyItems = $model->find_by_sql('SELECT `wheel_companies`.`id`,
+                `wheel_companies`.`name`,
+                `wheel_companies`.`cityId`,
+                `wheel_companies`.`active`,
+                `wheel_companies`.`rate`,
+                `wheel_companies`.`iso`,
+                        `wheel_city`.`name` as city,
+                        `wheel_user`.`firstName`,
+                        `wheel_user`.`lastName`,
+                        `wheel_user`.`email`,
+                        `wheel_user`.`phone`,
+                        `wheel_user`.`balance`
+                        FROM (`wheel_companies`
+                        LEFT JOIN `wheel_city`
+                        ON `wheel_city`.`id`=`wheel_companies`.`cityId`)
+                        LEFT JOIN `wheel_user`
+                        ON `wheel_user`.`companyId`=`wheel_companies`.`id`
+                        WHERE `wheel_companies`.`id`='.$companyId);
+        $company->items = (sizeof($companyItems)>0)?$companyItems[0]:$model;
+        $company->total = sizeof($companyItems);
+        $company->billing = Companybilling::getCompanybillingByCompanyIdClean($company->items->id);
+        return $company;
+    }
+
     public static function getCompany($companyId)
     {
         $model = new Company();

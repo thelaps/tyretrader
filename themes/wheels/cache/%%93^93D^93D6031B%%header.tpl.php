@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:27
+<?php /* Smarty version 2.6.26, created on 2015-09-14 02:10:08
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -38,6 +38,8 @@
 /stylesheets/ui-lightness/jquery-ui-1.10.4.custom.css">
     <link rel="stylesheet" href="<?php echo $this->_tpl_vars['src']; ?>
 /js/select2/css/select2.css">
+    <link rel="shortcut icon" href="<?php echo $this->_tpl_vars['src']; ?>
+/images/favicon.png">
 
     <!-- JS
    ================================================== -->

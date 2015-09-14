@@ -461,7 +461,7 @@ $(document).ready(function(){
             var deleteCatalog = new Array;
             tar.find('tr.selectedItem').each(function(key){
                 deleteCatalog.push($(this).attr('data-id'));
-            })
+            });
             if(deleteCatalog.length>0){
                 if(confirm('Удалить выбраное?')){
                     $('body').jPopup({isActive:true});
@@ -481,14 +481,22 @@ $(document).ready(function(){
             var companyId = (tar.attr('data-id')!=undefined)?tar.attr('data-id'):null;
             var self=$(this);
             if(companyId!=null){
+                $.get(App.baseLink()+'?view=admin_panel&load=api_panel&fnc=editCompany&case=showCompany&id='+companyId, function(json){
+                    json = App.ajax(json);
+                    self.find('[name="company[name]"]').val(json.data.company.name);
+                    self.find('[name="company[city_id]"]').val(json.data.company.cityid);
+                    self.find('[name="company[iso]"]').val((json.data.company.iso!='null')?json.data.company.iso:'');
+                    self.find('[name="company[rate]"]').val((json.data.company.rate!='null')?json.data.company.rate:'');
+                    self.find('[name="user[firstName]"]').val((json.data.company.firstname!='null')?json.data.company.firstname:'');
+                    self.find('[name="user[lastName]"]').val((json.data.company.lastname!='null')?json.data.company.lastname:'');
+                    self.find('[name="user[phone]"]').val((json.data.company.phone!='null')?json.data.company.phone:'');
+                    self.find('[name="user[balance]"]').val((json.data.company.balance!='null')?json.data.company.balance:'');
+                    self.find('[name="user[email]"]').val((json.data.company.email!='null')?json.data.company.email:'');
+                });
                 self.find('.hideIfEdit').hide();
                 self.find('.companyLegend').text('Редактировать поставщика');
                 self.find('[name="company[id]"]').val(companyId);
 
-                self.find('[name="company[name]"]').val(tar.attr('data-name'));
-                self.find('[name="company[city_id]"]').val(tar.attr('data-city'));
-                self.find('[name="company[iso]"]').val((tar.attr('data-iso')!='null')?tar.attr('data-iso'):'');
-                self.find('[name="company[rate]"]').val((tar.attr('data-rate')!='null')?tar.attr('data-rate'):'');
             }else{
                 self.find('.hideIfEdit').show();
                 self.find('.companyLegend').text('Добавить поставщика');
@@ -498,6 +506,11 @@ $(document).ready(function(){
                 self.find('[name="company[city_id]"]').val('');
                 self.find('[name="company[iso]"]').val('');
                 self.find('[name="company[rate]"]').val('');
+                self.find('[name="user[firstName]"]').val('');
+                self.find('[name="user[lastName]"]').val('');
+                self.find('[name="user[phone]"]').val('');
+                self.find('[name="user[balance]"]').val('');
+                self.find('[name="user[email]"]').val('');
             }
         },
         onSave:function(e,json){

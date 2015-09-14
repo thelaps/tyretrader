@@ -56,7 +56,7 @@ class profilerModel extends datamodel{
         return $this->user;
     }
 
-    public function isAllowedToLoad($loadable)
+    public function isAllowedToLoad($loadable, $isAdminAccess = false)
     {
         $notAuthorized = array(
             'opt',
@@ -65,8 +65,22 @@ class profilerModel extends datamodel{
             'export',
             'home',
         );
-        if ( !$this->isLoggedIn() ) {
-            return !in_array($loadable, $notAuthorized);
+        $notAuthorizedAdmin = array(
+            'price_panel'
+        );
+
+        if ($isAdminAccess) {
+            if ( !$this->isLoggedIn() ) {
+                return !in_array($loadable, $notAuthorizedAdmin);
+            } elseif ($this->isLoggedIn() && $this->user->roleid == User::ROLE_ADMIN) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if ( !$this->isLoggedIn() ) {
+                return !in_array($loadable, $notAuthorized);
+            }
         }
         return true;
     }

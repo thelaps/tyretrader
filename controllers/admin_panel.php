@@ -8,7 +8,13 @@
  */
 class admin_panel extends controller{
 
+    private $profilerModel;
+
     public function render(){
+
+        $this->getProfiler();
+        $this->viewData->profile = $this->profilerModel;
+
         App::setConfig('theme','admin_panel');
 
         $panel=$this->initStartPanel();
@@ -20,14 +26,42 @@ class admin_panel extends controller{
         $get=$this->getRequest('get');
         $panel=(isset($get['load']))?$get['load']:'main_panel';
 
+
         $oPanel=$this->getController($panel,true);
+        $allowedToLoad = $this->profilerModel->isAllowedToLoad($panel, true);
+
+        if ( $oPanel && $allowedToLoad ) {
+            $render=$oPanel->render();
+            $this->viewData = $oPanel->viewData;
+            return $render;
+        } else {
+            if ( !$oPanel ) {
+                $this->viewData->error->code = 404;
+                $this->viewData->error->message = 'Страница не найдена';
+            }
+            if ( !$allowedToLoad ) {
+                $this->viewData->error->code = 302;
+                $this->viewData->error->message = 'Авторизуйтесь для доступа в панель управления';
+            }
+        }
+        return 'error.tpl';
+
+
+
+
+
+        /*$oPanel=$this->getController($panel,true);
         $render=$oPanel->render();
         $this->viewData=$oPanel->viewData;
 
-        return $render;
+        return $render;*/
     }
 
     private function getRootNavigation(){
 
+    }
+
+    private function getProfiler(){
+        $this->profilerModel = $this->getModel('profilerModel');
     }
 }
