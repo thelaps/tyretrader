@@ -161,7 +161,7 @@ class Margin extends ActiveRecord\Model
             foreach ( $marginItem->attributes() as $attribute => $value ) {
                 if ( !empty($value) ) {
                     if ( $value > 0 ) {
-                        if ( in_array($attribute, $template) ) {
+                        if ( in_array($attribute, $template) && array_key_exists($attribute, $item->attributes()) ) {
                             $attributeRule->ruleValues[] = $value;
                             $attributeRule->itemValues[] = $item->$attribute;
                             $attributeRule->attributes[] = $attribute;
