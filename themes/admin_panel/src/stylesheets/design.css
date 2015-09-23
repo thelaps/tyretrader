@@ -30,6 +30,12 @@ fieldset{
     padding: 2px 6px;
 }
 
+.editable{
+    color: #4285f4;
+    font-weight: bold;
+    text-decoration: underline dashed;
+}
+
 .modelTypeChanger{
     float: left;
     margin: 2px 2px 0 0;

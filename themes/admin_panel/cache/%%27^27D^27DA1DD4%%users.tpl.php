@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-09-14 02:42:48
+<?php /* Smarty version 2.6.26, created on 2015-09-23 11:40:23
          compiled from users.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -26,18 +26,38 @@ unset($_smarty_tpl_vars);
             <div class="row widget_editor">
                 <div class="panel scrollLayer">
                     <table>
+                        <thead>
+                            <tr>
+                                <td>Роль пользов.</td>
+                                <td>Тип пользов.</td>
+                                <td>Имя</td>
+                                <td>Фамилия</td>
+                                <td>Балланс</td>
+                                <td>Компания</td>
+                                <td>Активирована до</td>
+                                <td>Состояние</td>
+                            </tr>
+                        </thead>
                         <?php $_from = $this->_tpl_vars['viewData']['users']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['user']):
 ?>
                         <tr>
-                            <td><?php echo $this->_tpl_vars['user']->name; ?>
+                            <td><?php if ($this->_tpl_vars['user']->roleid == 1): ?>Пользователь<?php elseif ($this->_tpl_vars['user']->roleid == 2): ?>Админ<?php else: ?>Неизвестен<?php endif; ?></td>
+                            <td><?php if ($this->_tpl_vars['user']->usertype == 1): ?>Пользователь<?php elseif ($this->_tpl_vars['user']->usertype == 2): ?>Компания<?php elseif ($this->_tpl_vars['user']->usertype == 3): ?>Поставщик<?php else: ?>Неизвестен<?php endif; ?></td>
+                            <td class="editable" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+" data-field="user.firstname"><?php echo $this->_tpl_vars['user']->firstname; ?>
 </td>
-                            <td><?php echo $this->_tpl_vars['user']->firstname; ?>
+                            <td class="editable" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+" data-field="user.lastname"><?php echo $this->_tpl_vars['user']->lastname; ?>
 </td>
-                            <td><?php echo $this->_tpl_vars['user']->lastname; ?>
+                            <td class="editable" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+" data-field="user.balance"><?php echo $this->_tpl_vars['user']->balance; ?>
 </td>
-                            <td><?php echo $this->_tpl_vars['user']->balance; ?>
-</td>
+                            <td><?php if ($this->_tpl_vars['user']->company_name != NULL): ?><?php echo $this->_tpl_vars['user']->company_name; ?>
+<?php else: ?> - <?php endif; ?></td>
+                            <td><?php if ($this->_tpl_vars['user']->company_expire != NULL): ?><?php echo $this->_tpl_vars['user']->company_expire; ?>
+<?php else: ?> - <?php endif; ?></td>
+                            <td><?php if ($this->_tpl_vars['user']->company_status != NULL): ?><?php if ($this->_tpl_vars['user']->company_status == 1): ?>Включена<?php else: ?>Отключена<?php endif; ?><?php else: ?> - <?php endif; ?></td>
                         </tr>
                         <?php endforeach; endif; unset($_from); ?>
                     </table>

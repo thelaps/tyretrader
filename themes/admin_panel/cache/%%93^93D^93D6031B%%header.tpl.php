@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2013-10-06 11:55:03
+<?php /* Smarty version 2.6.26, created on 2015-09-23 10:55:31
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -37,6 +37,8 @@
 /js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
 /js/jquery.suggest.js"></script>
+    <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
+/js/jquery.jeditable.js"></script>
     <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>
 /js/loader.js"></script>
     <script type="text/javascript" src="<?php echo $this->_tpl_vars['src']; ?>

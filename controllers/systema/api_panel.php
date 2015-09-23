@@ -40,6 +40,9 @@ class api_panel extends controller{
                 case 'sync':
                     $isComplete=$this->sync();
                     break;
+                case 'fieldEditor':
+                    $isComplete=$this->api_fieldEdit();
+                    break;
             }
             $response=array(
                 'status'=>$isComplete,
@@ -54,6 +57,33 @@ class api_panel extends controller{
             //return 'price.tpl';
         }
         App::ajax($this->sError);
+    }
+
+    public function api_fieldEdit()
+    {
+        $_allowedTables = array(
+            'user' => array(
+                'model' => 'User',
+                'fields' => array('firstname', 'lastname', 'balance', 'phone', 'cityid', 'roleid', 'subscribe')
+            )
+        );
+        $post=$this->getRequest('post');
+        if ( isset($post['datafield']) ) {
+            $_datafield = explode('.', $post['datafield']);
+            if ( array_key_exists($_datafield[0], $_allowedTables) ) {
+                $_rule = $_allowedTables[$_datafield[0]];
+                $_modelName = $_rule['model'];
+                $_model = new $_modelName;
+                $_modelResult = $_model->find($post['dataid']);
+                if ( in_array($_datafield[1], $_rule['fields']) ) {
+                    $_field = $_datafield[1];
+                    $_modelResult->{$_field} = $post['datavalue'];
+                    $_modelResult->save();
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public function api_editCompany()

@@ -66,7 +66,8 @@ class profilerModel extends datamodel{
             'home',
         );
         $notAuthorizedAdmin = array(
-            'price_panel'
+            'price_panel',
+            'user_panel'
         );
 
         if ($isAdminAccess) {

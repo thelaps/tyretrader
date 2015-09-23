@@ -1282,3 +1282,56 @@ $.extend({
         });
     }
 });
+
+
+/*$.fn.editable=function(options){
+    var _self = $(this);
+    var defaults = {
+        id: 'data-id',
+        field: 'data-field',
+        url: null,
+        data: null
+    };
+    var _options = $.extend(defaults, options);
+    _self.bind({
+        click: function(){
+            var _locked = $(this);
+            if ( !_locked.hasClass('lockEditable') ) {
+                _locked.addClass('lockEditable');
+                var _text = _locked.text();
+                var _id = _locked.attr(_options.id);
+                var _field = _locked.attr(_options.field);
+                _locked.html('<input class="textEditable" type="text" value="'+_text+'">');
+                _locked.find('.textEditable').focus().bind({
+                    focusout: function(e){
+                        var _tmp = $(this);
+                        _tmp.unbind();
+                        if ( confirm('Сохранить изменения?') ) {
+                            console.log('save', _tmp.val());
+                            _locked.html(_tmp.val());
+                        } else {
+                            _locked.html(_text);
+                        }
+                        _locked.removeClass('lockEditable');
+                    }
+                });
+                console.log(_text, _id, _field);
+            }
+        }
+    });
+};*/
+$(document).ready(function(){
+    $('.editable').editable(function(_value, settings) {
+        var _self = $(this);
+        var _id = _self.attr('data-id');
+        var _field = _self.attr('data-field');
+        $.post(App.baseLink()+'?view=admin_panel&load=api_panel&fnc=fieldEditor', {
+            datafield: _field,
+            dataid: _id,
+            datavalue: _value
+        }, function(data){
+            console.log(data);
+        });
+        return(_value);
+    });
+});

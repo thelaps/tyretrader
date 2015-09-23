@@ -28,6 +28,7 @@
    ================================================== -->
     <script type="text/javascript" src="{$src}/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="{$src}/js/jquery.suggest.js"></script>
+    <script type="text/javascript" src="{$src}/js/jquery.jeditable.js"></script>
     <script type="text/javascript" src="{$src}/js/loader.js"></script>
     <script type="text/javascript" src="{$src}/js/forms_processor.js"></script>
     <script type="text/javascript" src="{$src}/js/microUploader.js"></script>

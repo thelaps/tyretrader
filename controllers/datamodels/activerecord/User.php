@@ -242,7 +242,9 @@ class User extends ActiveRecord\Model
         $items = new stdClass();
         $items->users = $model->find_by_sql('
         SELECT `wheel_user`.*,
-        `wheel_companies`.`name`
+        `wheel_companies`.`name` AS company_name,
+        `wheel_companies`.`active` AS company_status,
+        `wheel_companies`.`expire` AS company_expire
         FROM `wheel_user` LEFT JOIN `wheel_companies`
         ON `wheel_companies`.`id`=`wheel_user`.`companyId`
         ORDER BY `wheel_companies`.`name`, `wheel_user`.`firstName`, `wheel_user`.`lastName`');
