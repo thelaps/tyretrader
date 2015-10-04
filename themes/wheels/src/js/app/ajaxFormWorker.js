@@ -35,16 +35,15 @@
             form = (form instanceof Object)? form : $(form);
             if($(form).length > 0){
                 $(form).each(function(key){
-                    console.log(key, $(this));
                     $(this).attr('data-form', 'AFW_'+key);
                     var action = $(this,'[data-form="AFW_'+key+'"]').attr('action');
                     var submiter = $(this,'[data-form="AFW_'+key+'"]').find('[type="submit"]');
                     submiter.attr('data-submit','AFW_'+key);
-                    console.log(submiter);
+                    console.log($(form).length, key, $(this).attr('action'), submiter.text());
                     submiter.bind({
                         click : function(e){
                             e.preventDefault();
-                            _submit = $(this);
+                            var _submit = $(this);
                             var afwKey = _submit.attr('data-submit');
                             _submit.attr('disabled',true);
                             var afwform = $(this).closest('form[data-form="'+afwKey+'"]');

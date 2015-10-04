@@ -1334,4 +1334,15 @@ $(document).ready(function(){
         });
         return(_value);
     });
+    $('.enterAsClient').each(function(){
+        var _btn = $(this);
+        _btn.bind({
+            click: function(){
+                var _id = $(this).attr('data-id');
+                document.cookie = 'x-entry='+_id+'; path=/';
+                window.location.href='/';
+                return false;
+            }
+        });
+    });
 });

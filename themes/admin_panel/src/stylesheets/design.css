@@ -30,6 +30,16 @@ fieldset{
     padding: 2px 6px;
 }
 
+.enterAsClient{
+    background: url(../images/backdoor.png) no-repeat 0 0;
+    text-decoration: none;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
 .editable{
     color: #4285f4;
     font-weight: bold;

@@ -488,6 +488,27 @@ $(document).ready(function(){
             title: 'Уведомление'
         });
     }
+
+    if ( $('.exitFromUser') != undefined ) {
+        $('.exitFromUser').bind({
+            click: function(){
+                document.cookie = 'x-entry=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;';
+                window.location = $(this).attr('href');
+                return false;
+            }
+        });
+    }
+
+    $('.tooltip').tooltip({
+        show: null,
+        position: {
+            my: "left top",
+            at: "left bottom"
+        },
+        open: function( event, ui ) {
+            ui.tooltip.animate({ top: ui.tooltip.position().top + 10 }, "fast" );
+        }
+    });
 });
 
 

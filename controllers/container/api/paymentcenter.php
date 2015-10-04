@@ -77,27 +77,29 @@ class paymentcenter extends controller{
     {
         $post = $this->getRequest('post');
         if ( $this->profiler->isLoggedIn() ) {
-            $package = Package::find_by_sku($post['sku']);
+            $package = Package::find($post['id']);
             if ( $package ) {
                 $user = $this->profiler->user;
                 $invoice = Invoice::createNew(Invoice::TYPE_PACKAGE, $user->id, null, $package->cost);
                 $invoiceItem = Invoiceitem::createNew($invoice->id, 'Пакет услуг: ' . $package->title, $package->amount, $package->cost, $package->cost);
-                $invoice->completePayment();
-                switch ($package->sku) {
-                    case 'company-prolongation':
-                        $company = $user->getCompany(false);
-                        if ( $company ) {
-                            if ( strtotime($company->expire->format('Y-m-d H:i:s')) >= time() ) {
-                                $company->expire = date('Y-m-d H:i:s', strtotime($company->expire->format('Y-m-d H:i:s') . ' +'.$package->amount.' month'));
-                            } else {
-                                $company->expire = date('Y-m-d H:i:s', strtotime('+'.$package->amount.' month'));
+                if ( $invoice->completePayment() ) {
+                    switch ($package->sku) {
+                        case 'company-prolongation':
+                            $company = $user->getCompany(false);
+                            if ( $company ) {
+                                if ( strtotime($company->expire->format('Y-m-d H:i:s')) >= time() ) {
+                                    $company->expire = date('Y-m-d H:i:s', strtotime($company->expire->format('Y-m-d H:i:s') . ' +'.$package->amount.' month'));
+                                } else {
+                                    $company->expire = date('Y-m-d H:i:s', strtotime('+'.$package->amount.' month'));
+                                }
+                                $company->active = Company::STATUS_ACTIVE;
+                                $company->save();
                             }
-                            $company->active = Company::STATUS_ACTIVE;
-                            $company->save();
-                        }
-                        break;
+                            break;
+                    }
+                    return $invoice;
                 }
-                return $invoice;
+                return false;
             }
         }
         return false;

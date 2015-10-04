@@ -50,6 +50,7 @@
         <li><a href="{$baseLink}/?load=sold">Продажа</a></li>-->
         <li><a href="{$baseLink}/?load=opt">Опт</a></li>
         {if $viewData->profile->user->roleid == 2}<li><a href="{$baseLink}/?view=admin_panel&load=price_panel">Обработка прайсов</a></li>{/if}
+        {if $viewData->x_entry}<li><a href="{$baseLink}/?view=admin_panel&load=user_panel" class="exitFromUser">Список пользователей</a></li>{/if}
         <!--<li><a href="#">Объявления</a></li>-->
     </ul>
 </div>

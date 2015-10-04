@@ -34,6 +34,17 @@ class profilerModel extends datamodel{
         if ( $token != null ) {
             $user = User::find(array('conditions' => array('token = ?', $token)));
             if(!empty($user)){
+                if ( isset($_COOKIE['x-entry']) && $user->roleid == User::ROLE_ADMIN ) {
+                    if ( $_COOKIE['x-entry'] != $user->id ) {
+                        $_x_user = User::find($_COOKIE['x-entry']);
+                        if ( !empty($_x_user) ) {
+                            $this->user = $_x_user;
+                            $this->company = $_x_user->getCompanyBilling();
+                            $this->currency = CurrencyRate::all(array('conditions' => 'ISO != \'' . CurrencyRate::ISO_UAH . '\''));
+                            return true;
+                        }
+                    }
+                }
                 $this->user = $user;
                 $this->company = $user->getCompanyBilling();
                 $this->currency = CurrencyRate::all(array('conditions' => 'ISO != \'' . CurrencyRate::ISO_UAH . '\''));

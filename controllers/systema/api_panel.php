@@ -371,8 +371,8 @@ class api_panel extends controller{
                         name=\''.$company['name'].'\',
                         cityId=\''.$company['city_id'].'\',
                         iso=\''.$company['iso'].'\',
-                        rate=\''.$company['rate'].'\',
-                        ' . (($prolongation != null)?'expire=\'' . $prolongation . '\', active=1' : '') . '
+                        rate=\''.$company['rate'].'\'
+                        ' . (($prolongation != null)?', expire=\'' . $prolongation . '\', active=1' : '') . '
                         WHERE id='.$company['id'].'';
                 $stmt = $dbo->prepare($query);
                 $stmt->execute();
@@ -383,8 +383,8 @@ class api_panel extends controller{
                         email=\''.$user['email'].'\',
                         firstName=\''.$user['firstName'].'\',
                         lastName=\''.$user['lastName'].'\',
-                        phone=\''.$user['phone'].'\',
-                        ' . (($user['balance'] != null)?'balance=\'' . $user['balance'] . '\'' : '') . '
+                        phone=\''.$user['phone'].'\'
+                        ' . (($user['balance'] != null)?', balance=\'' . $user['balance'] . '\'' : '') . '
                         WHERE companyId='.$company['id'];
                 $stmt = $dbo->prepare($queryUser);
                 return $stmt->execute();

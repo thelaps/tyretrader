@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2015-09-14 02:48:17
+<?php /* Smarty version 2.6.26, created on 2015-10-04 23:31:06
          compiled from widget/profileBox.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'widget/profileBox.tpl', 59, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'widget/profileBox.tpl', 60, false),)), $this); ?>
 <?php if ($this->_tpl_vars['viewData']->profile->isLoggedin()): ?>
 <?php echo '
 <!-- Start SiteHeart code -->
@@ -68,6 +68,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
 /?load=opt">Опт</a></li>
         <?php if ($this->_tpl_vars['viewData']->profile->user->roleid == 2): ?><li><a href="<?php echo $this->_tpl_vars['baseLink']; ?>
 /?view=admin_panel&load=price_panel">Обработка прайсов</a></li><?php endif; ?>
+        <?php if ($this->_tpl_vars['viewData']->x_entry): ?><li><a href="<?php echo $this->_tpl_vars['baseLink']; ?>
+/?view=admin_panel&load=user_panel" class="exitFromUser">Список пользователей</a></li><?php endif; ?>
         <!--<li><a href="#">Объявления</a></li>-->
     </ul>
 </div>

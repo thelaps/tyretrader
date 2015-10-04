@@ -67,22 +67,27 @@ class Invoice extends ActiveRecord\Model
         if ( $this->status != self::STATUS_CLOSED ) {
             switch ($this->type) {
                 case self::TYPE_BALANCE:
-                    $this->userBalanceIncrease();
+                    return $this->userBalanceIncrease();
                     break;
                 case self::TYPE_PACKAGE:
-                    $this->userBalanceDecrease();
+                    return $this->userBalanceDecrease();
                     break;
             }
         }
+        return false;
     }
 
     private function userBalanceDecrease()
     {
-        $this->user->balance = $this->user->balance - $this->price;
-        if ( $this->user->save() ) {
-            $this->status = self::STATUS_CLOSED;
-            $this->save();
+        if ( $this->user->balance >=  $this->price) {
+            $this->user->balance = $this->user->balance - $this->price;
+            if ( $this->user->save() ) {
+                $this->status = self::STATUS_CLOSED;
+                $this->save();
+                return true;
+            }
         }
+        return false;
     }
 
     private function userBalanceIncrease()
@@ -91,6 +96,8 @@ class Invoice extends ActiveRecord\Model
         if ( $this->user->save() ) {
             $this->status = self::STATUS_CLOSED;
             $this->save();
+            return true;
         }
+        return false;
     }
 }

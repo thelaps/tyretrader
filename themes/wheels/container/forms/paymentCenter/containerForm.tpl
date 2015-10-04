@@ -1,9 +1,10 @@
 <div id="main" data-role="main">
     <h2>Пакет: {$viewData->container.package->title}</h2>
     <div class="widget">
-        <form action="{$baseLink}/?view=api&load=paymentcenter" class="form">
+        <form method="post" action="{$baseLink}/?view=api&load=paymentcenter" class="form">
             <input type="hidden" name="fnc" value="buyPackage">
             <input type="hidden" name="sku" value="{$viewData->container.package->sku}">
+            <input type="hidden" name="id" value="{$viewData->container.package->id}">
             <h5>
             {$viewData->container.package->description}
             </h5>

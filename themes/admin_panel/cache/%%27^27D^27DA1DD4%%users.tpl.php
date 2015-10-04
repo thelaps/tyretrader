@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-09-23 11:40:23
+<?php /* Smarty version 2.6.26, created on 2015-10-04 23:00:21
          compiled from users.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -36,6 +36,7 @@ unset($_smarty_tpl_vars);
                                 <td>Компания</td>
                                 <td>Активирована до</td>
                                 <td>Состояние</td>
+                                <td>Действия</td>
                             </tr>
                         </thead>
                         <?php $_from = $this->_tpl_vars['viewData']['users']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
@@ -58,6 +59,8 @@ unset($_smarty_tpl_vars);
                             <td><?php if ($this->_tpl_vars['user']->company_expire != NULL): ?><?php echo $this->_tpl_vars['user']->company_expire; ?>
 <?php else: ?> - <?php endif; ?></td>
                             <td><?php if ($this->_tpl_vars['user']->company_status != NULL): ?><?php if ($this->_tpl_vars['user']->company_status == 1): ?>Включена<?php else: ?>Отключена<?php endif; ?><?php else: ?> - <?php endif; ?></td>
+                            <td><a href="#" class="enterAsClient" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+"></a></td>
                         </tr>
                         <?php endforeach; endif; unset($_from); ?>
                     </table>

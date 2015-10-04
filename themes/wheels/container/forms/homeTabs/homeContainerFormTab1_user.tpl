@@ -132,10 +132,10 @@
                 <div class="row">
                     <div class="field align-right two-cell">
                         <div class="cell">
-                            <label>Юридическое название</label>
+                            <label style="font-weight: bold; color: #678C59;">Юридическое название</label>
                         </div>
                         <div class="cell">
-                            <input type="text" name="company[name]" value="" disabled="true" class="accountChanger">
+                            <input title="«Название фирмы, которое будет отображено на сайте»" type="text" name="company[name]" value="" disabled="true" class="accountChanger tooltip">
                         </div>
                     </div>
                 </div>

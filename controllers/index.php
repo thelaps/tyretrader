@@ -18,6 +18,8 @@ class index extends controller{
 
         $this->viewData->profile = $this->profilerModel;
 
+        $this->viewData->x_entry = (isset($_COOKIE['x-entry']));
+
         $panel=$this->initStartContainer();
 
 
