@@ -9,8 +9,10 @@
 class PayOnline
 {
     const LIQPAY = 'LiqPay';
+    /*const LIQPAY_PUB = 'i6952807541';
+    const LIQPAY_PRT = 'tpYKt4sw08xpMC0mibz7KtJ1WE6ENZrfoYU0SVZY';*/
     const LIQPAY_PUB = 'i42003954328';
-    const LIQPAY_PRT = 'tpYKt4sw08xpMC0mibz7KtJ1WE6ENZrfoYU0SVZY';
+    const LIQPAY_PRT = 'fO3eNIikXmmGt3tuDdcIXsxOAkMORzDkG8KmIbcb';
     private $paymentInstance = null;
 
     public function makePayment($paymentSystem, $invoice, $card)
@@ -63,7 +65,7 @@ class PayOnline
             'currency'       => 'UAH',
             'description'    => $invoice->title,
             'order_id'       => $invoice->id,
-            'sandbox'        => '1',
+            //'sandbox'        => '1',
             'server_url'     => App::getConfig('baseLink').'/?view=api&load=paymentcenter&fnc=payVerify',
             'result_url'     => App::getConfig('baseLink').'/?load=home',
             'pay_way'        => 'card',
