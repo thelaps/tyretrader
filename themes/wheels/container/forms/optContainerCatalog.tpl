@@ -45,6 +45,6 @@
     </div>
 </div>
 <div id="pageContent">
-    <h5>Тестовые данные</h5>
-    <p>Тестовый текст</p>
+    <h5>{$viewData->_content->title}</h5>
+    <p>{$viewData->_content->content}</p>
 </div>

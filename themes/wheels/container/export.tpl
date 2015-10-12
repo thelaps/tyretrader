@@ -1,6 +1,6 @@
 <div id="main" data-role="main">
-    <h2>Настройка экспорта прайслиста</h2>
-    <p>Снимите или поставьте галочку для отображения рубрики в прайсе. Перемщайте рубрики для наиболее удобного отображения</p>
+    <h2>{$viewData->_content->title}</h2>
+    <p>{$viewData->_content->content}</p>
         <table class="movableContainer">
             <tr>
                 <td>

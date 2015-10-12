@@ -9,10 +9,10 @@
 class PayOnline
 {
     const LIQPAY = 'LiqPay';
-    /*const LIQPAY_PUB = 'i6952807541';
-    const LIQPAY_PRT = 'tpYKt4sw08xpMC0mibz7KtJ1WE6ENZrfoYU0SVZY';*/
-    const LIQPAY_PUB = 'i42003954328';
+    const LIQPAY_PUB = 'i6952807541';
     const LIQPAY_PRT = 'fO3eNIikXmmGt3tuDdcIXsxOAkMORzDkG8KmIbcb';
+    /*const LIQPAY_PUB = 'i42003954328';
+    const LIQPAY_PRT = 'tpYKt4sw08xpMC0mibz7KtJ1WE6ENZrfoYU0SVZY';*/
     private $paymentInstance = null;
 
     public function makePayment($paymentSystem, $invoice, $card)

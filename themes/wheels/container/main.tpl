@@ -4,7 +4,7 @@
 </div>
 <div class="container">
     <div class="sixteen columns head">
-        <h1 class="remove-bottom" style="margin-top: 40px"><span class="errorMessage">Добро пожаловать на портал AutoManager!</span></h1>
+        <h1 class="remove-bottom" style="margin-top: 40px"><span class="errorMessage">{$viewData->_content->title}</span></h1>
         <h5>Beta-версия</h5>
         <hr />
     </div>

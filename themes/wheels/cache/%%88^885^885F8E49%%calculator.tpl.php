@@ -1,7 +1,10 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-18 00:46:27
+<?php /* Smarty version 2.6.26, created on 2015-10-13 01:44:50
          compiled from container/calculator.tpl */ ?>
 <div id="main" data-role="main">
-<h2>Калькулятор цен</h2>
+    <h2><?php echo $this->_tpl_vars['viewData']->_content->title; ?>
+</h2>
+    <p><?php echo $this->_tpl_vars['viewData']->_content->content; ?>
+</p>
 <div class="tab-widget" data-role="tabs">
 <ul>
     <li class="active" data-action="post" data-target=".price-grid">

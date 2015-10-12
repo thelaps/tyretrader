@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-09-14 02:10:08
+<?php /* Smarty version 2.6.26, created on 2015-10-13 01:59:50
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -10,9 +10,12 @@
     <!-- Basic Page Needs
    ================================================== -->
     <meta charset="utf-8">
-    <title>Automanager</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title><?php echo $this->_tpl_vars['viewData']->_content->meta_title; ?>
+</title>
+    <meta name="description" content="<?php echo $this->_tpl_vars['viewData']->_content->meta_description; ?>
+">
+    <meta name="keywords" content="<?php echo $this->_tpl_vars['viewData']->_content->meta_keywords; ?>
+">
     <base href="<?php echo $this->_tpl_vars['baseLink']; ?>
 /">
 
@@ -97,7 +100,9 @@
             <a class="logo" href="<?php echo $this->_tpl_vars['baseLink']; ?>
 ">TYREMANAGER. Вам с нами по пути!</a>
             <div class="head-banner">
-                <img src="themes/wheels/src/images/banner.jpg" alt="banner">
+                <img src="<?php echo $this->_tpl_vars['viewData']->_banner->content; ?>
+" alt="banner" title="<?php echo $this->_tpl_vars['viewData']->_banner->title; ?>
+">
             </div>
         </div>
         <?php $_smarty_tpl_vars = $this->_tpl_vars;

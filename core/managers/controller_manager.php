@@ -28,6 +28,7 @@ class controller_manager extends view_manager{
     private function newController($getter=null,$default=null){
         $class_name=($getter)?$getter:(($default)?$default:'error');
         $blDie=App::getConfig('dieOnError');
+        App::setSysArguments($class_name);
         if(is_string($class_name)){
             try{
                 try{

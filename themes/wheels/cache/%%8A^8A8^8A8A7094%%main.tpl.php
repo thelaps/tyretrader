@@ -1,10 +1,11 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 09:12:32
+<?php /* Smarty version 2.6.26, created on 2015-10-13 01:30:37
          compiled from container/main.tpl */ ?>
 <div id="main">
 </div>
 <div class="container">
     <div class="sixteen columns head">
-        <h1 class="remove-bottom" style="margin-top: 40px"><span class="errorMessage">Добро пожаловать на портал AutoManager!</span></h1>
+        <h1 class="remove-bottom" style="margin-top: 40px"><span class="errorMessage"><?php echo $this->_tpl_vars['viewData']->_content->title; ?>
+</span></h1>
         <h5>Beta-версия</h5>
         <hr />
     </div>

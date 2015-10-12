@@ -4,6 +4,25 @@ class App{
 
     public $error=null;
 
+    private static $_sys_controller;
+    private static $_sys_loader;
+
+    public static function setSysArguments($_controller = null, $_loader = null){
+        if ( !empty($_controller) ) {
+            self::$_sys_controller = $_controller;
+        }
+        if ( !empty($_loader) ) {
+            self::$_sys_loader = $_loader;
+        }
+    }
+
+    public static function _sys(){
+        $_sys = new stdClass();
+        $_sys->controller = self::$_sys_controller;
+        $_sys->loader = self::$_sys_loader;
+        return $_sys;
+    }
+
     public static function start(){
         define('CORE_DIR',dirname(__FILE__).DIRECTORY_SEPARATOR);
         define('ROOT_DIR',CORE_DIR.'../');

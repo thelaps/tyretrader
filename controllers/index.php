@@ -22,7 +22,8 @@ class index extends controller{
 
         $panel=$this->initStartContainer();
 
-
+        $this->viewData->_content = Content::pageContent();
+        $this->viewData->_banner = Content::pageBanner();
 
 
 
@@ -58,6 +59,7 @@ class index extends controller{
     private function initStartContainer(){
         $get=$this->getRequest('get');
         $panel=(isset($get['load']))?$get['load']:'main';
+        App::setSysArguments(null, $panel);
 
         $oPanel=$this->getController($panel,false,'container');
         $allowedToLoad = $this->profilerModel->isAllowedToLoad($panel);

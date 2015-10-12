@@ -8,9 +8,9 @@
     <!-- Basic Page Needs
    ================================================== -->
     <meta charset="utf-8">
-    <title>Automanager</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>{$viewData->_content->meta_title}</title>
+    <meta name="description" content="{$viewData->_content->meta_description}">
+    <meta name="keywords" content="{$viewData->_content->meta_keywords}">
     <base href="{$baseLink}/">
 
     <!-- Mobile Specific Metas
@@ -66,7 +66,7 @@
         <div id="head">
             <a class="logo" href="{$baseLink}">TYREMANAGER. Вам с нами по пути!</a>
             <div class="head-banner">
-                <img src="themes/wheels/src/images/banner.jpg" alt="banner">
+                <img src="{$viewData->_banner->content}" alt="banner" title="{$viewData->_banner->title}">
             </div>
         </div>
         {include file="widget/profileBox.tpl"}

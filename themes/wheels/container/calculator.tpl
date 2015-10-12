@@ -1,5 +1,6 @@
 <div id="main" data-role="main">
-<h2>Калькулятор цен</h2>
+    <h2>{$viewData->_content->title}</h2>
+    <p>{$viewData->_content->content}</p>
 <div class="tab-widget" data-role="tabs">
 <ul>
     <li class="active" data-action="post" data-target=".price-grid">

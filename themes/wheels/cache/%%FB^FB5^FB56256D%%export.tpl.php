@@ -1,8 +1,10 @@
-<?php /* Smarty version 2.6.26, created on 2015-01-28 00:14:34
+<?php /* Smarty version 2.6.26, created on 2015-10-13 02:00:16
          compiled from container/export.tpl */ ?>
 <div id="main" data-role="main">
-    <h2>Настройка экспорта прайслиста</h2>
-    <p>Снимите или поставьте галочку для отображения рубрики в прайсе. Перемщайте рубрики для наиболее удобного отображения</p>
+    <h2><?php echo $this->_tpl_vars['viewData']->_content->title; ?>
+</h2>
+    <p><?php echo $this->_tpl_vars['viewData']->_content->content; ?>
+</p>
         <table class="movableContainer">
             <tr>
                 <td>

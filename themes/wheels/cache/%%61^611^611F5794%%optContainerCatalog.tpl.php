@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:37
+<?php /* Smarty version 2.6.26, created on 2015-10-13 01:39:54
          compiled from container/forms/optContainerCatalog.tpl */ ?>
 <script>
     <?php echo '
@@ -49,6 +49,8 @@
     </div>
 </div>
 <div id="pageContent">
-    <h5>Тестовые данные</h5>
-    <p>Тестовый текст</p>
+    <h5><?php echo $this->_tpl_vars['viewData']->_content->title; ?>
+</h5>
+    <p><?php echo $this->_tpl_vars['viewData']->_content->content; ?>
+</p>
 </div>
