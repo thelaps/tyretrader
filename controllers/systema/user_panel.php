@@ -28,6 +28,7 @@ class user_panel extends controller{
             App::ajax(json_encode(array('status'=>$isComplete)));
         }else{
             $this->viewData['users']=$this->getUsers();
+            $this->viewData['statistics']=$this->getUsersStat();
             return 'users.tpl';
         }
         App::ajax($this->sError);
@@ -36,5 +37,10 @@ class user_panel extends controller{
     public function getUsers(){
         $model=new User; //Getter for datamodel classes -> we have an object of class
         return $model->getAllGroupedUsres(); //"->datamodel" - pseudo storage. After commit this is not empty)
+    }
+
+    public function getUsersStat(){
+        $model=new User; //Getter for datamodel classes -> we have an object of class
+        return $model->getUsersStat();
     }
 }

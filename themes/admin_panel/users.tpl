@@ -31,7 +31,7 @@
                         </thead>
                         {foreach item=user from=$viewData.users}
                         <tr>
-                            <td>{if $user->roleid == 1}Пользователь{elseif $user->roleid == 2}Админ{else}Неизвестен{/if}</td>
+                            <td class="drop_editable" data-id="{$user->id}" data-field="user.roleid">{if $user->roleid == 1}Пользователь{elseif $user->roleid == 2}Админ{else}Неизвестен{/if}</td>
                             <td>{if $user->usertype == 1}Пользователь{elseif $user->usertype == 2}Компания{elseif $user->usertype == 3}Поставщик{else}Неизвестен{/if}</td>
                             <td class="editable" data-id="{$user->id}" data-field="user.firstname">{$user->firstname}</td>
                             <td class="editable" data-id="{$user->id}" data-field="user.lastname">{$user->lastname}</td>
@@ -43,6 +43,10 @@
                         </tr>
                         {/foreach}
                     </table>
+                </div>
+                <div class="panel">
+                    Сейчас в сети: <b>{$viewData.statistics->online}</b><br/>
+                    За сутки в сети: <b>{$viewData.statistics->last_day_online}</b>
                 </div>
             </div>
         </div>

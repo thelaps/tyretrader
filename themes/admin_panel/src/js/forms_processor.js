@@ -1334,6 +1334,32 @@ $(document).ready(function(){
         });
         return(_value);
     });
+    $('.drop_editable').editable(function(_value, settings) {
+        var _self = $(this);
+        var _id = _self.attr('data-id');
+        var _field = _self.attr('data-field');
+        var _text = '';
+        switch (parseInt(_value)){
+            case 1:
+                _text = 'Пользователь';
+                break;
+            case 2:
+                _text = 'Админ';
+                break;
+        }
+        $.post(App.baseLink()+'?view=admin_panel&load=api_panel&fnc=fieldEditor', {
+            datafield: _field,
+            dataid: _id,
+            datavalue: _value
+        }, function(data){
+            console.log(data);
+        });
+        return(_text);
+    }, {
+        data   : " {'1':'Пользователь','2':'Админ'}",
+        type   : 'select',
+        submit : 'OK'
+    });
     $('.enterAsClient').each(function(){
         var _btn = $(this);
         _btn.bind({

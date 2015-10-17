@@ -251,6 +251,26 @@ class User extends ActiveRecord\Model
         return $items->users;
     }
 
+    public function getUsersStat()
+    {
+        $model = new User();
+        $stat = new stdClass();
+        $_online = $model->find_by_sql('
+        SELECT COUNT(`wheel_user`.`log_time`) AS counter
+        FROM `wheel_user`
+        WHERE NOW() BETWEEN `wheel_user`.`log_time` AND DATE_SUB(`wheel_user`.`log_time` , INTERVAL -1 HOUR )
+        ');
+        $stat->online = ( !empty($_online) ) ? $_online[0]->counter : 0;
+
+        $_lastDayOnline = $model->find_by_sql('
+        SELECT COUNT(`wheel_user`.`log_time`) AS counter
+        FROM `wheel_user`
+        WHERE NOW() BETWEEN `wheel_user`.`log_time` AND DATE_SUB(`wheel_user`.`log_time` , INTERVAL -24 HOUR )
+        ');
+        $stat->last_day_online = ( !empty($_lastDayOnline) ) ? $_lastDayOnline[0]->counter : 0;
+        return $stat;
+    }
+
     /*// order can have many payments by many people
     // the conditions is just there as an example as it makes no logical sense
     static $has_many = array(

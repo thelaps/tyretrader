@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-13 01:59:50
+<?php /* Smarty version 2.6.26, created on 2015-10-17 13:04:53
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -88,7 +88,16 @@
 /js/html5.js"></script>
     <![endif]-->
     <?php echo '
+        <script>
+            (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');
 
+            ga(\'create\', \'UA-68484404-1\', \'auto\');
+            ga(\'send\', \'pageview\');
+
+        </script>
     '; ?>
 
 

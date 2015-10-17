@@ -8,7 +8,7 @@
             <h5>
             {$viewData->container.package->description}
             </h5>
-            <h5>Стоимость: {$viewData->container.package->cost|number_format:2}грн./мес.</h5>
+            <h5>Стоимость: {$viewData->container.package->cost|number_format:2}грн. / {if $viewData->container.package->amount > 0}{$viewData->container.package->amount}{else}1{/if}мес.</h5>
             <hr>
             <div class="row-submit">
                 <button type="submit">Оплатить в счет балланса</button>

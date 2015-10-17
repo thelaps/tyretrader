@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-04 23:00:21
+<?php /* Smarty version 2.6.26, created on 2015-10-14 15:49:18
          compiled from users.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -43,7 +43,8 @@ unset($_smarty_tpl_vars);
     foreach ($_from as $this->_tpl_vars['user']):
 ?>
                         <tr>
-                            <td><?php if ($this->_tpl_vars['user']->roleid == 1): ?>Пользователь<?php elseif ($this->_tpl_vars['user']->roleid == 2): ?>Админ<?php else: ?>Неизвестен<?php endif; ?></td>
+                            <td class="drop_editable" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+" data-field="user.roleid"><?php if ($this->_tpl_vars['user']->roleid == 1): ?>Пользователь<?php elseif ($this->_tpl_vars['user']->roleid == 2): ?>Админ<?php else: ?>Неизвестен<?php endif; ?></td>
                             <td><?php if ($this->_tpl_vars['user']->usertype == 1): ?>Пользователь<?php elseif ($this->_tpl_vars['user']->usertype == 2): ?>Компания<?php elseif ($this->_tpl_vars['user']->usertype == 3): ?>Поставщик<?php else: ?>Неизвестен<?php endif; ?></td>
                             <td class="editable" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
 " data-field="user.firstname"><?php echo $this->_tpl_vars['user']->firstname; ?>
@@ -64,6 +65,12 @@ unset($_smarty_tpl_vars);
                         </tr>
                         <?php endforeach; endif; unset($_from); ?>
                     </table>
+                </div>
+                <div class="panel">
+                    Сейчас в сети: <b><?php echo $this->_tpl_vars['viewData']['statistics']->online; ?>
+</b><br/>
+                    За сутки в сети: <b><?php echo $this->_tpl_vars['viewData']['statistics']->last_day_online; ?>
+</b>
                 </div>
             </div>
         </div>
