@@ -86,11 +86,17 @@ $.extend({
                     including:settingItem.find('[name="including[]"]').val(),
                     manufacturer:settingItem.find('[name="manufacturer[]"]').val(),
                     currency:settingItem.find('[name="currency[]"]').val(),
-                    parameter:null
-                }
+                    parameter:null,
+                    inactive_cells:null
+                };
                 settingObj.parameter=new Array;
-                settingItem.find('[name="parameter[][]"]').each(function(){
-                    settingObj.parameter.push($(this).val());
+                settingObj.inactive_cells=new Array;
+                settingItem.find('[name="parameter[][]"]').each(function(_eq){
+                    if ( settingItem.find('input[name="parameter_key[]"]:eq('+_eq+')').is(':checked') ) {
+                        settingObj.parameter.push($(this).val());
+                    } else {
+                        settingObj.inactive_cells.push(_eq);
+                    }
                 });
 
                 if($.inArray('21', settingObj.parameter)!=-1 && $.inArray('25', settingObj.parameter)!=-1 && ($.inArray('2', settingObj.parameter)!=-1 || (settingObj.parameter.indexOf('13')!=-1 && settingObj.parameter.indexOf('17')!=-1))){
@@ -153,16 +159,21 @@ $.extend({
                 var self = this;
                 var timeout=setTimeout(function(){
                     $.parser.waitFor=($.parser.waitFor+1);
-                    var key='parser_items_'+domKey+'_'+xkey;
+                    var _key='parser_items_'+domKey+'_'+xkey;
                     var cells=$(self).find('td');
-                    var imploded='';
+                    var _implodedArray=new Array;
+                    var imploded = '';
                     cells.each(function(key){
-                        var delimiter=(key==0)?'':' | ';
-                        imploded+=delimiter+$(this).text();
+                        if ($.inArray(key, $.parser.collection.settings[domKey].inactive_cells) == -1) {
+                            _implodedArray.push($(this).text());
+                        }
+                        //var delimiter=(key==0)?'':' | ';
+                        //imploded+=delimiter+$(this).text();
                     });
-                    localStorage.setItem(key, imploded);
+                    imploded = _implodedArray.join(' | ');
+                    localStorage.setItem(_key, imploded);
                     var tabbing={
-                        key:key,
+                        key:_key,
                         tab:domKey,
                         row:xkey
                     }
@@ -193,10 +204,14 @@ $.extend({
 
 
             if (!$.parser.namingIsSet) {
+                var _doubleSize = $.findParameter(attachParameters.parameters, 19, true);
+                if ( _doubleSize != null ) {
+                    _doubleSize = _doubleSize.split('/');
+                }
                 specifiedSizes = {
                     R: $.findParameter(attachParameters.parameters, 13, true),
-                    W: $.findParameter(attachParameters.parameters, 17, true),
-                    H: $.findParameter(attachParameters.parameters, 45, true),
+                    W: (_doubleSize != null) ? _doubleSize[0] : $.findParameter(attachParameters.parameters, 17, true),
+                    H: (_doubleSize != null) ? _doubleSize[1] : $.findParameter(attachParameters.parameters, 45, true),
                     I: $.findParameter(attachParameters.parameters, 30, true),
                     Si: {
                         F: $.findParameter(attachParameters.parameters, 36, true),
@@ -228,8 +243,8 @@ $.extend({
 
 
 
-console.log(strSource, extraCell, attachParameters, checkedParameters, $.parser.namingIsSet, specifiedSizes);
-
+//console.log(strSource, extraCell, attachParameters, checkedParameters, $.parser.namingIsSet, specifiedSizes);
+console.log(tyreSizes);
             if(tyreSizes!=null || wheelSizes!=null || specifiedSizes!=null){
                 var tmpObj={
                     company:company,

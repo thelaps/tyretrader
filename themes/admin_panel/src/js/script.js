@@ -12,11 +12,13 @@ $(function(){
 		url: dropbox.attr('data-action'),
 
 		uploadFinished:function(i,file,response){
-            dropbox.css({'background-color':'#ffffff'});
-			$.data(file).addClass('done');
-			// response is the JSON object that post_file.php returns
-            $('body').jPopup({isActive:true, text:'Затягиваю...\n'});
-            $.compileData(file,dropbox);
+            if ( response.status == true ) {
+                dropbox.css({'background-color':'#ffffff'});
+                $.data(file).addClass('done');
+                // response is the JSON object that post_file.php returns
+                $('body').jPopup({isActive:true, text:'Затягиваю...\n'});
+                $.compileData({name: response.data},dropbox);
+            }
 		},
 		
     	error: function(err, file) {
@@ -252,18 +254,23 @@ $.extend({
                         self.find('select, input').each(function(key){
                             var node = $(this);
                             var type = node.get(0).nodeName.toLowerCase();
+                            var _type=type;
                             var name = node.attr('name');
                             var postfix='';
                             if(name=='parameter[][]'){
                                 postfix=':eq('+parameterCounter+')';
                                 parameterCounter++;
                             }
+                            if(name=='parameter_key[]'){
+                                _type = 'checkbox';
+                                postfix=':eq('+parameterCounter+')';
+                            }
                             var selector = type+'[name=\\"'+name+'\\"]'+postfix;
                             settingRow[key] = {
-                                nodeValue:node.val(),
+                                nodeValue:(name=='parameter_key[]') ? node.is(':checked') : node.val(),
                                 nodeSelector:selector,
                                 nodeKey:key,
-                                nodeType:type
+                                nodeType:_type
                             };
                         });
                         settingCollection.push({tab:'li[data-id=\\"'+id+'\\"]',row:settingRow,isActive:isChecked});
@@ -320,6 +327,13 @@ $.extend({
                         break;
                     case 'input':
                         node.val(val);
+                        break;
+                    case 'checkbox':
+                        if ( val == 'true' ) {
+                            node.attr('checked', 'checked');
+                        } else {
+                            node.removeAttr('checked');
+                        }
                         break;
                 }
             }
@@ -433,7 +447,7 @@ $.fn.createParameters=function(jsonData,iType,isActiveOnly,each){
     for(i=0; i<listTabColumns; i++){
         DOMsource+='<div class="row">';
         DOMsource+='<div class="panel">' +
-            '<label>Колонка '+i+'</label>' +
+            '<label>Колонка '+i+' - <input type="checkbox" name="parameter_key[]" checked style="float: right;"></label>' +
             '<select name="parameter[][]">' +
             '<option value="0" selected>-</option>';
 

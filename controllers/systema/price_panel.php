@@ -9,6 +9,7 @@
 class price_panel extends controller{
 
     public $sError=null;
+    private $_data=null;
 
     public function render(){
         $get=$this->getRequest('get');
@@ -38,7 +39,7 @@ class price_panel extends controller{
                     return false;
                     break;
             }
-            App::ajax(json_encode(array('status'=>$isComplete)));
+            App::ajax(json_encode(array('status'=>$isComplete, 'data' => $this->_data)));
         }else{
             $this->viewData['oSearchTemplates']=$this->attachSearchTemplates();
             $this->viewData['parameters']=$this->attachParameters();
@@ -138,7 +139,9 @@ class price_panel extends controller{
                 file_put_contents('log.txt', $line.PHP_EOL, FILE_APPEND);
                 $this->sError='Uploads are ignored in demo mode.';
             }
-            if(move_uploaded_file($source['tmp_name'], $upload_dir.urldecode($source['name']))){
+            $_newName = md5($source['name']) . '.' . $this->get_extension($source['name']);
+            $this->_data = $_newName;
+            if(move_uploaded_file($source['tmp_name'], $upload_dir.$_newName)){
                 return true;
             }
 
