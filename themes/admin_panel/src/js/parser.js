@@ -1131,6 +1131,7 @@ console.log(tyreSizes);
                     finalLabel.show();
                     finalLabel.text('Подготовка...\n');
                     var arrObj=new Array;
+
                     for(var item in $.parser.accepted){
                         if($.parser.accepted[item]!=null){
                             arrObj.push($.parser.accepted[item]);
@@ -1245,7 +1246,7 @@ $.extend({
         if(priceData.length > 0){
             var season = ['-','Зима','Лето','Всесезонка'];
             var type_transport = ['-','Легковой/4x4','Легкогрузовой','Индустриальный','Грузовой','Мото'];
-            var html = '<h5>Шины</h5><div class="overscroll"><table class="evenodd">';
+            var html = '<h5>Шины '+priceData.length+' ед.</h5><div class="overscroll"><table class="evenodd">';
             html += '<tr>' +
                 '<td>Производитель</td>' +
                 '<td>Модель</td>' +
@@ -1342,7 +1343,7 @@ $.extend({
     makeWheelPriceTable:function(priceData){
         if(priceData.length > 0){
             var type_wheel = ['-','Стальной','Литой','Кованый','Составной'];
-            var html = '<h5>Диски</h5><div class="overscroll"><table class="evenodd">';
+            var html = '<h5>Диски '+priceData.length+' ед.</h5><div class="overscroll"><table class="evenodd">';
             html += '<tr>' +
                 '<td>Производитель</td>' +
                 '<td>Модель</td>' +
