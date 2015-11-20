@@ -31,6 +31,7 @@ class price_panel extends controller{
                     $this->viewData['manufacturers']=$this->attachManufacturers();
                     $this->viewData['raw_manufacturers']=$this->attachRawManufacturers();
                     $this->viewData['raw_companies']=$this->attachRawCompanies();
+                    $this->viewData['active_companies']=$this->attachActiveCompanies();
                     $this->viewData['semantic']=$this->attachSemanticData();
                     $this->viewData['extras']=$this->attachExtrasData();
                     $this->viewData['city']=$this->attachLocations();
@@ -46,6 +47,7 @@ class price_panel extends controller{
             $this->viewData['manufacturers']=$this->attachManufacturers();
             $this->viewData['raw_manufacturers']=$this->attachRawManufacturers();
             $this->viewData['raw_companies']=$this->attachRawCompanies();
+            $this->viewData['active_companies']=$this->attachActiveCompanies();
             $this->viewData['semantic']=$this->attachSemanticData();
             $this->viewData['extras']=$this->attachExtrasData();
             $this->viewData['city']=$this->attachLocations();
@@ -194,6 +196,12 @@ class price_panel extends controller{
     public function attachRawCompanies(){
         $params=$this->getModel('wheel_companies'); //Getter for datamodel classes -> we have an object of class
         $params->commit(true); //Commit - set data to storage from model - this able us to controlling models
+        return $params->datamodel; //"->datamodel" - pseudo storage. After commit this is not empty)
+    }
+
+    public function attachActiveCompanies(){
+        $params=$this->getModel('wheel_companies'); //Getter for datamodel classes -> we have an object of class
+        $params->getActiveCompanies(); //Commit - set data to storage from model - this able us to controlling models
         return $params->datamodel; //"->datamodel" - pseudo storage. After commit this is not empty)
     }
 

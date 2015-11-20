@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-18 12:27:20
+<?php /* Smarty version 2.6.26, created on 2015-11-20 09:59:17
          compiled from price.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -100,12 +100,13 @@ unset($_smarty_tpl_vars);
                                 <label for="company_id">Компания</label>
                                 <select id="company_id" class="extraCompany" name="company_id">
                                     <option disabled selected value=""> - </option>
-                                    <?php $_from = $this->_tpl_vars['viewData']['raw_companies']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+                                    <?php $_from = $this->_tpl_vars['viewData']['active_companies']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['option']):
 ?>
                                     <option value="<?php echo $this->_tpl_vars['option']->id; ?>
 "><?php echo $this->_tpl_vars['option']->name; ?>
-</option>
+ <text style="color: #efefef">(<?php echo $this->_tpl_vars['option']->city; ?>
+)</text></option>
                                     <?php endforeach; endif; unset($_from); ?>
                                 </select>
                                 <ul class="extraSettings">
