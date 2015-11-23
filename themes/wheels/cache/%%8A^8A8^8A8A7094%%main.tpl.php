@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-13 01:30:37
+<?php /* Smarty version 2.6.26, created on 2015-11-23 21:22:26
          compiled from container/main.tpl */ ?>
 <div id="main">
 </div>
@@ -17,19 +17,23 @@
         </p>
     </div>
     <div class="one-third column">
-        <h3>Контакты</h3>
-        <p>Тех. поддержка:</p>
+        <h3>Отдел обработки</h3>
         <ul class="square">
-            <li><strong>тел.:</strong>: +38 (098) 937-69-99</li>
-            <li><strong>email.:</strong>: support@automanager.com.ua</li>
-            <!--<li><strong>Style Agnostic</strong>: It provides the most basic, beautiful styles, but is meant to be overwritten.</li>-->
+            <li><?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('MANAGER_PHONE_1'); ?>
+</li>
+            <li><?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('MANAGER_EMAIL_1'); ?>
+</li>
         </ul>
     </div>
     <div class="one-third column">
-        <h3>Docs &amp; Support</h3>
-        <p>
-            The easiest way to really get started with JE is to check out the full docs and info at <a href="http://thelaps.biz">thelaps.biz</a>. JE is also open-source and has no project on git.
-        </p>
+        <h3>Тех. поддержка</h3>
+        <!--<p>Тех. поддержка:</p>-->
+        <ul class="square">
+            <li><?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('SUPPORT_PHONE_1'); ?>
+</li>
+            <li><?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('SUPPORT_EMAIL_1'); ?>
+</li>
+        </ul>
     </div>
 
 </div>

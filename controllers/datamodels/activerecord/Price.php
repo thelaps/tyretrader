@@ -514,7 +514,7 @@ class Price extends ActiveRecord\Model
             if ( empty($data['amount']) ) {
                 $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'stock_1 > 0';
             }
-            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-1000 days');
+            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-10 days');
         }
         if(sizeof($makedRules)>0){
             $strRule = implode(' AND ', $makedRules);

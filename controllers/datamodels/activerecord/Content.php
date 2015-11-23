@@ -8,12 +8,22 @@
  */
 class Content extends ActiveRecord\Model
 {
+    const TEXT = 4;
     const BANNER = 3;
     const PAGE = 2;
     const SYSTEM_PAGE = 1;
     const DEF_KEY = 'default';
 
     public static $table_name = 'wheel_content';
+
+    public function getText($_sku = null)
+    {
+        $model = null;
+        if ( $_sku != null ) {
+            $model = self::find(array('conditions' => array('type = ? AND sku = ?', self::TEXT, $_sku)));
+        }
+        return (empty($model)) ? null : $model->content;
+    }
 
     public static function pageContent()
     {

@@ -24,6 +24,7 @@ class index extends controller{
 
         $this->viewData->_content = Content::pageContent();
         $this->viewData->_banner = Content::pageBanner();
+        $this->viewData->_contentmodel = new Content();
 
 
 
