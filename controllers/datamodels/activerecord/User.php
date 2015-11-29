@@ -244,9 +244,11 @@ class User extends ActiveRecord\Model
         SELECT `wheel_user`.*,
         `wheel_companies`.`name` AS company_name,
         `wheel_companies`.`active` AS company_status,
-        `wheel_companies`.`expire` AS company_expire
+        `wheel_companies`.`expire` AS company_expire,
+        `wheel_city`.`name` AS city_name
         FROM `wheel_user` LEFT JOIN `wheel_companies`
         ON `wheel_companies`.`id`=`wheel_user`.`companyId`
+        LEFT JOIN `wheel_city` ON `wheel_city`.`id` = `wheel_companies`.`cityId`
         ORDER BY `wheel_companies`.`name`, `wheel_user`.`firstName`, `wheel_user`.`lastName`');
         return $items->users;
     }

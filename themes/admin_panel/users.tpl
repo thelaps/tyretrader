@@ -36,7 +36,7 @@
                             <td class="editable" data-id="{$user->id}" data-field="user.firstname">{$user->firstname}</td>
                             <td class="editable" data-id="{$user->id}" data-field="user.lastname">{$user->lastname}</td>
                             <td class="editable" data-id="{$user->id}" data-field="user.balance">{$user->balance}</td>
-                            <td>{if $user->company_name != NULL}{$user->company_name}{else} - {/if}</td>
+                            <td>{if $user->company_name != NULL}{$user->company_name} - ({$user->city_name}){else} - {/if}</td>
                             <td>{if $user->company_expire != NULL}{$user->company_expire}{else} - {/if}</td>
                             <td>{if $user->company_status != NULL}{if $user->company_status == 1}Включена{else}Отключена{/if}{else} - {/if}</td>
                             <td><a href="#" class="enterAsClient" data-id="{$user->id}"></a></td>

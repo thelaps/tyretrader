@@ -202,8 +202,8 @@ class Price extends ActiveRecord\Model
 
             $filter = $model->makeFilterFromPost($post, $rules, 'r', true);
             $filterOuter = $model->makeFilterFromPost($post, $rules, 't', true);
-            $filter .= ' AND r.manufacturer_type = '.$productType . ' AND r.stock_1 > 0 AND r.date > '.strtotime('-10 days') ;
-            $filterOuter .= ' AND t.manufacturer_type = '.$productType . ' AND t.stock_1 > 0 AND t.date > '.strtotime('-10 days') ;
+            $filter .= ' AND r.manufacturer_type = '.$productType . ' AND r.stock_1 > 0 AND r.date > '.strtotime('-1000 days') ;
+            $filterOuter .= ' AND t.manufacturer_type = '.$productType . ' AND t.stock_1 > 0 AND t.date > '.strtotime('-1000 days') ;
 
             $completeSql = 'SELECT
                                 `s`.`avg_price_region`,
@@ -354,7 +354,7 @@ class Price extends ActiveRecord\Model
             $completeSql = 'SELECT '.(($isCountOnly)?'COUNT(*) AS items':'SQ.*
             ' . ((!$excludeScopeName) ? ', CONCAT_WS(\' \',SQ.`manufacturer`, SQ.`model`, SQ.`size_w`,
                 SQ.`size_h`, SQ.`size_r`, SQ.`marking`, SQ.`technology`,
-                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename' : '')).' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 200' : ''));
+                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename' : '')).' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 100' : ''));
         }
         return $completeSql;
     }
@@ -514,7 +514,7 @@ class Price extends ActiveRecord\Model
             if ( empty($data['amount']) ) {
                 $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'stock_1 > 0';
             }
-            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-10 days');
+            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-1000 days');
         }
         if(sizeof($makedRules)>0){
             $strRule = implode(' AND ', $makedRules);
@@ -678,7 +678,7 @@ class Price extends ActiveRecord\Model
 
         if(!empty($_pricePartials)){
             $unionsSql = '
-                CREATE OR REPLACE VIEW wheel_priceview AS SELECT `wheel_price`.*, wheel_manufacturers.name AS manufacturer,
+                CREATE OR REPLACE VIEW wheel_priceview_temporary AS SELECT `wheel_price`.*, wheel_manufacturers.name AS manufacturer,
                 wheel_models.name AS model,
                 wheel_models.src,
                 wheel_models.season, wheel_models.use,
@@ -705,6 +705,8 @@ class Price extends ActiveRecord\Model
                     LEFT JOIN wheel_models ON wheel_models.id=model_id';
             }
             $connection->query($unionsSql);
+            $connection->query('DROP TABLE IF EXISTS `wheel_priceview`');
+            $connection->query('CREATE TABLE `wheel_priceview` ENGINE=MyISAM DEFAULT CHARSET=utf8 AS SELECT * FROM `wheel_priceview_temporary`');
         }
     }
 }
