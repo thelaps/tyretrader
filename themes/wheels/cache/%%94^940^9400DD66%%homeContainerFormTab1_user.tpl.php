@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 09:25:24
+<?php /* Smarty version 2.6.26, created on 2015-12-05 20:52:24
          compiled from container/forms/homeTabs/homeContainerFormTab1_user.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -150,10 +150,10 @@
                 <div class="row">
                     <div class="field align-right two-cell">
                         <div class="cell">
-                            <label>Юридическое название</label>
+                            <label style="font-weight: bold; color: #678C59;">Юридическое название</label>
                         </div>
                         <div class="cell">
-                            <input type="text" name="company[name]" value="" disabled="true" class="accountChanger">
+                            <input title="«Название фирмы, которое будет отображено на сайте»" type="text" name="company[name]" value="" disabled="true" class="accountChanger tooltip">
                         </div>
                     </div>
                 </div>

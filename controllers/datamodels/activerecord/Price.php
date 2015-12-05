@@ -53,6 +53,9 @@ class Price extends ActiveRecord\Model
                 if ( empty($item->manufactured_year) ) {
                     $item->manufactured_year = '-';
                 }
+                if ( empty($item->manufactured_country_label) ) {
+                    $item->manufactured_country_label = '-';
+                }
 
                 $timeDiff = abs($currentTime - $item->date);
                 $numberDays = $timeDiff/86400;
@@ -83,19 +86,11 @@ class Price extends ActiveRecord\Model
         //$opt->total = $opt->total[0]->items;
         $opt->filter = (object)$post['filter'];
         $currentTime = time();
-        $manufacturedCountries = array();
         if($unionsSql!=null){
             $opt->items = $model->find_by_sql($unionsSql);
             $opt->total = count($opt->items);
-            foreach ($opt->items as $item) {
 
-                $manufacturedCountry = ' - ';
-                if (!array_key_exists($item->manufactured_country, $manufacturedCountries)) {
-                    $manufacturedCountry = Helper::getLabelById($item->manufactured_country);
-                    $manufacturedCountries[$item->manufactured_country] = $manufacturedCountry;
-                } else {
-                    $manufacturedCountry = $manufacturedCountries[$item->manufactured_country];
-                }
+            foreach ($opt->items as $item) {
 
                 $compiledPrice = $item->makePriceWtihMargin();
 
@@ -104,12 +99,14 @@ class Price extends ActiveRecord\Model
                 if ( empty($item->manufactured_year) ) {
                     $item->manufactured_year = '-';
                 }
+                if ( empty($item->manufactured_country_label) ) {
+                    $item->manufactured_country_label = '-';
+                }
 
                 $timeDiff = abs($currentTime - $item->date);
                 $numberDays = $timeDiff/86400;
                 $numberDays = intval($numberDays);
                 $item->assign_attribute('daysago', $numberDays);
-                $item->assign_attribute('manufactured_country_label', $manufacturedCountry);
 
                 $item->assign_attribute('retail_price', ($isPaid) ? $compiledPrice->retail : '***');
                 $item->assign_attribute('wholesale_price', ($isPaid) ? $compiledPrice->wholesale : '***');
@@ -319,7 +316,7 @@ class Price extends ActiveRecord\Model
         $this->scopeTables = $scope;
     }
 
-    private function makeUnions($post = null, $isCountOnly = false, $limited = true, $excludeScopeName = false)
+    private function makeUnions($post = null, $isCountOnly = false, $limited = true)
     {
         $filter = $this->makeFilterFromPost($post);
         $ordering = $this->makeOrderingFromPost($post);
@@ -351,10 +348,7 @@ class Price extends ActiveRecord\Model
                     LEFT JOIN wheel_models ON wheel_models.id=model_id';
             }*/
             $unionsSql = 'wheel_priceview';
-            $completeSql = 'SELECT '.(($isCountOnly)?'COUNT(*) AS items':'SQ.*
-            ' . ((!$excludeScopeName) ? ', CONCAT_WS(\' \',SQ.`manufacturer`, SQ.`model`, SQ.`size_w`,
-                SQ.`size_h`, SQ.`size_r`, SQ.`marking`, SQ.`technology`,
-                SQ.`et`, SQ.`dia`, SQ.`pcd_1`, SQ.`pcd_2`) AS sqlscopename' : '')).' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 100' : ''));
+            $completeSql = 'SELECT '.(($isCountOnly)?'COUNT(*) AS items':'SQ.*' ).' FROM `'.$unionsSql.'` SQ'.$filter.(($isCountOnly)?'':' '.$ordering.(($limited) ? ' LIMIT 0, 400' : ''));
         }
         return $completeSql;
     }
@@ -535,13 +529,6 @@ class Price extends ActiveRecord\Model
 
     public function makeName()
     {
-        $technology = null;
-        $marking = null;
-        $spike = null;
-        $helper = Helper::extras();
-        $technology = Helper::getObjBy($this->technology, $helper['technology'], 'id');
-        $marking = Helper::getObjBy($this->marking, $helper['marking'], 'id');
-        $spike = Helper::getObjBy($this->spike, $helper['spike'], 'id');
         $sw_index = array();
         $size_i_c = '';
         $size_i_z = '';
@@ -571,9 +558,9 @@ class Price extends ActiveRecord\Model
             $this->size_w.(($this->size_h!=null)?'/'.$this->size_h:'').' '.$size_i_z.'R'.$this->size_r.
                 $size_i_c.' '.
                 $sw_index.' '.
-                ((isset($technology->name))?$technology->name:'').' '.
-                ((isset($spike->name))?$spike->name:'').' '
-                //((isset($marking->name))?$marking->name:'').' '
+                ((isset($this->technology_label))?$this->technology_label:'').' '.
+                ((isset($this->spike_label))?$this->spike_label:'').' '
+                //((isset($this->marking_label))?$this->marking_label:'').' '
         );
 
         $scopename = implode(' ',$scopename);
@@ -706,7 +693,33 @@ class Price extends ActiveRecord\Model
             }
             $connection->query($unionsSql);
             $connection->query('DROP TABLE IF EXISTS `wheel_priceview`');
-            $connection->query('CREATE TABLE `wheel_priceview` ENGINE=MyISAM DEFAULT CHARSET=utf8 AS SELECT * FROM `wheel_priceview_temporary`');
+            $connection->query('CREATE TABLE `wheel_priceview` ENGINE=MyISAM DEFAULT CHARSET=utf8
+                AS (SELECT WPT.*,
+                  CONCAT_WS(\' \',WPT.`manufacturer`, WPT.`model`, WPT.`size_w`,
+                  WPT.`size_h`, WPT.`size_r`, WPT.`marking`, WPT.`technology`,
+                  WPT.`et`, WPT.`dia`, WPT.`pcd_1`, WPT.`pcd_2`) AS sqlscopename,
+                  WDP.`name` AS manufactured_country_label,
+                  WDP_TECH.`name` AS technology_label,
+                  WDP_MARK.`name` AS marking_label,
+                  WDP_SPIKE.`name` AS spike_label
+                FROM `wheel_priceview_temporary` WPT
+                LEFT JOIN `wheel_dict2parameters` WDP ON WDP.`id`=WPT.`manufactured_country`
+                LEFT JOIN `wheel_dict2parameters` WDP_TECH ON WDP_TECH.`id`=WPT.`technology`
+                LEFT JOIN `wheel_dict2parameters` WDP_MARK ON WDP_MARK.`id`=WPT.`marking`
+                LEFT JOIN `wheel_dict2parameters` WDP_SPIKE ON WDP_SPIKE.`id`=WPT.`spike`
+                )');
+
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `company_id` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `manufacturer_id` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `model_id` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `date` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `season` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `type_transport` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `size_r` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `size_w` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `size_h` ) ');
+            $connection->query('ALTER TABLE `wheel_priceview` ADD INDEX ( `sqlscopename` ) ');
+            $connection->query('FLUSH TABLE `wheel_priceview`');
         }
     }
 }
