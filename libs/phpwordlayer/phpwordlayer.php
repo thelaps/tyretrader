@@ -53,7 +53,7 @@ class phpwordlayer{
                 $section->addPageBreak();
             }
             $companyItem = $company[0]['company']->items;
-            $companyBilling = $company[0]['company']->billing->items;
+            $companyBilling = $company[0]['company']->billing;
 
             $companyTable = $section->addTable();
 

@@ -39,6 +39,7 @@ class opt extends controller{
             }
             //App::ajax(json_encode($response));
         }
+
         $response = array(
             'action' => $action,
             'completeData' => (!in_array($action, array('xlsCatalog', 'priceExport'))) ? $this->arrayAttributes($completeData, $action) : $completeData,
