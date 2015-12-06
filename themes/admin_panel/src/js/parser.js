@@ -99,14 +99,28 @@ $.extend({
                     }
                 });
 
-                if($.inArray('21', settingObj.parameter)!=-1 && $.inArray('25', settingObj.parameter)!=-1 && ($.inArray('2', settingObj.parameter)!=-1 || (settingObj.parameter.indexOf('13')!=-1 && settingObj.parameter.indexOf('17')!=-1))){
+                /*
+                * 21 цена опт
+                * 25 наличие 1
+                * 2 наименование
+                * 13 диаметр
+                * 17 ширина
+                * 19 ширина/профиль
+                */
+
+                if($.inArray('21', settingObj.parameter)!=-1 && $.inArray('25', settingObj.parameter)!=-1 &&
+                    (
+                        $.inArray('2', settingObj.parameter)!=-1 ||
+                        (settingObj.parameter.indexOf('13')!=-1 && settingObj.parameter.indexOf('17')!=-1) ||
+                        (settingObj.parameter.indexOf('13')!=-1 && settingObj.parameter.indexOf('19')!=-1)
+                    )){
                     $.parser.collection.settings.push(settingObj);
                 }else{
                     var errorIn = {
                         tab: '>> Вкладка №: '+i,
                         price: (settingObj.parameter.indexOf('21')==-1),
                         quantity: (settingObj.parameter.indexOf('25')==-1),
-                        naming: (settingObj.parameter.indexOf('2')==-1) ? (settingObj.parameter.indexOf('13')==-1 && settingObj.parameter.indexOf('17')==-1) : false
+                        naming: (settingObj.parameter.indexOf('2')==-1) ? (settingObj.parameter.indexOf('13')==-1 && settingObj.parameter.indexOf('17')==-1) : (settingObj.parameter.indexOf('13')==-1 && settingObj.parameter.indexOf('19')==-1)
                     };
                     $.parser.internalError.push(errorIn);
                 }
@@ -208,18 +222,22 @@ $.extend({
                 if ( _doubleSize != null ) {
                     _doubleSize = _doubleSize.split('/');
                 }
+                var _doubleIndex = $.findParameter(attachParameters.parameters, 38, true);
+                if ( _doubleIndex != null ) {
+                    indexes = $.parser.regulate(_doubleIndex,domKey,'tyreindex');
+                }
                 specifiedSizes = {
                     R: $.findParameter(attachParameters.parameters, 13, true),
                     W: (_doubleSize != null) ? _doubleSize[0] : $.findParameter(attachParameters.parameters, 17, true),
                     H: (_doubleSize != null) ? _doubleSize[1] : $.findParameter(attachParameters.parameters, 45, true),
                     I: $.findParameter(attachParameters.parameters, 30, true),
                     Si: {
-                        F: $.findParameter(attachParameters.parameters, 36, true),
-                        B: $.findParameter(attachParameters.parameters, 37, true)
+                        F: ($.findParameter(attachParameters.parameters, 36, true) != null) ? $.findParameter(attachParameters.parameters, 36, true) : ((indexes!=null && (indexes[8]!=undefined || indexes[4]!=undefined))?((indexes[8]!=undefined)?indexes[8]:((indexes[5]!=undefined)?indexes[5]:null)):null),
+                        B: ($.findParameter(attachParameters.parameters, 37, true) != null) ? $.findParameter(attachParameters.parameters, 37, true) : ((indexes!=null && indexes[10]!=undefined)?indexes[10]:null)
                     },
                     Sw: {
-                        F: $.findParameter(attachParameters.parameters, 34, true),
-                        B: $.findParameter(attachParameters.parameters, 35, true)
+                        F: ($.findParameter(attachParameters.parameters, 34, true) != null) ? $.findParameter(attachParameters.parameters, 34, true) : ((indexes!=null && (indexes[7]!=undefined || indexes[4]!=undefined))?((indexes[7]!=undefined)?indexes[7]:((indexes[4]!=undefined)?indexes[4]:null)):null),
+                        B: ($.findParameter(attachParameters.parameters, 35, true) != null) ? $.findParameter(attachParameters.parameters, 35, true) : ((indexes!=null && indexes[9]!=undefined)?indexes[9]:null)
                     }
                 };
             } else {
