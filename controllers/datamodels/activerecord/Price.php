@@ -199,8 +199,8 @@ class Price extends ActiveRecord\Model
 
             $filter = $model->makeFilterFromPost($post, $rules, 'r', true);
             $filterOuter = $model->makeFilterFromPost($post, $rules, 't', true);
-            $filter .= ' AND r.manufacturer_type = '.$productType . ' AND r.stock_1 > 0 AND r.date > '.strtotime('-1000 days') ;
-            $filterOuter .= ' AND t.manufacturer_type = '.$productType . ' AND t.stock_1 > 0 AND t.date > '.strtotime('-1000 days') ;
+            $filter .= ' AND r.manufacturer_type = '.$productType . ' AND r.stock_1 > 0 AND r.date > '.strtotime('-10 days') ;
+            $filterOuter .= ' AND t.manufacturer_type = '.$productType . ' AND t.stock_1 > 0 AND t.date > '.strtotime('-10 days') ;
 
             $completeSql = 'SELECT
                                 `s`.`avg_price_region`,
@@ -508,7 +508,7 @@ class Price extends ActiveRecord\Model
             if ( empty($data['amount']) ) {
                 $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'stock_1 > 0';
             }
-            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-1000 days');
+            $makedRules[] = (($tableAlias != null) ? $tableAlias.'.' : '') . 'date > '.strtotime('-10 days');
         }
         if(sizeof($makedRules)>0){
             $strRule = implode(' AND ', $makedRules);
