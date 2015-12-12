@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:37
+<?php /* Smarty version 2.6.26, created on 2015-12-12 17:03:25
          compiled from container/forms/optContainerForm.tpl */ ?>
 <div class="tab-widget" data-role="tabs">
     <ul>
@@ -7,7 +7,7 @@
         <!--<li>Грузовые</li>-->
         <li>Мото</li>
         <!--<li>Сельхоз</li>-->
-        <li>Индустриальные</li>
+        <li>Грузовая / Агро / Индустриальная</li>
         <li>Диски</li>
         <li>Марка машины</li>
     </ul>
