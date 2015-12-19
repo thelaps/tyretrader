@@ -44,7 +44,11 @@ class wheel_semantic extends datamodel{
             $aTmp=array_merge_recursive($viewData,$this->letterizeToAssoc($row->name));
             $viewData=$aTmp;
         };
-        return json_encode($viewData);
+        try {
+            return json_encode($viewData);
+        } catch (Exception $e) {
+            return json_encode(array('error' => true, 'message' => $e->getMessage()));
+        }
     }
 
     private function letterizeToAssoc($str){
