@@ -70,6 +70,7 @@ class price_panel extends controller{
             return 'exel_1.json?version='.rand(0,999);
         }catch (Exception $e){
             $this->sError=$e->getMessage();
+            print_r($this->sError);die;
         }
     }
 
