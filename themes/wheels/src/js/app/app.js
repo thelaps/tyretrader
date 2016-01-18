@@ -64,7 +64,7 @@ $(document).ready(function(){
                 window.location = App.options.base;
             },
             auth: function(){
-                window.location.reload(true);
+                window.location.href=App.options.base + '/?load=opt';
             },
             logout: function(){
                 window.location.reload(true);

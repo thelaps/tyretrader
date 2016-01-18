@@ -22,7 +22,7 @@ class user_panel extends controller{
                     $isComplete=false;
                     break;
                 case 'delete':
-                    $isComplete=false;
+                    $isComplete=$this->deleteUser($get['dataid']);
                     break;
             }
             App::ajax(json_encode(array('status'=>$isComplete)));
@@ -37,6 +37,18 @@ class user_panel extends controller{
     public function getUsers(){
         $model=new User; //Getter for datamodel classes -> we have an object of class
         return $model->getAllGroupedUsres(); //"->datamodel" - pseudo storage. After commit this is not empty)
+    }
+
+    public function deleteUser($_id){
+        $user = User::find($_id);
+        if ( $user->companyid > 0 ) {
+            $company = $user->getCompany(false);
+            if ($company != null) {
+                $company->delete();
+            }
+        }
+        $user->delete();
+        return Price::synchronisePriceStructure();
     }
 
     public function getUsersStat(){

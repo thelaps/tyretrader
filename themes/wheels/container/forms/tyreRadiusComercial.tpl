@@ -2,8 +2,7 @@
     {if $isAll}
         <option value="">Все</option>
     {/if}
-    <option value="13">13c</option>
-    <option value="14">14c</option>
-    <option value="15">15c</option>
-    <option value="16"{if !$isAll} selected="selected"{/if}>16c</option>
+    <option value="17.5">17,5</option>
+    <option value="19.5">19.5</option>
+    <option value="22.5"{if !$isAll} selected="selected"{/if}>22.5</option>
 </select>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-11-29 12:35:00
+<?php /* Smarty version 2.6.26, created on 2016-01-12 23:06:50
          compiled from users.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -61,8 +61,12 @@ unset($_smarty_tpl_vars);
                             <td><?php if ($this->_tpl_vars['user']->company_expire != NULL): ?><?php echo $this->_tpl_vars['user']->company_expire; ?>
 <?php else: ?> - <?php endif; ?></td>
                             <td><?php if ($this->_tpl_vars['user']->company_status != NULL): ?><?php if ($this->_tpl_vars['user']->company_status == 1): ?>Включена<?php else: ?>Отключена<?php endif; ?><?php else: ?> - <?php endif; ?></td>
-                            <td><a href="#" class="enterAsClient" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
-"></a></td>
+                            <td>
+                                <a href="#" class="enterAsClient" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+"></a>
+                                <a href="#" class="deleteClient" data-id="<?php echo $this->_tpl_vars['user']->id; ?>
+"></a>
+                            </td>
                         </tr>
                         <?php endforeach; endif; unset($_from); ?>
                     </table>

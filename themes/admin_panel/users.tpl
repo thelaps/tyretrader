@@ -39,7 +39,10 @@
                             <td>{if $user->company_name != NULL}{$user->company_name} - ({$user->city_name}){else} - {/if}</td>
                             <td>{if $user->company_expire != NULL}{$user->company_expire}{else} - {/if}</td>
                             <td>{if $user->company_status != NULL}{if $user->company_status == 1}Включена{else}Отключена{/if}{else} - {/if}</td>
-                            <td><a href="#" class="enterAsClient" data-id="{$user->id}"></a></td>
+                            <td>
+                                <a href="#" class="enterAsClient" data-id="{$user->id}"></a>
+                                <a href="#" class="deleteClient" data-id="{$user->id}"></a>
+                            </td>
                         </tr>
                         {/foreach}
                     </table>

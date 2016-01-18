@@ -1371,4 +1371,21 @@ $(document).ready(function(){
             }
         });
     });
+    $('.deleteClient').each(function(){
+        var _btn = $(this);
+        _btn.bind({
+            click: function(){
+                if (confirm('Удалить клиента? Вействие будет необратимым')) {
+                    var _id = $(this).attr('data-id');
+                    $.post(App.baseLink()+'?view=admin_panel&load=user_panel', {
+                        fnc: 'delete',
+                        dataid: _id
+                    }, function(data){
+                        console.log(data);
+                    });
+                }
+                return false;
+            }
+        });
+    });
 });
