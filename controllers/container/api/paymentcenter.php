@@ -80,8 +80,8 @@ class paymentcenter extends controller{
             $package = Package::find($post['id']);
             if ( $package ) {
                 $user = $this->profiler->user;
-                $invoice = Invoice::createNew(Invoice::TYPE_PACKAGE, $user->id, null, $package->cost);
-                $invoiceItem = Invoiceitem::createNew($invoice->id, 'Пакет услуг: ' . $package->title, $package->amount, $package->cost, $package->cost);
+                $invoice = Invoice::createNew(Invoice::TYPE_PACKAGE, $user->id, null, $package->cost * (($package->amount > 0) ? $package->amount : 1));
+                $invoiceItem = Invoiceitem::createNew($invoice->id, 'Пакет услуг: ' . $package->title, $package->amount, $package->cost, $invoice->price);
                 if ( $invoice->completePayment() ) {
                     switch ($package->sku) {
                         case 'company-prolongation':

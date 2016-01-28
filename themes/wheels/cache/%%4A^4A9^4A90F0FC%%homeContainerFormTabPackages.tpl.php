@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-04 22:05:51
+<?php /* Smarty version 2.6.26, created on 2016-01-27 00:06:48
          compiled from container/forms/homeTabs/homeContainerFormTabPackages.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'container/forms/homeTabs/homeContainerFormTabPackages.tpl', 10, false),)), $this); ?>
@@ -19,7 +19,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_form
             <p><?php echo $this->_tpl_vars['package']->description; ?>
 </p>
             <button type="submit">Купить за <?php echo ((is_array($_tmp=$this->_tpl_vars['package']->cost)) ? $this->_run_mod_handler('number_format', true, $_tmp, 2) : number_format($_tmp, 2)); ?>
-грн./мес.</button>
+грн./мес. на <?php if ($this->_tpl_vars['package']->amount > 0): ?><?php echo $this->_tpl_vars['package']->amount; ?>
+<?php endif; ?>мес.</button>
         </form>
     </div>
     <hr/>

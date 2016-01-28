@@ -7,7 +7,7 @@
             <input type="hidden" name="id" value="{$package->id}">
             <h4>{$package->title}</h4>
             <p>{$package->description}</p>
-            <button type="submit">Купить за {$package->cost|number_format:2}грн./мес.</button>
+            <button type="submit">Купить за {$package->cost|number_format:2}грн./мес. на {if $package->amount > 0}{$package->amount}{/if}мес.</button>
         </form>
     </div>
     <hr/>
