@@ -150,10 +150,8 @@ class Company extends ActiveRecord\Model
         if ( sizeof($expirePriceItems) > 0 ) {
             foreach ( $expirePriceItems as $companyItem ) {
                 App::helper()->sendMail('expirationOfPrice', $companyItem->email, 'Обновление прайса', $companyItem);
-                die;
             }
         }
-        print_r(array('OKAY', sizeof($expirePriceItems)));
     }
 
     /*public static  function getAllAssocRates()
