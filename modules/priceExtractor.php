@@ -45,6 +45,10 @@ class priceExtractor extends connector{
 
                 if($this->makeSqlProcess($priceAction)){
                     $price = $this->getPriceData($this->companyId);
+                    $companyModel = new Company();
+                    $companyToUpdate = $companyModel->getCompany($this->companyId);
+                    $companyToUpdate->last_update = new DateTime();
+                    $companyToUpdate->save();
                     $status = true;
                 }
             }

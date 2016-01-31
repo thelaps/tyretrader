@@ -33,7 +33,8 @@ class wheel_companies extends datamodel{
                             wheel_companies.active,
                             wheel_companies.iso,
                             wheel_companies.rate,
-                            wheel_city.name as city
+                            wheel_city.name as city,
+                            DATE_FORMAT(wheel_companies.last_update, \'%d.%m.%Y\') as last_update
                     FROM wheel_companies LEFT JOIN wheel_city ON wheel_city.id=wheel_companies.cityId
                     WHERE wheel_companies.id='.$this->companyId.'
                 ORDER BY wheel_companies.name ASC';
@@ -44,10 +45,11 @@ class wheel_companies extends datamodel{
                             wheel_companies.active,
                             wheel_companies.iso,
                             wheel_companies.rate,
-                            wheel_city.name as city
+                            wheel_city.name as city,
+                            DATE_FORMAT(wheel_companies.last_update, \'%d.%m.%Y\') as last_update
                     FROM wheel_companies LEFT JOIN wheel_city ON wheel_city.id=wheel_companies.cityId
                     WHERE wheel_companies.active=1 AND wheel_companies.warehouse=1
-                ORDER BY wheel_companies.name ASC';
+                ORDER BY wheel_companies.last_update DESC, wheel_companies.name ASC';
         }
         $stmt = $dbo->prepare($query);
         $stmt->execute();

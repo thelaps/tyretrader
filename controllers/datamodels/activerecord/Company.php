@@ -136,6 +136,26 @@ class Company extends ActiveRecord\Model
         return (sizeof($paidItems) > 0);
     }
 
+    public static function sendExpirePriceMail()
+    {
+        $model = new Company();
+        $expirePriceItems = $model->find_by_sql('
+            SELECT c.*, u.`email`, u.`firstName`, u.`lastName`
+            FROM `wheel_companies` AS c
+            LEFT JOIN `wheel_user` AS u
+                ON u.`companyId`=c.`id`
+            WHERE c.`warehouse`='.self::WAREHOUSE.'
+            AND DATEDIFF(NOW(), c.`last_update`) > '.App::getConfig('updateExpire').'
+        ');
+        if ( sizeof($expirePriceItems) > 0 ) {
+            foreach ( $expirePriceItems as $companyItem ) {
+                App::helper()->sendMail('expirationOfPrice', $companyItem->email, 'Обновление прайса', $companyItem);
+                die;
+            }
+        }
+        print_r(array('OKAY', sizeof($expirePriceItems)));
+    }
+
     /*public static  function getAllAssocRates()
     {
         $companies = array();

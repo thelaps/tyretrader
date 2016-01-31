@@ -12,7 +12,8 @@ class jConfig{
     public function __construct(){
         $this->_config['PDO']=null;
         $this->_config['dieOnError']=false;
-        $this->_config['baseLink']='http://'.$_SERVER['HTTP_HOST'];
+        $this->_config['baseLink']=(!App::isCLI()) ? 'http://'.$_SERVER['HTTP_HOST'] : null;
+        $this->_config['updateExpire']=8;
         $this->_config['project']='wheels';
         $this->_config['theme']='wheels';
         $this->_config['activeUI']='Smarty';

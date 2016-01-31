@@ -71,7 +71,7 @@
                                 <select id="company_id" class="extraCompany" name="company_id">
                                     <option disabled selected value=""> - </option>
                                     {foreach item=option from=$viewData.active_companies}
-                                    <option value="{$option->id}">{$option->name} - ({$option->city})</option>
+                                    <option value="{$option->id}">{$option->last_update}: {$option->name} - ({$option->city})</option>
                                     {/foreach}
                                 </select>
                                 <ul class="extraSettings">

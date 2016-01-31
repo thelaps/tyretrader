@@ -18,10 +18,13 @@ class controller_manager extends view_manager{
 
         require CORE_DIR.'controller.php';
 
-        $this->newController($this->get['view'],'index');
-
-        if($this->controllers!=null){
-            $this->run();
+        if ( App::isCLI() ) {
+            App::newJump('cron', 'modules');
+        } else {
+            $this->newController($this->get['view'],'index');
+            if($this->controllers!=null){
+                $this->run();
+            }
         }
     }
 

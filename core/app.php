@@ -123,6 +123,10 @@ class App{
     public static function helper(){
         return self::newJump('helper', 'modules');
     }
+
+    public static function isCLI(){
+        return ( php_sapi_name() == 'cli' );
+    }
 }
 /*define('CORE_DIR',dirname(__FILE__).DIRECTORY_SEPARATOR);
 require CORE_DIR.'config.php';
