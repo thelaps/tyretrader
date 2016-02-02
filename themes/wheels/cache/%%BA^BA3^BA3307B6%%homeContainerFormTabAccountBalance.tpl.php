@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:43:30
+<?php /* Smarty version 2.6.26, created on 2016-01-19 03:26:42
          compiled from container/forms/homeTabs/homeContainerFormTabAccountBalance.tpl */ ?>
 <script>
     <?php echo '

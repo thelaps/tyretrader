@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-14 15:46:07
+<?php /* Smarty version 2.6.26, created on 2016-01-31 17:49:24
          compiled from layout/menu.tpl */ ?>
 <div class="container top_menu">
 <a href="<?php echo $this->_tpl_vars['baseLink']; ?>

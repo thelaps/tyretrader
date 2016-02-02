@@ -17,8 +17,8 @@ class helper{
         $this->template->compile_check = true;
         $this->template->force_compile = false;
         $this->template->debugging = false;
-        $this->template->template_dir = helper::$templatePath;
-        $this->template->compile_dir = helper::$templatePath.'/cache';
+        $this->template->template_dir = CORE_DIR.'../'.helper::$templatePath;
+        $this->template->compile_dir = CORE_DIR.'../'.helper::$templatePath.'/cache';
     }
 
     public function sendMail($template, $to, $subj, $data)
@@ -29,12 +29,12 @@ class helper{
         $headers .= "X-Mailer: PHP/" . phpversion();
 
         $this->template->assign('data', $data);
-        $view = $this->template->fetch(strtolower($template).'.tpl');
+        $view = $this->template->fetch($this->getTemplatePath($template));
         mail($to, $subj, $view, $headers);
     }
 
     public function getTemplatePath($template)
     {
-        return helper::$templatePath.'/'.strtolower($template).'.tpl';
+        return CORE_DIR.'../'.helper::$templatePath.'/'.strtolower($template).'.tpl';
     }
 }

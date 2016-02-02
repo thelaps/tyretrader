@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-04 23:31:06
+<?php /* Smarty version 2.6.26, created on 2016-01-18 19:01:57
          compiled from widget/profileBox.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'number_format', 'widget/profileBox.tpl', 60, false),)), $this); ?>

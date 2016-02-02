@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2013-09-14 03:06:54
+<?php /* Smarty version 2.6.26, created on 2016-01-31 17:49:24
          compiled from widget/locations_editor.tpl */ ?>
 <div class="widget_editor locations_table">
     <button class="close">Закрыть</button>
