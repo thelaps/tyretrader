@@ -1,0 +1,20 @@
+# Cache
+themes/wheels/cache/
+themes/admin_panel/cache/
+themes/notifications/cache/
+
+# Additioanl scripts
+inbox/
+
+# Media files
+images/ic_*
+tmp/
+files/*.xls
+files/*.xlsx
+files/*.csv
+files/price/*.xlsx
+files/price/*.docx
+files/price/*.csv
+
+# IDE
+.idea/
