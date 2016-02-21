@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version 2.6.26, created on 2016-02-21 12:33:07
+=======
+<?php /* Smarty version 2.6.26, created on 2016-01-18 19:01:57
+>>>>>>> 0065ad3cc2f23cd4dcb380c900a80bb1ac56d3d7
          compiled from layout/footer.tpl */ ?>
 
                 <footer id="footer">

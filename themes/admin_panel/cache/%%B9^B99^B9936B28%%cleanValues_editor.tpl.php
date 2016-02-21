@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-01-21 01:06:25
+<?php /* Smarty version 2.6.26, created on 2016-01-31 17:49:24
          compiled from widget/cleanValues_editor.tpl */ ?>
 <div class="widget_editor values_table">
     <button class="close">Закрыть</button>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-09-14 01:19:24
+<?php /* Smarty version 2.6.26, created on 2016-01-31 17:49:24
          compiled from widget/company_editor.tpl */ ?>
 <div class="widget_editor company_table">
     <button class="close">Закрыть</button>

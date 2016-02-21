@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 09:32:43
+<?php /* Smarty version 2.6.26, created on 2016-01-19 10:46:27
          compiled from container/api/product_raw.tpl */ ?>
 <article>
     <h1><?php echo $this->_tpl_vars['viewData']->container->makeName(); ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-13 01:48:01
+<?php /* Smarty version 2.6.26, created on 2016-01-19 06:46:08
          compiled from container/viewsettings.tpl */ ?>
 <div id="main" data-role="main">
     <h2><?php echo $this->_tpl_vars['viewData']->_content->title; ?>

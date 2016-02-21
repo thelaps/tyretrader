@@ -145,7 +145,7 @@ class Company extends ActiveRecord\Model
             LEFT JOIN `wheel_user` AS u
                 ON u.`companyId`=c.`id`
             WHERE c.`warehouse`='.self::WAREHOUSE.'
-            AND DATEDIFF(NOW(), c.`last_update`) > '.App::getConfig('updateExpire').'
+            AND DATEDIFF(NOW(), c.`last_update`) = '.App::getConfig('updateExpire').'
         ');
         if ( sizeof($expirePriceItems) > 0 ) {
             foreach ( $expirePriceItems as $companyItem ) {

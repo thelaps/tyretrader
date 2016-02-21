@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-13 01:42:28
+<?php /* Smarty version 2.6.26, created on 2016-02-01 04:24:59
          compiled from container/forms/analitycsContainerCatalog.tpl */ ?>
 <div class="block">
     <ul class="table-legend">

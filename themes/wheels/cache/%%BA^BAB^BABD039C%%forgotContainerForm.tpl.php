@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-10-12 19:56:23
+<?php /* Smarty version 2.6.26, created on 2016-01-19 03:42:04
          compiled from container/forms/forgotContainerForm.tpl */ ?>
 <h2>Восстановление доступа</h2>
 <div class="widget forgot">
