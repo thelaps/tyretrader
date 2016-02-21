@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?php /* Smarty version 2.6.26, created on 2016-02-21 10:32:17
-=======
-<?php /* Smarty version 2.6.26, created on 2016-01-19 02:07:05
->>>>>>> 0065ad3cc2f23cd4dcb380c900a80bb1ac56d3d7
+<?php /* Smarty version 2.6.26, created on 2016-02-21 12:56:52
          compiled from container/forms/tyreRadius.tpl */ ?>
 <select class="jcf-ignore" id="<?php echo $this->_tpl_vars['id']; ?>
 " name="tyre[size_r][]" style="width: 76px;">

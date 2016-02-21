@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<?php /* Smarty version 2.6.26, created on 2016-02-21 12:13:20
-=======
-<?php /* Smarty version 2.6.26, created on 2016-02-02 10:41:44
->>>>>>> 0065ad3cc2f23cd4dcb380c900a80bb1ac56d3d7
+<?php /* Smarty version 2.6.26, created on 2016-02-21 12:57:02
          compiled from primitiveForms/content_edit.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
