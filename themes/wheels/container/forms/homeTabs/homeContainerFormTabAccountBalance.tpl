@@ -1,11 +1,11 @@
 <script>
     {literal}
     $(document).ready(function(){
-        var minAmount = 100;
+        var minAmount = {/literal}{$viewData->_contentmodel->getText('MIN_REFILL')}{literal};
         $('input[name="payment[amount]"]').bind({
             change: function(){
-                if ($(this).val() < 100) {
-                    $(this).val('100');
+                if ($(this).val() < minAmount) {
+                    $(this).val(minAmount);
                 }
             }
         });
@@ -24,7 +24,7 @@
                             <label>Сумма пополнения</label>
                         </div>
                         <div class="cell">
-                            <input type="text" name="payment[amount]" value="100">
+                            <input type="text" name="payment[amount]" value="{$viewData->_contentmodel->getText('MIN_REFILL')}">
                         </div>
                     </div>
                 </div>

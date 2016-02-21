@@ -45,6 +45,7 @@ class wheel_semantic extends datamodel{
             $viewData=$aTmp;
         };
         try {
+
             return json_encode($viewData);
         } catch (Exception $e) {
             return json_encode(array('error' => true, 'message' => $e->getMessage()));

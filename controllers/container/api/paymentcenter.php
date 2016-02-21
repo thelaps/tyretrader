@@ -98,6 +98,10 @@ class paymentcenter extends controller{
                             break;
                     }
                     return $invoice;
+                } else {
+                    if ($user->balance < $invoice->price) {
+                        $this->errors[] = array('message' => 'У Вас недостаточно средств на счету!');
+                    }
                 }
                 return false;
             }

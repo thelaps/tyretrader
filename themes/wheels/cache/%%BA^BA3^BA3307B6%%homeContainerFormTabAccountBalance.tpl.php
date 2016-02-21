@@ -1,13 +1,15 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:43:30
+<?php /* Smarty version 2.6.26, created on 2016-02-21 10:25:22
          compiled from container/forms/homeTabs/homeContainerFormTabAccountBalance.tpl */ ?>
 <script>
     <?php echo '
     $(document).ready(function(){
-        var minAmount = 100;
+        var minAmount = '; ?>
+<?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('MIN_REFILL'); ?>
+<?php echo ';
         $(\'input[name="payment[amount]"]\').bind({
             change: function(){
-                if ($(this).val() < 100) {
-                    $(this).val(\'100\');
+                if ($(this).val() < minAmount) {
+                    $(this).val(minAmount);
                 }
             }
         });
@@ -28,7 +30,8 @@
                             <label>Сумма пополнения</label>
                         </div>
                         <div class="cell">
-                            <input type="text" name="payment[amount]" value="100">
+                            <input type="text" name="payment[amount]" value="<?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('MIN_REFILL'); ?>
+">
                         </div>
                     </div>
                 </div>

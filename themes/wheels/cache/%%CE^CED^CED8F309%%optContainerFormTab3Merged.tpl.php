@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:37
+<?php /* Smarty version 2.6.26, created on 2016-02-21 10:40:41
          compiled from container/forms/optTabs/optContainerFormTab3Merged.tpl */ ?>
 <div class="tab" data-role="tab">
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
@@ -93,7 +93,7 @@
                 <!-- Select type and size -->
                 <div class="area-type">
                     <!-- Tyre options -->
-                    <div class="field">
+                    <!--<div class="field">
                         <label>Сезон</label>
                         <ul class="opt-group justify" data-role="seasons">
                             <li>
@@ -109,7 +109,7 @@
                                 <label for="s_season-3">Всесезонная</label>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
                     <div class="size-field">
                         <div>
                             <label for="s_t-axle">Тип оси</label>

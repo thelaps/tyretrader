@@ -1443,6 +1443,14 @@ button.delete {
 .ico-twitter {
     background-position: -248px -43px;
 }
+.ico-vk {
+    width: 32px;
+    height: 31px;
+    text-indent: -999px;
+    overflow: hidden;
+    background: url('../images/vk-xxl.png') no-repeat 0px 0px;
+    background-size: 31px;
+}
 .link-to-top {
     position: absolute;
     left:50%;

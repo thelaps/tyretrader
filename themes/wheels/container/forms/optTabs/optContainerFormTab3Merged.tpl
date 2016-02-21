@@ -67,7 +67,7 @@
                 <!-- Select type and size -->
                 <div class="area-type">
                     <!-- Tyre options -->
-                    <div class="field">
+                    <!--<div class="field">
                         <label>Сезон</label>
                         <ul class="opt-group justify" data-role="seasons">
                             <li>
@@ -83,7 +83,7 @@
                                 <label for="s_season-3">Всесезонная</label>
                             </li>
                         </ul>
-                    </div>
+                    </div>-->
                     <div class="size-field">
                         <div>
                             <label for="s_t-axle">Тип оси</label>

@@ -101,7 +101,7 @@
                         <div>
                             <label for="s_radial">Диаметр</label>
                             <!--<input id="s_radial" class="size-s" type="text" name="tyre[size_r][]">-->
-                            {include file="container/forms/tyreRadius.tpl" id="s_radial" isAll=true}
+                            {include file="container/forms/tyreRadius.tpl" id="s_radial" isAll=true enableCSize=true}
                         </div>
                     </div>
                 </div>

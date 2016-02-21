@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:37
+<?php /* Smarty version 2.6.26, created on 2016-02-21 10:32:17
          compiled from container/forms/tyreRadius.tpl */ ?>
 <select class="jcf-ignore" id="<?php echo $this->_tpl_vars['id']; ?>
 " name="tyre[size_r][]" style="width: 76px;">
@@ -15,12 +15,16 @@
     <option value="12">12</option>
     <option value="13">13</option>
     <option value="14">14</option>
+    <?php if ($this->_tpl_vars['enableCSize']): ?><option value="14">14C</option><?php endif; ?>
     <option value="15,3">15,3</option>
     <option value="15">15</option>
+    <?php if ($this->_tpl_vars['enableCSize']): ?><option value="15">15C</option><?php endif; ?>
     <option value="15,5">15,5</option>
     <option value="16"<?php if (! $this->_tpl_vars['isAll']): ?> selected="selected"<?php endif; ?>>16</option>
+    <?php if ($this->_tpl_vars['enableCSize']): ?><option value="16">16C</option><?php endif; ?>
     <option value="16,5">16,5</option>
     <option value="17">17</option>
+    <?php if ($this->_tpl_vars['enableCSize']): ?><option value="17">17C</option><?php endif; ?>
     <option value="17,5">17,5</option>
     <option value="18">18</option>
     <option value="19,5">19,5</option>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-01-26 23:41:24
+<?php /* Smarty version 2.6.26, created on 2016-02-21 12:13:20
          compiled from primitiveForms/content_edit.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -10,6 +10,18 @@ $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/menu.tpl', 'sm
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
+<?php if ($this->_tpl_vars['viewData']['content']->type == 1 || $this->_tpl_vars['viewData']['content']->type == 2): ?>
+<script src="<?php echo $this->_tpl_vars['src']; ?>
+/js/ckeditor/ckeditor.js"></script>
+<?php echo '
+<script>
+    $(document).ready(function(){
+        CKEDITOR.replace(\'content_editor\');
+    });
+</script>
+'; ?>
+
+<?php endif; ?>
 <div id="ajaxStatus">
     <span></span>
 </div>
@@ -22,7 +34,7 @@ unset($_smarty_tpl_vars);
         <hr />
     </div>
     <form action="<?php echo $this->_tpl_vars['baseLink']; ?>
-/?view=admin_panel&load=content_panel" method="POST" class="editableForm sixteen columns">
+/?view=admin_panel&load=content_panel" method="POST" enctype="multipart/form-data" class="editableForm sixteen columns">
         <input type="hidden" name="fnc" value="<?php if ($this->_tpl_vars['viewData']['content']->id != null): ?>update<?php else: ?>add<?php endif; ?>">
         <input type="hidden" name="type" value="<?php echo $this->_tpl_vars['viewData']['_type']; ?>
 ">
@@ -42,7 +54,7 @@ unset($_smarty_tpl_vars);
             <input name="content[description]" type="text" value="<?php echo $this->_tpl_vars['viewData']['content']->description; ?>
 ">
             <label>Основной текст</label>
-            <textarea name="content[content]"><?php echo $this->_tpl_vars['viewData']['content']->content; ?>
+            <textarea name="content[content]" id="content_editor"><?php echo $this->_tpl_vars['viewData']['content']->content; ?>
 </textarea>
             <label>META Title</label>
             <input name="content[meta_title]" type="text" value="<?php echo $this->_tpl_vars['viewData']['content']->meta_title; ?>
@@ -75,6 +87,15 @@ unset($_smarty_tpl_vars);
         <label>Описание</label>
         <textarea name="content[description]"><?php echo $this->_tpl_vars['viewData']['content']->description; ?>
 </textarea>
+    <?php elseif ($this->_tpl_vars['viewData']['_type'] == 'banner'): ?>
+        <input type="hidden" name="content[type]" value="3">
+        <input type="hidden" name="content[content]" value="<?php echo $this->_tpl_vars['viewData']['content']->content; ?>
+">
+        <label>Описание</label>
+        <input name="content[description]" type="text" value="<?php echo $this->_tpl_vars['viewData']['content']->description; ?>
+">
+        <label>Загрузить</label>
+        <input name="banner_content" type="file">
     <?php endif; ?>
         <button type="submit">OK</button>
     </form>

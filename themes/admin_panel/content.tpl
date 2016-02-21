@@ -32,16 +32,16 @@
             {/foreach}
             </ul>
         </div>
-        <!--<div class="one-third column">
+        <div class="one-third column">
             <h4>Баннеры</h4>
             <ul>
             {foreach item=data from=$viewData.content}
                 {if $data->type == 3}
-                <li> - <a href="?view=admin_panel&load=content_panel&fnc=edit&type=content&id={$data->id}">{$data->description}</a></li>
+                <li> - <a href="?view=admin_panel&load=content_panel&fnc=edit&type=banner&id={$data->id}">{$data->description}</a></li>
                 {/if}
             {/foreach}
             </ul>
-        </div>-->
+        </div>
         <div class="one-third column">
             <h4>Текст</h4>
             <ul>

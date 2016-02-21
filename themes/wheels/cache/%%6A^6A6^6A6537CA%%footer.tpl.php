@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-15 08:34:27
+<?php /* Smarty version 2.6.26, created on 2016-02-21 12:33:07
          compiled from layout/footer.tpl */ ?>
 
                 <footer id="footer">
@@ -18,8 +18,8 @@
 ">Политика конфиденциальности</a></li>
                     </ul>
                     <ul class="social">
-                        <li><a class="ico ico-facebook" href="#">facebook</a></li>
-                        <li><a class="ico ico-twitter" href="#">twitter</a></li>
+                        <li><a class="ico ico-facebook" target="_blank" href="https://www.facebook.com/automanagerua/">facebook</a></li>
+                        <li><a class="ico ico-vk" target="_blank" href="http://vk.com/automanagerua">vk</a></li>
                     </ul>
                 </footer>
             </div>

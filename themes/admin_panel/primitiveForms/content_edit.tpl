@@ -1,5 +1,15 @@
 {include file='layout/header.tpl'}
 {include file='layout/menu.tpl'}
+{if $viewData.content->type == 1 || $viewData.content->type == 2}
+<script src="{$src}/js/ckeditor/ckeditor.js"></script>
+{literal}
+<script>
+    $(document).ready(function(){
+        CKEDITOR.replace('content_editor');
+    });
+</script>
+{/literal}
+{/if}
 <div id="ajaxStatus">
     <span></span>
 </div>
@@ -8,7 +18,7 @@
         <h5>Редактирование {if $viewData._type == 'content'}{$viewData.content->description}{elseif $viewData._type == 'package'}{$viewData.content->title} {$viewData.content->cost}{/if}</h5>
         <hr />
     </div>
-    <form action="{$baseLink}/?view=admin_panel&load=content_panel" method="POST" class="editableForm sixteen columns">
+    <form action="{$baseLink}/?view=admin_panel&load=content_panel" method="POST" enctype="multipart/form-data" class="editableForm sixteen columns">
         <input type="hidden" name="fnc" value="{if $viewData.content->id != null}update{else}add{/if}">
         <input type="hidden" name="type" value="{$viewData._type}">
         {if $viewData.content->id != null}
@@ -24,7 +34,7 @@
             <label>Описание (метка для удобства)</label>
             <input name="content[description]" type="text" value="{$viewData.content->description}">
             <label>Основной текст</label>
-            <textarea name="content[content]">{$viewData.content->content}</textarea>
+            <textarea name="content[content]" id="content_editor">{$viewData.content->content}</textarea>
             <label>META Title</label>
             <input name="content[meta_title]" type="text" value="{$viewData.content->meta_title}">
             <label>META Keywords</label>
@@ -47,6 +57,13 @@
         <input name="content[title]" type="text" value="{$viewData.content->title}">
         <label>Описание</label>
         <textarea name="content[description]">{$viewData.content->description}</textarea>
+    {elseif $viewData._type == 'banner'}
+        <input type="hidden" name="content[type]" value="3">
+        <input type="hidden" name="content[content]" value="{$viewData.content->content}">
+        <label>Описание</label>
+        <input name="content[description]" type="text" value="{$viewData.content->description}">
+        <label>Загрузить</label>
+        <input name="banner_content" type="file">
     {/if}
         <button type="submit">OK</button>
     </form>

@@ -1,6 +1,8 @@
-<?php /* Smarty version 2.6.26, created on 2015-11-23 21:22:26
+<?php /* Smarty version 2.6.26, created on 2016-02-21 12:37:57
          compiled from container/main.tpl */ ?>
 <div id="main">
+<?php echo $this->_tpl_vars['viewData']->_contentmodel->getText('MIN_REFILL'); ?>
+
 </div>
 <div class="container">
     <div class="sixteen columns head">

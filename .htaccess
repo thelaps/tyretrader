@@ -2,5 +2,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
+RewriteRule ^view/([a-zA-Z0-9\-_]*)/$ index.php?view=index&load=pages&page=$1 [L]
 RewriteRule ^system/$ index.php?view=admin_panel [L]
 RewriteRule ^system/([a-z0-9\.\-_]*)/$ index.php?view=admin_panel&load=$1 [L]

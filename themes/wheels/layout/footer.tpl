@@ -10,8 +10,8 @@
                         <li><a href="{$baseLink}">Политика конфиденциальности</a></li>
                     </ul>
                     <ul class="social">
-                        <li><a class="ico ico-facebook" href="#">facebook</a></li>
-                        <li><a class="ico ico-twitter" href="#">twitter</a></li>
+                        <li><a class="ico ico-facebook" target="_blank" href="https://www.facebook.com/automanagerua/">facebook</a></li>
+                        <li><a class="ico ico-vk" target="_blank" href="http://vk.com/automanagerua">vk</a></li>
                     </ul>
                 </footer>
             </div>

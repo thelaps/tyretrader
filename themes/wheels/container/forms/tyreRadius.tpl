@@ -12,12 +12,16 @@
     <option value="12">12</option>
     <option value="13">13</option>
     <option value="14">14</option>
+    {if $enableCSize}<option value="14">14C</option>{/if}
     <option value="15,3">15,3</option>
     <option value="15">15</option>
+    {if $enableCSize}<option value="15">15C</option>{/if}
     <option value="15,5">15,5</option>
     <option value="16"{if !$isAll} selected="selected"{/if}>16</option>
+    {if $enableCSize}<option value="16">16C</option>{/if}
     <option value="16,5">16,5</option>
     <option value="17">17</option>
+    {if $enableCSize}<option value="17">17C</option>{/if}
     <option value="17,5">17,5</option>
     <option value="18">18</option>
     <option value="19,5">19,5</option>
