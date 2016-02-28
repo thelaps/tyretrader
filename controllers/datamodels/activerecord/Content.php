@@ -20,9 +20,26 @@ class Content extends ActiveRecord\Model
     {
         $model = null;
         if ( $_sku != null ) {
-            $model = self::find(array('conditions' => array('type = ? AND sku = ?', self::TEXT, $_sku)));
+            $model = self::find(array('conditions' => array('type = ? AND sku = ? AND status = ?', self::TEXT, $_sku, 1)));
         }
         return (empty($model)) ? null : $model->content;
+    }
+
+    public function getBanner($_sku = null)
+    {
+        $model = null;
+        if ( $_sku != null ) {
+            $model = self::find(array('conditions' => array('type = ? AND sku = ? AND status = ?', self::BANNER, $_sku, 1)));
+        }
+        $html = '';
+        if ( !empty($model) ) {
+            if ($model->subtype == 'image') {
+                $html = '<img src="'.$model->content.'" title="'.$model->title.'">';
+            } else {
+                $html = $model->content;
+            }
+        }
+        return $html;
     }
 
     public static function pageContent()

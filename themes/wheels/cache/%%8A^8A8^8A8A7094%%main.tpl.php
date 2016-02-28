@@ -1,8 +1,22 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-21 12:56:40
+<?php /* Smarty version 2.6.26, created on 2016-02-23 21:19:11
          compiled from container/main.tpl */ ?>
 <div id="main">
 </div>
 <div class="container">
+
+    <div class="one-third column">
+        <?php echo $this->_tpl_vars['viewData']->_contentmodel->getBanner('BANNER_1'); ?>
+
+    </div>
+    <div class="one-third column">
+        <?php echo $this->_tpl_vars['viewData']->_contentmodel->getBanner('BANNER_2'); ?>
+
+    </div>
+    <div class="one-third column">
+        <?php echo $this->_tpl_vars['viewData']->_contentmodel->getBanner('BANNER_3'); ?>
+
+    </div>
+
     <div class="sixteen columns head">
         <h1 class="remove-bottom" style="margin-top: 40px"><span class="errorMessage"><?php echo $this->_tpl_vars['viewData']->_content->title; ?>
 </span></h1>

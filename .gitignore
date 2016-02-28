@@ -1,14 +1,14 @@
 # Cache
-themes/wheels/cache/
-themes/admin_panel/cache/
-themes/notifications/cache/
+themes/wheels/cache/*
+themes/admin_panel/cache/*
+themes/notifications/cache/*
 
 # Additioanl scripts
-inbox/
+inbox/*
 
 # Media files
 images/ic_*
-tmp/
+tmp/*
 files/*.xls
 files/*.xlsx
 files/*.csv

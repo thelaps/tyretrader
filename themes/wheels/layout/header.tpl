@@ -75,7 +75,11 @@
         <div id="head">
             <a class="logo" href="{$baseLink}">TYREMANAGER. Вам с нами по пути!</a>
             <div class="head-banner">
-                <img src="{$viewData->_banner->content}" alt="banner" title="{$viewData->_banner->title}">
+                {if $viewData->_banner->subtype == 'image'}
+                    <img src="{$viewData->_banner->content}" alt="banner" title="{$viewData->_banner->title}">
+                {elseif $viewData->_banner->subtype == 'code'}
+                    {$viewData->_banner->content}
+                {/if}
             </div>
         </div>
         {include file="widget/profileBox.tpl"}

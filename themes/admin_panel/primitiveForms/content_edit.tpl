@@ -24,8 +24,15 @@
         {if $viewData.content->id != null}
             <input name="content[id]" type="hidden" value="{$viewData.content->id}">
         {/if}
-        <label>Активно?</label>
-        <input name="content[status]" type="checkbox" {if $viewData.content->status == 1}checked {/if}value="1">
+        <ul>
+            <li>
+                <label>
+                    <input name="content[status]" type="hidden" value="0">
+                    <input name="content[status]" type="checkbox" {if $viewData.content->status == 1}checked {/if}value="1">
+                    Активно?
+                </label>
+            </li>
+        </ul>
 
     {if $viewData._type == 'content'}
         {if $viewData.content->type == 1 || $viewData.content->type == 2}
@@ -58,15 +65,51 @@
         <label>Описание</label>
         <textarea name="content[description]">{$viewData.content->description}</textarea>
     {elseif $viewData._type == 'banner'}
-        <input type="hidden" name="content[type]" value="3">
-        <input type="hidden" name="content[content]" value="{$viewData.content->content}">
         <label>Описание</label>
         <input name="content[description]" type="text" value="{$viewData.content->description}">
-        <label>Загрузить</label>
-        <input name="banner_content" type="file">
+        <input type="hidden" name="content[type]" value="3">
+        <ul>
+            <li><label><input type="radio" value="image" name="content[subtype]" {if $viewData.content->subtype == 'image'} checked{/if}> Изображение</label></li>
+            <li><label><input type="radio" value="code" name="content[subtype]" {if $viewData.content->subtype == 'code'} checked{/if}> Код (flash/javascript)*</label></li>
+        </ul>
+        <input type="hidden" name="content[content]" value="{$viewData.content->content}">
+        <textarea data-subtype="code" name="content[content]" {if $viewData.content->subtype != 'code'} style="display: none;" disabled {/if}>{$viewData.content->content}</textarea>
+        <label data-subtype="image"{if $viewData.content->subtype != 'image'} style="display: none;" disabled {/if}>Загрузить</label>
+        <input data-subtype="image" name="banner_content" type="file"{if $viewData.content->subtype != 'image'} style="display: none;" disabled {/if}>
+        <div class="clear"></div>
+    <hr/>
     {/if}
-        <button type="submit">OK</button>
+        <button type="submit">Сохранить</button>
     </form>
 </div>
+{if $viewData._type == 'banner'}
+{literal}
+<script>
+    function _handleBannerType(){
+        var _subtype = $('[name="content[subtype]"]:checked').val();
+        switch (_subtype){
+            case 'image':
+                $('[data-subtype="code"]').attr('disabled', true).hide();
+                $('[data-subtype="image"]').removeAttr('disabled');
+                $('[data-subtype="image"]').show();
+                break;
+            case 'code':
+                $('[data-subtype="image"]').attr('disabled', true).hide();
+                $('[data-subtype="code"]').removeAttr('disabled');
+                $('[data-subtype="code"]').show();
+                break;
+        }
+    }
+    $(document).ready(function(){
+        _handleBannerType();
 
+        $('[name="content[subtype]"]').bind({
+            change: function(){
+                _handleBannerType();
+            }
+        });
+    });
+</script>
+{/literal}
+{/if}
 {include file='layout/footer.tpl'}

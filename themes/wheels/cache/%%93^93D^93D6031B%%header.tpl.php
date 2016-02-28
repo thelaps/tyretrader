@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-21 12:56:40
+<?php /* Smarty version 2.6.26, created on 2016-02-23 21:12:59
          compiled from layout/header.tpl */ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
@@ -109,9 +109,14 @@
             <a class="logo" href="<?php echo $this->_tpl_vars['baseLink']; ?>
 ">TYREMANAGER. Вам с нами по пути!</a>
             <div class="head-banner">
-                <img src="<?php echo $this->_tpl_vars['viewData']->_banner->content; ?>
+                <?php if ($this->_tpl_vars['viewData']->_banner->subtype == 'image'): ?>
+                    <img src="<?php echo $this->_tpl_vars['viewData']->_banner->content; ?>
 " alt="banner" title="<?php echo $this->_tpl_vars['viewData']->_banner->title; ?>
 ">
+                <?php elseif ($this->_tpl_vars['viewData']->_banner->subtype == 'code'): ?>
+                    <?php echo $this->_tpl_vars['viewData']->_banner->content; ?>
+
+                <?php endif; ?>
             </div>
         </div>
         <?php $_smarty_tpl_vars = $this->_tpl_vars;

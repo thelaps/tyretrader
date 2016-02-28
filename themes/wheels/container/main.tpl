@@ -3,6 +3,17 @@
 {include file="container/forms/mainContainerCatalog.tpl"*}
 </div>
 <div class="container">
+
+    <div class="one-third column">
+        {$viewData->_contentmodel->getBanner('BANNER_1')}
+    </div>
+    <div class="one-third column">
+        {$viewData->_contentmodel->getBanner('BANNER_2')}
+    </div>
+    <div class="one-third column">
+        {$viewData->_contentmodel->getBanner('BANNER_3')}
+    </div>
+
     <div class="sixteen columns head">
         <h1 class="remove-bottom" style="margin-top: 40px"><span class="errorMessage">{$viewData->_content->title}</span></h1>
         <h5>Beta-версия</h5>

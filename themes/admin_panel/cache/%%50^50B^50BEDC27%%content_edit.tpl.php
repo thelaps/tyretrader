@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-21 12:57:02
+<?php /* Smarty version 2.6.26, created on 2016-02-23 21:35:47
          compiled from primitiveForms/content_edit.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -42,8 +42,15 @@ unset($_smarty_tpl_vars);
             <input name="content[id]" type="hidden" value="<?php echo $this->_tpl_vars['viewData']['content']->id; ?>
 ">
         <?php endif; ?>
-        <label>Активно?</label>
-        <input name="content[status]" type="checkbox" <?php if ($this->_tpl_vars['viewData']['content']->status == 1): ?>checked <?php endif; ?>value="1">
+        <ul>
+            <li>
+                <label>
+                    <input name="content[status]" type="hidden" value="0">
+                    <input name="content[status]" type="checkbox" <?php if ($this->_tpl_vars['viewData']['content']->status == 1): ?>checked <?php endif; ?>value="1">
+                    Активно?
+                </label>
+            </li>
+        </ul>
 
     <?php if ($this->_tpl_vars['viewData']['_type'] == 'content'): ?>
         <?php if ($this->_tpl_vars['viewData']['content']->type == 1 || $this->_tpl_vars['viewData']['content']->type == 2): ?>
@@ -88,19 +95,57 @@ unset($_smarty_tpl_vars);
         <textarea name="content[description]"><?php echo $this->_tpl_vars['viewData']['content']->description; ?>
 </textarea>
     <?php elseif ($this->_tpl_vars['viewData']['_type'] == 'banner'): ?>
-        <input type="hidden" name="content[type]" value="3">
-        <input type="hidden" name="content[content]" value="<?php echo $this->_tpl_vars['viewData']['content']->content; ?>
-">
         <label>Описание</label>
         <input name="content[description]" type="text" value="<?php echo $this->_tpl_vars['viewData']['content']->description; ?>
 ">
-        <label>Загрузить</label>
-        <input name="banner_content" type="file">
+        <input type="hidden" name="content[type]" value="3">
+        <ul>
+            <li><label><input type="radio" value="image" name="content[subtype]" <?php if ($this->_tpl_vars['viewData']['content']->subtype == 'image'): ?> checked<?php endif; ?>> Изображение</label></li>
+            <li><label><input type="radio" value="code" name="content[subtype]" <?php if ($this->_tpl_vars['viewData']['content']->subtype == 'code'): ?> checked<?php endif; ?>> Код (flash/javascript)*</label></li>
+        </ul>
+        <input type="hidden" name="content[content]" value="<?php echo $this->_tpl_vars['viewData']['content']->content; ?>
+">
+        <textarea data-subtype="code" name="content[content]" <?php if ($this->_tpl_vars['viewData']['content']->subtype != 'code'): ?> style="display: none;" disabled <?php endif; ?>><?php echo $this->_tpl_vars['viewData']['content']->content; ?>
+</textarea>
+        <label data-subtype="image"<?php if ($this->_tpl_vars['viewData']['content']->subtype != 'image'): ?> style="display: none;" disabled <?php endif; ?>>Загрузить</label>
+        <input data-subtype="image" name="banner_content" type="file"<?php if ($this->_tpl_vars['viewData']['content']->subtype != 'image'): ?> style="display: none;" disabled <?php endif; ?>>
+        <div class="clear"></div>
+    <hr/>
     <?php endif; ?>
-        <button type="submit">OK</button>
+        <button type="submit">Сохранить</button>
     </form>
 </div>
+<?php if ($this->_tpl_vars['viewData']['_type'] == 'banner'): ?>
+<?php echo '
+<script>
+    function _handleBannerType(){
+        var _subtype = $(\'[name="content[subtype]"]:checked\').val();
+        switch (_subtype){
+            case \'image\':
+                $(\'[data-subtype="code"]\').attr(\'disabled\', true).hide();
+                $(\'[data-subtype="image"]\').removeAttr(\'disabled\');
+                $(\'[data-subtype="image"]\').show();
+                break;
+            case \'code\':
+                $(\'[data-subtype="image"]\').attr(\'disabled\', true).hide();
+                $(\'[data-subtype="code"]\').removeAttr(\'disabled\');
+                $(\'[data-subtype="code"]\').show();
+                break;
+        }
+    }
+    $(document).ready(function(){
+        _handleBannerType();
 
+        $(\'[name="content[subtype]"]\').bind({
+            change: function(){
+                _handleBannerType();
+            }
+        });
+    });
+</script>
+'; ?>
+
+<?php endif; ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/footer.tpl', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
