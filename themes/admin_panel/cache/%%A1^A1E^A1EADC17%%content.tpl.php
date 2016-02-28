@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-21 12:56:59
+<?php /* Smarty version 2.6.26, created on 2016-02-28 10:56:50
          compiled from content.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -45,10 +45,12 @@ unset($_smarty_tpl_vars);
                 <?php if ($this->_tpl_vars['data']->type == 2): ?>
                 <li> - <a href="?view=admin_panel&load=content_panel&fnc=edit&type=content&id=<?php echo $this->_tpl_vars['data']->id; ?>
 "><?php echo $this->_tpl_vars['data']->description; ?>
-</a></li>
+</a> <a class="confirmRemove" style="color: #ac1c36;" href="?view=admin_panel&load=content_panel&fnc=delete&type=content&id=<?php echo $this->_tpl_vars['data']->id; ?>
+">[Удалить]</a></li>
                 <?php endif; ?>
             <?php endforeach; endif; unset($_from); ?>
             </ul>
+            <a class="button" href="?view=admin_panel&load=content_panel&fnc=edit&type=content">Добавить</a>
         </div>
         <div class="one-third column">
             <h4>Баннеры</h4>
@@ -93,6 +95,19 @@ unset($_smarty_tpl_vars);
         </div>
 
 	</div><!-- container -->
+<?php echo '
+<script>
+    $(document).ready(function(){
+        $(\'.confirmRemove\').each(function(){
+            $(this).bind({
+                click: function(e){
+                    return (confirm(\'Удалить запись?\'));
+                }
+            });
+        });
+    });
+</script>
+'; ?>
 
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/footer.tpl', 'smarty_include_vars' => array()));

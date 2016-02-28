@@ -12,7 +12,7 @@ class Banner extends Content
 
     public function uploadDataFile()
     {
-        if ( isset($_FILES) ) {
+        if ( !empty($_FILES) ) {
             $filename = $_FILES["banner_content"]["name"];
             $file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
             $file_ext = $this->getFileExtension($filename); // get file name

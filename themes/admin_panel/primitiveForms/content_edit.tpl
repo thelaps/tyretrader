@@ -1,7 +1,7 @@
 {include file='layout/header.tpl'}
 {include file='layout/menu.tpl'}
-{if $viewData.content->type == 1 || $viewData.content->type == 2}
 <script src="{$src}/js/ckeditor/ckeditor.js"></script>
+{if $viewData.content->type == 1 || $viewData.content->type == 2 }
 {literal}
 <script>
     $(document).ready(function(){
@@ -72,8 +72,8 @@
             <li><label><input type="radio" value="image" name="content[subtype]" {if $viewData.content->subtype == 'image'} checked{/if}> Изображение</label></li>
             <li><label><input type="radio" value="code" name="content[subtype]" {if $viewData.content->subtype == 'code'} checked{/if}> Код (flash/javascript)*</label></li>
         </ul>
-        <input type="hidden" name="content[content]" value="{$viewData.content->content}">
-        <textarea data-subtype="code" name="content[content]" {if $viewData.content->subtype != 'code'} style="display: none;" disabled {/if}>{$viewData.content->content}</textarea>
+        <textarea name="content[content]" style="display: none;">{$viewData.content->content}</textarea>
+        <textarea data-subtype="code" name="content[content]" id="content_editor" {if $viewData.content->subtype != 'code'} style="display: none;" disabled {/if}>{$viewData.content->content}</textarea>
         <label data-subtype="image"{if $viewData.content->subtype != 'image'} style="display: none;" disabled {/if}>Загрузить</label>
         <input data-subtype="image" name="banner_content" type="file"{if $viewData.content->subtype != 'image'} style="display: none;" disabled {/if}>
         <div class="clear"></div>
@@ -89,6 +89,7 @@
         var _subtype = $('[name="content[subtype]"]:checked').val();
         switch (_subtype){
             case 'image':
+                CKEDITOR.instances['content_editor'].destroy();
                 $('[data-subtype="code"]').attr('disabled', true).hide();
                 $('[data-subtype="image"]').removeAttr('disabled');
                 $('[data-subtype="image"]').show();
@@ -96,6 +97,7 @@
             case 'code':
                 $('[data-subtype="image"]').attr('disabled', true).hide();
                 $('[data-subtype="code"]').removeAttr('disabled');
+                CKEDITOR.replace('content_editor');
                 $('[data-subtype="code"]').show();
                 break;
         }

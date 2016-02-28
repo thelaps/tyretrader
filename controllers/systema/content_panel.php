@@ -54,6 +54,17 @@ class content_panel extends controller{
                     $this->viewData['_type'] = strtolower($_class);
                     return 'primitiveForms/content_edit.tpl';
                     break;
+                case 'delete':
+                    $_class = 'Content';
+                    if ( isset($get['id']) ) {
+                        $model = Content::find($get['id']);
+                        if ( !empty($model) ) {
+                            $model->delete();
+                        }
+                    }
+                    header('Location: /?view=admin_panel&load=content_panel', true, 302);
+                    exit();
+                    break;
             }
         }else{
             $this->viewData['content'] = Content::all();

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-23 21:35:47
+<?php /* Smarty version 2.6.26, created on 2016-02-28 10:43:38
          compiled from primitiveForms/content_edit.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -10,9 +10,9 @@ $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/menu.tpl', 'sm
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<?php if ($this->_tpl_vars['viewData']['content']->type == 1 || $this->_tpl_vars['viewData']['content']->type == 2): ?>
 <script src="<?php echo $this->_tpl_vars['src']; ?>
 /js/ckeditor/ckeditor.js"></script>
+<?php if ($this->_tpl_vars['viewData']['content']->type == 1 || $this->_tpl_vars['viewData']['content']->type == 2): ?>
 <?php echo '
 <script>
     $(document).ready(function(){
@@ -103,9 +103,9 @@ unset($_smarty_tpl_vars);
             <li><label><input type="radio" value="image" name="content[subtype]" <?php if ($this->_tpl_vars['viewData']['content']->subtype == 'image'): ?> checked<?php endif; ?>> Изображение</label></li>
             <li><label><input type="radio" value="code" name="content[subtype]" <?php if ($this->_tpl_vars['viewData']['content']->subtype == 'code'): ?> checked<?php endif; ?>> Код (flash/javascript)*</label></li>
         </ul>
-        <input type="hidden" name="content[content]" value="<?php echo $this->_tpl_vars['viewData']['content']->content; ?>
-">
-        <textarea data-subtype="code" name="content[content]" <?php if ($this->_tpl_vars['viewData']['content']->subtype != 'code'): ?> style="display: none;" disabled <?php endif; ?>><?php echo $this->_tpl_vars['viewData']['content']->content; ?>
+        <textarea name="content[content]" style="display: none;"><?php echo $this->_tpl_vars['viewData']['content']->content; ?>
+</textarea>
+        <textarea data-subtype="code" name="content[content]" id="content_editor" <?php if ($this->_tpl_vars['viewData']['content']->subtype != 'code'): ?> style="display: none;" disabled <?php endif; ?>><?php echo $this->_tpl_vars['viewData']['content']->content; ?>
 </textarea>
         <label data-subtype="image"<?php if ($this->_tpl_vars['viewData']['content']->subtype != 'image'): ?> style="display: none;" disabled <?php endif; ?>>Загрузить</label>
         <input data-subtype="image" name="banner_content" type="file"<?php if ($this->_tpl_vars['viewData']['content']->subtype != 'image'): ?> style="display: none;" disabled <?php endif; ?>>
@@ -122,6 +122,7 @@ unset($_smarty_tpl_vars);
         var _subtype = $(\'[name="content[subtype]"]:checked\').val();
         switch (_subtype){
             case \'image\':
+                CKEDITOR.instances[\'content_editor\'].destroy();
                 $(\'[data-subtype="code"]\').attr(\'disabled\', true).hide();
                 $(\'[data-subtype="image"]\').removeAttr(\'disabled\');
                 $(\'[data-subtype="image"]\').show();
@@ -129,6 +130,7 @@ unset($_smarty_tpl_vars);
             case \'code\':
                 $(\'[data-subtype="image"]\').attr(\'disabled\', true).hide();
                 $(\'[data-subtype="code"]\').removeAttr(\'disabled\');
+                CKEDITOR.replace(\'content_editor\');
                 $(\'[data-subtype="code"]\').show();
                 break;
         }
