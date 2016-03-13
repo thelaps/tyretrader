@@ -148,7 +148,7 @@ class opt extends controller{
 
     private function getAllItems($post = null)
     {
-        return Price::getAllItems($post);
+        return Price::getStaticAllItems($post);
     }
 
     private function getCompanies()

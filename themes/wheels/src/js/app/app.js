@@ -391,7 +391,16 @@ $(document).ready(function(){
                 bindMarginButtons();
             },
             priceExport : function(e) {
-                $('#downloader').attr('src',App.options.base+'files/price/'+e);
+                if ( e != null ) {
+                    $('#downloader').attr('src',App.options.base+'files/price/'+e);
+                } else {
+                    $('#dialog-error > span.errorTitle').text('Файл не создан.');
+                    $('#dialog-error > ul.errorList').html('<li>Возможно отсутствуют данные.</li><li>Попробуйте указать меньшее наличие.</li>');
+                    $("#dialog-error").dialog({
+                        modal: true,
+                        title: 'Запрос отменен'
+                    });
+                }
             },
             changeAccount : function(e) {
                 window.location.reload();

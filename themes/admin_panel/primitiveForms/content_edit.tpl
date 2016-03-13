@@ -89,7 +89,9 @@
         var _subtype = $('[name="content[subtype]"]:checked').val();
         switch (_subtype){
             case 'image':
-                CKEDITOR.instances['content_editor'].destroy();
+                if (CKEDITOR.instances['content_editor'] != undefined) {
+                    CKEDITOR.instances['content_editor'].destroy();
+                }
                 $('[data-subtype="code"]').attr('disabled', true).hide();
                 $('[data-subtype="image"]').removeAttr('disabled');
                 $('[data-subtype="image"]').show();

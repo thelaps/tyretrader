@@ -2,7 +2,8 @@
 <div class="widget registration">
     <form action="{$baseLink}/?view=api&load=account" class="form">
         <input type="hidden" name="fnc" value="register">
-        <ul class="opt-group select-user-type">
+        <input type="hidden" name="userType" value="1">
+        <!--<ul class="opt-group select-user-type">
             <li>
                 <input id="person" type="radio" name="userType" value="1" checked>
                 <label for="person">Покупатель</label>
@@ -12,7 +13,7 @@
                 <label for="store">Магазин</label>
             </li>
         </ul>
-        <hr>
+        <hr>-->
         <div class="two-columns">
             <div>
                 <h3>Личные данные</h3>

@@ -116,7 +116,7 @@ class phpexel{
         $tmpName = uniqid('price_');
         $output = $baseFolder.$tmpName.'.csv';
         $extras = Helper::extras();
-        if ( $this->filename != null ) {
+        if ( $this->filename != null && $items->total > 0 ) {
             $sheetKey = 0;
             $csvArray = array();
             foreach ( $items->items as $typeKey => $sheetItem ) {

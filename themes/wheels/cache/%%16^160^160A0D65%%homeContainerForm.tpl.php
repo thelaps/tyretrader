@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-01-19 03:24:48
+<?php /* Smarty version 2.6.26, created on 2016-03-12 20:51:12
          compiled from container/forms/homeContainerForm.tpl */ ?>
 
 <div class="sidebar-widget">
@@ -9,7 +9,7 @@
                 <li>
                     <a href="" class="active" data-tab="#sidebar-linked">Личные данные</a>
                 </li>
-                <li>
+                <!--<li>
                     <a href="" data-tab="#sidebar-linked">Статистика</a>
                 </li>
                 <li>
@@ -20,7 +20,7 @@
                 </li>
                 <li>
                     <a href="" data-tab="#sidebar-linked">Обзоры</a>
-                </li>
+                </li>-->
                 <li>
                     <a href="" data-tab="#sidebar-linked">Балланс</a>
                 </li>
@@ -58,10 +58,10 @@
 <div id="sidebar-linked" class="tab-widget" data-role="tabs">
     <ul>
         <li class="active">Личные данные</li>
-        <li>Статистика</li>
+        <!--<li>Статистика</li>
         <li>Акции</li>
         <li>Фото</li>
-        <li>Обзоры</li>
+        <li>Обзоры</li>-->
         <li>Балланс</li>
         <li>Услуги</li>
     </ul>
@@ -79,7 +79,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
         <?php endif; ?>
-        <div class="tab" data-role="tab">
+        <!--<div class="tab" data-role="tab">
             <img src="<?php echo $this->_tpl_vars['src']; ?>
 /images/under-construction.png">
             Раздел в разработке...
@@ -98,7 +98,7 @@ unset($_smarty_tpl_vars);
             <img src="<?php echo $this->_tpl_vars['src']; ?>
 /images/under-construction.png">
             Раздел в разработке...
-        </div>
+        </div>-->
         <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "container/forms/homeTabs/homeContainerFormTabAccountBalance.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

@@ -73,6 +73,48 @@ class Price extends ActiveRecord\Model
         }
     }
 
+    public static function getStaticAllItems($post = null)
+    {
+        $model = new Price();
+        $model->loadScopeData();
+        $unionsSql = $model->makeUnions($post, false, false);
+        $unionsSqlTotal = $model->makeUnions($post, true);
+        $opt = new stdClass();
+        $opt->total = $model->find_by_sql($unionsSqlTotal);
+        $opt->total = $opt->total[0]->items;
+        $opt->filter = (object)$post['filter'];
+        $currentTime = time();
+        if($unionsSql!=null){
+            $opt_items = $model->find_by_sql($unionsSql);
+            foreach ($opt_items as $item) {
+
+                $compiledPrice = $item->makePriceWtihMargin();
+
+                $item->price_1 = $compiledPrice->wholesale;
+
+                if ( empty($item->manufactured_year) ) {
+                    $item->manufactured_year = '-';
+                }
+                if ( empty($item->manufactured_country_label) ) {
+                    $item->manufactured_country_label = '-';
+                }
+
+                $timeDiff = abs($currentTime - $item->date);
+                $numberDays = $timeDiff/86400;
+                $numberDays = intval($numberDays);
+                $item->assign_attribute('daysago', $numberDays);
+
+                $item->assign_attribute('price_compiled', $compiledPrice->retail);
+
+                $item->assign_attribute('scopename', $item->makeName());
+                $item->assign_attribute('time', date('d.m.Y', $item->date));
+
+                $opt->items[$item->manufacturer_type][] = $item;
+            }
+            return $opt;
+        }
+    }
+
     public static function getOptItems($post = null)
     {
         $profiler = new profilerModel;

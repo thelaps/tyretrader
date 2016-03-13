@@ -97,6 +97,11 @@ class User extends ActiveRecord\Model
                 $model->save();
                 $model->pass = $attributes['pass'];
                 App::helper()->sendMail('registerSuccess', $attributes['email'], 'Регистрация на портале', $model);
+                $_content = new Content();
+                $_supportEmail = $_content->getText('MANAGER_EMAIL_1');
+                if (!empty($_supportEmail)) {
+                    App::helper()->sendMail('registerSuccessAdmin', $_supportEmail, 'Новый пользователь на портале', $model);
+                }
             }
         } else {
             $model->errors = array(

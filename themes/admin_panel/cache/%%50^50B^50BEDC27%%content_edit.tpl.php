@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-28 10:43:38
+<?php /* Smarty version 2.6.26, created on 2016-03-12 20:57:30
          compiled from primitiveForms/content_edit.tpl */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'layout/header.tpl', 'smarty_include_vars' => array()));
@@ -122,7 +122,9 @@ unset($_smarty_tpl_vars);
         var _subtype = $(\'[name="content[subtype]"]:checked\').val();
         switch (_subtype){
             case \'image\':
-                CKEDITOR.instances[\'content_editor\'].destroy();
+                if (CKEDITOR.instances[\'content_editor\'] != undefined) {
+                    CKEDITOR.instances[\'content_editor\'].destroy();
+                }
                 $(\'[data-subtype="code"]\').attr(\'disabled\', true).hide();
                 $(\'[data-subtype="image"]\').removeAttr(\'disabled\');
                 $(\'[data-subtype="image"]\').show();
