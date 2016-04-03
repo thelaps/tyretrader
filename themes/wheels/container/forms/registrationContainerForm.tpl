@@ -48,7 +48,7 @@
                     <tr>
                         <td><label>Город</label></td>
                         <td>
-                            <select name="cityId" class="cityFilter" id="homeCity">
+                            <select name="cityId" class="" id="homeCity">
                                 <option value="">Все</option>
                                 {foreach from=$viewData->container.city item=region}
                                     {foreach from=$region.cities item=cityofregion}

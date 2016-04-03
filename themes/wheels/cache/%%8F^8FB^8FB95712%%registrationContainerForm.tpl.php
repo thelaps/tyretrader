@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-03-12 20:19:36
+<?php /* Smarty version 2.6.26, created on 2016-04-03 10:18:25
          compiled from container/forms/registrationContainerForm.tpl */ ?>
 <h2>Регистрация</h2>
 <div class="widget registration">
@@ -55,7 +55,7 @@
                     <tr>
                         <td><label>Город</label></td>
                         <td>
-                            <select name="cityId" class="cityFilter" id="homeCity">
+                            <select name="cityId" class="" id="homeCity">
                                 <option value="">Все</option>
                                 <?php $_from = $this->_tpl_vars['viewData']->container['city']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['region']):

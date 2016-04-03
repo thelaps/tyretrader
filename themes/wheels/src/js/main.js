@@ -38,19 +38,28 @@ $(document).ready(function(){
             change: function(){
                 var id = $(this).val();
                 var filter = $($(this).attr('data-filter'));
-                if(id==''){
-                    filter.children().each(function(){
-                        $(this).show().removeAttr('disabled');
-                    });
-                } else {
-                    var needed = filter.find('[data-manufacturer="'+id+'"]');
-                    filter.children().each(function(){
-                        $(this).hide().attr('disabled', true);
-                    });
-                    needed.each(function(){
-                        $(this).show().removeAttr('disabled');
-                    });
-                }
+
+                var formData = {
+                    fnc: 'models',
+                    id: id
+                };
+                var action = App.options.base + '?view=api&load=datalist';
+                $.post(action, formData, function(data, status){
+                    var jsonString = $(data).text();
+                    var json = $.parseJSON(jsonString);
+                    if(status=='success'){
+                        var options = new Array;
+                        var items = json.completeData.items;
+                        options.push('<option value="">Не выбрана</option>');
+                        for(var i in items) {
+                            options.push('<option value="'+items[i].id+'">'+items[i].name+'</option>');
+                        }
+                        filter.html(options.join(''));
+                    }else{
+                        //alert('Серверная ошибка!');
+                    }
+                });
+                filter.select2('val', '');
                 filter.select2();
             }
         });
@@ -60,20 +69,28 @@ $(document).ready(function(){
             change: function(e){
                 var id = $(this).val();
                 var filter = $($(this).attr('data-filter'));
-                console.log(e, id, filter);
-                if(id==''){
-                    filter.children().each(function(){
-                        $(this).show().removeAttr('disabled');
-                    });
-                }else{
-                    var needed = filter.find('[data-city="'+id+'"]');
-                    filter.children().each(function(){
-                        $(this).hide().attr('disabled', true);
-                    });
-                    needed.each(function(){
-                        $(this).show().removeAttr('disabled');
-                    });
-                }
+
+                var formData = {
+                    fnc: 'cities',
+                    id: id
+                };
+                var action = App.options.base + '?view=api&load=datalist';
+                $.post(action, formData, function(data, status){
+                    var jsonString = $(data).text();
+                    var json = $.parseJSON(jsonString);
+                    if(status=='success'){
+                        var options = new Array;
+                        var items = json.completeData.items;
+                        options.push('<option value="">Все</option>');
+                        for(var i in items) {
+                            options.push('<option value="'+items[i].id+'">'+items[i].name+'</option>');
+                        }
+                        filter.html(options.join(''));
+                    }else{
+                        //alert('Серверная ошибка!');
+                    }
+                });
+                filter.select2('val', '');
                 filter.select2();
             }
         });
